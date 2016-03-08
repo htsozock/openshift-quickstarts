@@ -37,8 +37,9 @@ public class MainServlet extends HttpServlet {
                     for (TodoEntry entry : todoListService.getAllEntries()) {
                         out.println(
                                 entryTemplate
-                                        .replace("{{ summary }}", escapeHtml(entry.getSummary()))
-                                        .replace("{{ description }}", escapeHtml(entry.getDescription()))
+								        .replace("{{ project_code }}", escapeHtml(entry.getProject_code()))
+                                        .replace("{{ name }}", escapeHtml(entry.getName()))
+                                        .replace("{{ status }}", escapeHtml(entry.getStatus()))
                         );
                     }
                 } else if (insideLoop) {
@@ -58,10 +59,11 @@ public class MainServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String summary = req.getParameter("summary");
-        String description = req.getParameter("description");
+         String project_code = req.getParameter("project_code"); //not required if the project code is generated
+		String name = req.getParameter("name");
+        String status = req.getParameter("status");
 
-        todoListService.addEntry(new TodoEntry(summary, description));
+        todoListService.addEntry(new TodoEntry(project_code, name, status));
 
         resp.sendRedirect("index.html");
     }

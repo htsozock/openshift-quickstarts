@@ -61,7 +61,7 @@ public class JdbcTodoListDAO implements TodoListDAO {
     }
 
     private boolean isSchemaInitialized(Connection connection) throws SQLException {
-        ResultSet rset = connection.getMetaData().getTables(null, null, "todo_entries", null);
+        ResultSet rset = connection.getMetaData().getTables(null, null, "project", null);
         try {
             return rset.next();
         } finally {
@@ -75,11 +75,12 @@ public class JdbcTodoListDAO implements TodoListDAO {
             Connection connection = getConnection();
             try {
                 connection.setAutoCommit(true);
-                PreparedStatement statement = connection.prepareStatement("INSERT INTO todo_entries (id, summary, description) VALUES (?, ?, ?)");
+               // PreparedStatement statement = connection.prepareStatement("INSERT INTO todo_entries (id, summary, description) VALUES (?, ?, ?)");
+				   PreparedStatement statement = connection.prepareStatement("INSERT INTO project (project_code, name, status   ) VALUES (?, ?, ?)");
                 try {
-                    statement.setLong(1, getNextId());
-                    statement.setString(2, entry.getSummary());
-                    statement.setString(3, entry.getDescription());
+                    statement.setLong(1, getProject_code);
+                    statement.setString(2, entry.getName());
+                    statement.setString(3, entry.getStatus());
                     statement.executeUpdate();
                 } finally {
                     statement.close();
@@ -92,9 +93,9 @@ public class JdbcTodoListDAO implements TodoListDAO {
         }
     }
 
-    private long getNextId() {
-        return new Random().nextLong();
-    }
+    //private long getNextId() {
+      //  return new Random().nextLong();
+   // }
 
     @Override
     public List<TodoEntry> list() {
@@ -104,14 +105,14 @@ public class JdbcTodoListDAO implements TodoListDAO {
                 Statement statement = connection.createStatement();
                 List<TodoEntry> list;
                 try {
-                    ResultSet rset = statement.executeQuery("SELECT id, summary, description FROM todo_entries");
+                    ResultSet rset = statement.executeQuery("select project_code, name, status FROM project ");
                     try {
                         list = new ArrayList<TodoEntry>();
                         while (rset.next()) {
-                            Long id = rset.getLong(1);
-                            String summary = rset.getString(2);
-                            String description = rset.getString(2);
-                            list.add(new TodoEntry(id, summary, description));
+                            String project_code = rset.getString(1);
+                            String  name = rset.getString(2);
+                            String status = rset.getString(2);
+                            list.add(new TodoEntry(project_code, name, status));
                         }
                     } finally {
                         rset.close();

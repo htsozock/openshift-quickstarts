@@ -7,47 +7,54 @@ import java.io.Serializable;
  */
 public class TodoEntry {
 
-    private Serializable id;
+   // private Serializable project_code;
+    private String  project_code;
+    private String name;
 
-    private String summary;
-
-    private String description;
+    private String status;
 
     public TodoEntry() {
     }
 
-    public TodoEntry(String summary, String description) {
-        this(null, summary, description);
+    public TodoEntry(String project_code, String name, String status) {
+      // -- this(null, summary, description);
+		this(project_code, name, status);
     }
 
-    public TodoEntry(Serializable id, String summary, String description) {
-        this.id = id;
-        this.summary = summary;
-        this.description = description;
+    public TodoEntry(Serializable project_code, String name, String status) {
+        this.project_code= project_code;
+        this.name = name;
+        this.status = satus;
     }
 
 
-    public String getSummary() {
-        return summary;
+    public String getName() {
+        return name;
     }
 
-    public void setSummary(String summary) {
-        this.summary = summary;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getStatus() {
+        return status;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public Serializable getId() {
-        return id;
+   // public Serializable getId() {
+     //   return id;
+    //}
+       public String getProject_name() {
+        return project_name;
     }
-
-    public void setId(Serializable id) {
-        this.id = id;
+   // public void setId(Serializable id) {
+     //   this.id = id;
+    //}
+	
+	  public void setProject_name(String project_name) {
+        this.project_name = project_name;
     }
 }
