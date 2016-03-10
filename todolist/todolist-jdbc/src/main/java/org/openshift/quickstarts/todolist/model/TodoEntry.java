@@ -11,47 +11,48 @@ public class TodoEntry {
     private Serializable id;
     private String name;
     private String status;
-    private  Date startdt; 
-    private Date enddt;
+    private String startdt; 
+    private String enddt;
     private String organization;
     private String manager;
-    private String  status;
-    
+    private String description;
+   // private String startdt = new Date().parse("yyyy-MM-dd'T'HH:mm:ss", "2013-04-14T16:11:48.000");
+  //  private String enddt   = new Date().parse("yyyy-MM-dd'T'HH:mm:ss", "2013-04-14T16:11:48.000");
     // overloaded constructors --- 
     
     public TodoEntry() {
     }
 
-    public TodoEntry( String name, Date startdt, Date enddt, String organization, String manager,  String status, String description) {
+    public TodoEntry( String name,String startdt, String enddt,  String organization, String manager,  String status, String description) {
        this(null, name,startdt, enddt ,organization,manager, status, description);
     }
 
-    public TodoEntry(Serializable id, String name, Date startdt, Date enddt, String organization, String manager,  String status, String description) {
+    public TodoEntry(Serializable id, String name, String startdt, String enddt, String organization, String manager,  String status, String description) {
         this.id= id;
         this.name = name;
         this.startdt = startdt;
         this.enddt = enddt;
         this.organization = organization;
         this.manager = manager;
-        this.status = satus;
+        this.status = status;
         this.description = description;
     }
 
 // SETTERS AND GETTERS   -- 
     
-     public Date getStartdt() {
+     public String getStartdt() {
         return startdt;
      }
 
-     public void setStartdt(Date startdt) {
+     public void setStartdt( String startdt) {
         this.startdt = startdt;
      }
      
-     public Date getEnddt() {
+     public  String getEnddt() {
          return enddt;
       }
 
-      public void setEnddt(Date enddt) {
+      public void setEnddt( String enddt) {
          this.enddt = enddt;
       }
     

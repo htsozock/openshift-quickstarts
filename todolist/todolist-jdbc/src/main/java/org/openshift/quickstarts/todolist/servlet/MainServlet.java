@@ -41,7 +41,7 @@ public class MainServlet extends HttpServlet {
                     for (TodoEntry entry : todoListService.getAllEntries()) {
                         out.println(
                                 entryTemplate
-								        .replace("{{ id }}", escapeHtml(entry.getId()))
+								       // .replace("{{ id }}", escapeHtml(entry.getId()))
                                         .replace("{{ name }}", escapeHtml(entry.getName()))
                                         .replace("{{ status }}", escapeHtml(entry.getStatus()))
                                         .replace("{{ manager }}", escapeHtml(entry.getManager()))
@@ -77,7 +77,7 @@ public class MainServlet extends HttpServlet {
         String description = req.getParameter("description");
         
         todoListService.addEntry(new TodoEntry( name,startdt, enddt, organization, manager, status, description));
-
+        
         resp.sendRedirect("index.html");
     }
 }

@@ -49,7 +49,7 @@ public class JdbcTodoListDAO implements TodoListDAO {
                     connection.setAutoCommit(true);
                     Statement statement = connection.createStatement();
                     try {
-                         statement.executeUpdate(" CREATE TABLE project (id bigint, name VARCHAR(50), startdt DATE, enddt DATE, organization "
+                         statement.executeUpdate(" CREATE TABLE project (id bigint, name VARCHAR(50), startdt VARCHAR(50), enddt VARCHAR(50), organization "
                         		+ "VARCHAR(50), manager VARCHAR(50), status VARCHAR(25), description  TEXT,	PRIMARY KEY(id))");
                        
                     } finally {
@@ -84,8 +84,8 @@ public class JdbcTodoListDAO implements TodoListDAO {
 				  try {
                     statement.setLong(1, getNextId);
                     statement.setString(2, entry.getName());
-                    statement.setDate(3, entry.getStartdt());
-                    statement.setDate(4, entry.getEnddt());
+                    statement.setString(3, entry.getStartdt());
+                    statement.setString(4, entry.getEnddt());
                     statement.setString(5, entry.getOrganization());
                     statement.setString(6, entry.getManager());
                     statement.setString(7, entry.getStatus());
@@ -123,8 +123,8 @@ public class JdbcTodoListDAO implements TodoListDAO {
                         while (rset.next()) {
                             String id = rset.getString(1);
                             String  name = rset.getString(2);
-                            Date    startdt = rset.getDate(3);
-                            Date    enddt = rset.getDate(4);
+                            String  startdt = rset.getString(3);
+                            String  enddt = rset.getString(4);
                             String  organization = rset.getString(5);
                             String  manager= rset.getString(6);
                             String status = rset.getString(7);
