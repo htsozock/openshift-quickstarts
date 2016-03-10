@@ -12,9 +12,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 
-/**
- *
- */
+/** 
+  * The MainServlet returns the to-do list html on GET requests and handles the 
+  * creation of new to-do list entries on POST requests. 
+ */ 
+
 public class MainServlet extends HttpServlet {
 
     private TodoListService todoListService = new TodoListService();
@@ -37,9 +39,13 @@ public class MainServlet extends HttpServlet {
                     for (TodoEntry entry : todoListService.getAllEntries()) {
                         out.println(
                                 entryTemplate
-								        .replace("{{ project_code }}", escapeHtml(entry.getProject_code()))
+								        .replace("{{ id }}", escapeHtml(entry.getId()))
                                         .replace("{{ name }}", escapeHtml(entry.getName()))
                                         .replace("{{ status }}", escapeHtml(entry.getStatus()))
+                                        .replace("{{ manager }}", escapeHtml(entry.getManager()))
+                                        .replace("{{ organization }}", escapeHtml(entry.getOrganization()))
+                                        .replace("{{ startdt }}", escapeHtml(entry.getStartdt()))
+                                        .replace("{{ enddt }}", escapeHtml(entry.getEnddt()))
                         );
                     }
                 } else if (insideLoop) {
@@ -51,7 +57,7 @@ public class MainServlet extends HttpServlet {
         } finally {
             reader.close();
         }
-    }
+    } 
 
     private String escapeHtml(String text) {
         return text.replace("<", "&lt;");
@@ -59,11 +65,16 @@ public class MainServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-         String project_code = req.getParameter("project_code"); //not required if the project code is generated
+      // project id is generated --- will be use using sequence 
 		String name = req.getParameter("name");
         String status = req.getParameter("status");
-
-        todoListService.addEntry(new TodoEntry(project_code, name, status));
+    	String manager = req.getParameter("manager");
+        String organization = req.getParameter("organization");
+    	String startdt = req.getParameter("startdt");
+        String enddt = req.getParameter("enddt");
+        String description = req.getParameter("description");
+        
+        todoListService.addEntry(new TodoEntry( name,startdt, enddt, organization, manager, status, description));
 
         resp.sendRedirect("index.html");
     }

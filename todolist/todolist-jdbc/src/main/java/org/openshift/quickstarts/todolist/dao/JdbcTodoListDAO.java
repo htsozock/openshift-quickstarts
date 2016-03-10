@@ -24,6 +24,7 @@ public class JdbcTodoListDAO implements TodoListDAO {
         dataSource = lookupDataSource();
         initializeSchemaIfNeeded();
     }
+    
 
     private DataSource lookupDataSource() {
         try {
@@ -39,7 +40,7 @@ public class JdbcTodoListDAO implements TodoListDAO {
         }
     }
 
-    private void initializeSchemaIfNeeded() {
+   private void initializeSchemaIfNeeded() {
         try {
             Connection connection = getConnection();
             try {
@@ -47,7 +48,9 @@ public class JdbcTodoListDAO implements TodoListDAO {
                     connection.setAutoCommit(true);
                     Statement statement = connection.createStatement();
                     try {
-                        statement.executeUpdate("CREATE TABLE todo_entries (id bigint, summary VARCHAR(255), description TEXT)");
+                         statement.executeUpdate(" CREATE TABLE project (id bigint, name VARCHAR(50), startdt DATE, enddt DATE, organization "
+                        		+ "VARCHAR(50), manager VARCHAR(50), status VARCHAR(25), description  TEXT,	PRIMARY KEY(id))");
+                       
                     } finally {
                         statement.close();
                     }
@@ -75,12 +78,17 @@ public class JdbcTodoListDAO implements TodoListDAO {
             Connection connection = getConnection();
             try {
                 connection.setAutoCommit(true);
-               // PreparedStatement statement = connection.prepareStatement("INSERT INTO todo_entries (id, summary, description) VALUES (?, ?, ?)");
-				   PreparedStatement statement = connection.prepareStatement("INSERT INTO project (project_code, name, status   ) VALUES (?, ?, ?)");
-                try {
-                    statement.setLong(1, getProject_code);
+                PreparedStatement statement = connection.prepareStatement("INSERT INTO project (id, name,startdt, enddt ,organization,manager, status,description ) "
+				   		+ "VALUES (?, ?, ?,?, ?, ?,?, ?)");
+				  try {
+                    statement.setLong(1, getNextId);
                     statement.setString(2, entry.getName());
-                    statement.setString(3, entry.getStatus());
+                    statement.setDate(3, entry.getStartdt());
+                    statement.setDate(4, entry.getEnddt());
+                    statement.setString(5, entry.getOrganization());
+                    statement.setString(6, entry.getManager());
+                    statement.setString(7, entry.getStatus());
+                    statement.setString(8, entry.getDescription());
                     statement.executeUpdate();
                 } finally {
                     statement.close();
@@ -93,9 +101,11 @@ public class JdbcTodoListDAO implements TodoListDAO {
         }
     }
 
-    //private long getNextId() {
-      //  return new Random().nextLong();
-   // }
+   
+    private long getNextId() {
+      return new Random().nextLong();
+    // Will use sequence  LATER -SELECT PROJECT_SEQUENCE.NEXTVAL FROM DUAL
+    }
 
     @Override
     public List<TodoEntry> list() {
@@ -105,14 +115,18 @@ public class JdbcTodoListDAO implements TodoListDAO {
                 Statement statement = connection.createStatement();
                 List<TodoEntry> list;
                 try {
-                    ResultSet rset = statement.executeQuery("select project_code, name, status FROM project ");
+                    ResultSet rset = statement.executeQuery(" SELECT  id, name,startdt, enddt ,organization,manager, status FROM project ");
                     try {
                         list = new ArrayList<TodoEntry>();
                         while (rset.next()) {
-                            String project_code = rset.getString(1);
+                            String id = rset.getString(1);
                             String  name = rset.getString(2);
-                            String status = rset.getString(2);
-                            list.add(new TodoEntry(project_code, name, status));
+                            Date    startdt = rset.getDate(3);
+                            Date    enddt = rset.getDate(4);
+                            String  organization = rset.getString(5);
+                            String  manager= rset.getString(6);
+                            String status = rset.getString(7);
+                            list.add(new TodoEntry(id, name,startdt, enddt ,organization,manager, status));
                         }
                     } finally {
                         rset.close();

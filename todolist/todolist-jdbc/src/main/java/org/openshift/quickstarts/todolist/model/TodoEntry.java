@@ -7,34 +7,76 @@ import java.io.Serializable;
  */
 public class TodoEntry {
 
-   // private Serializable project_code;
-    private String  project_code;
+    private Serializable id;
     private String name;
-
     private String status;
-
+    private  Date startdt; 
+    private Date enddt;
+    private String organization;
+    private String manager;
+    private String  status;
+    
+    // overloaded constructors --- 
+    
     public TodoEntry() {
     }
 
     public TodoEntry(String project_code, String name, String status) {
-      // -- this(null, summary, description);
-		this(project_code, name, status);
+       this(null, name,startdt, enddt ,organization,manager, status, description);
     }
 
-    public TodoEntry(Serializable project_code, String name, String status) {
-        this.project_code= project_code;
+    public TodoEntry(Serializable id, String name, Date startdt, Date enddt, String organization, String manager,  String status, String description) {
+        this.id= id;
         this.name = name;
+        this.startdt = startdt;
+        this.enddt = enddt;
+        this.organization = organization;
+        this.manager = manager;
         this.status = satus;
+        this.description = description;
     }
 
+// SETTERS AND GETTERS   -- 
+    
+     public Date getStartdt() {
+        return startdt;
+     }
 
+     public void setStartdt(Date startdt) {
+        this.startdt = startdt;
+     }
+     
+     public Date getEnddt() {
+         return enddt;
+      }
+
+      public void setEnddt(Date enddt) {
+         this.enddt = enddt;
+      }
+    
+      public String getOrganization() {
+          return organization;
+      }
+
+      public void setOrganization(String organization) {
+          this.organization = organization;
+       }
+    
+       public String getManager() {
+           return manager;
+       }
+
+        public void setManager(String manager) {
+           this.manager = manager;
+        }
+    
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+     public void setName(String name) {
         this.name = name;
-    }
+     }
 
     public String getStatus() {
         return status;
@@ -44,17 +86,21 @@ public class TodoEntry {
         this.status = status;
     }
 
-   // public Serializable getId() {
-     //   return id;
-    //}
-       public String getProject_name() {
-        return project_name;
+    public String getDescription() {
+        return description;
     }
-   // public void setId(Serializable id) {
-     //   this.id = id;
-    //}
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+      
+    public Serializable getId() {
+      return id;
+    }
+   
+    public void setId(Serializable id) {
+      this.id = id;
+    }
 	
-	  public void setProject_name(String project_name) {
-        this.project_name = project_name;
-    }
+	  
 }
