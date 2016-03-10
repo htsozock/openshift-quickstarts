@@ -104,5 +104,13 @@ public class TodoEntry {
       this.id = id;
     }
 	
+    @Override 
+        public String toString() { 
+            return "TodoEntry{" + 
+                    "id=" + id + 
+                     ", name='" + name + '\'' + 
+                     ", status='" +  status + '\'' + 
+                     '}'; 
+
 	  
 }

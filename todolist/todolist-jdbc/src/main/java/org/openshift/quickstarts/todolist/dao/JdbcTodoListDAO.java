@@ -73,11 +73,7 @@ public class JdbcTodoListDAO implements TodoListDAO {
         }
     }
 
-    private long getNextId() {
-        return new Random().nextLong();
-      // nEED use sequence  LATER -SELECT PROJECT_SEQUENCE.NEXTVAL FROM DUAL
-        
-      }
+    
       
     @Override
     public void save(TodoEntry entry) {
@@ -109,7 +105,11 @@ public class JdbcTodoListDAO implements TodoListDAO {
     }
 
    
-    
+    private long getNextId() {
+        return new Random().nextLong();
+      // nEED use sequence  LATER -SELECT PROJECT_SEQUENCE.NEXTVAL FROM DUAL
+        
+      }
 
     @Override
     public List<TodoEntry> list() {
@@ -119,7 +119,7 @@ public class JdbcTodoListDAO implements TodoListDAO {
                 Statement statement = connection.createStatement();
                 List<TodoEntry> list;
                 try {
-                    ResultSet rset = statement.executeQuery(" SELECT  id, name,startdt, enddt ,organization,manager, status FROM project ");
+                    ResultSet rset = statement.executeQuery(" SELECT  id, name,startdt, enddt ,organization,manager, status, description  FROM project ");
                     try {
                         list = new ArrayList<TodoEntry>();
                         while (rset.next()) {
@@ -130,7 +130,8 @@ public class JdbcTodoListDAO implements TodoListDAO {
                             String  organization = rset.getString(5);
                             String  manager= rset.getString(6);
                             String status = rset.getString(7);
-                            list.add(new TodoEntry(id, name,startdt, enddt ,organization,manager, status));
+                            String description  = rset.getString(8);
+                            list.add(new TodoEntry(id, name,startdt, enddt ,organization,manager, status, description));
                         }
                     } finally {
                         rset.close();
