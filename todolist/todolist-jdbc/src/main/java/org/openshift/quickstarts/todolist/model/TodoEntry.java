@@ -112,5 +112,5 @@ public class TodoEntry {
                      ", status='" +  status + '\'' + 
                      '}'; 
 
-	  
+    }
 }
