@@ -21,7 +21,7 @@ public class TodoEntry {
     public TodoEntry() {
     }
 
-    public TodoEntry(String project_code, String name, String status) {
+    public TodoEntry( String name, Date startdt, Date enddt, String organization, String manager,  String status, String description) {
        this(null, name,startdt, enddt ,organization,manager, status, description);
     }
 

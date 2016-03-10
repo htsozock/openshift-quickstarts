@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class TodoListService {
 
-    private TodoListDAO dao = new JdbcTodoListDAO(); //polymorphism 
+    private TodoListDAO dao = new JdbcTodoListDAO(); //Using polymorphism 
 
     public void addEntry(TodoEntry entry) {
         dao.save(entry);

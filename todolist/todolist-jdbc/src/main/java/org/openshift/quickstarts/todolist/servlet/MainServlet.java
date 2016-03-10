@@ -15,6 +15,7 @@ import java.io.PrintWriter;
 /** 
   * The MainServlet returns the to-do list html on GET requests and handles the 
   * creation of new to-do list entries on POST requests. 
+  * *
  */ 
 
 public class MainServlet extends HttpServlet {

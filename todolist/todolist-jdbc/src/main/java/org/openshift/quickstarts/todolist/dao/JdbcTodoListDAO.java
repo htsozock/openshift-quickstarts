@@ -104,7 +104,8 @@ public class JdbcTodoListDAO implements TodoListDAO {
    
     private long getNextId() {
       return new Random().nextLong();
-    // Will use sequence  LATER -SELECT PROJECT_SEQUENCE.NEXTVAL FROM DUAL
+    // nEED use sequence  LATER -SELECT PROJECT_SEQUENCE.NEXTVAL FROM DUAL
+      
     }
 
     @Override
