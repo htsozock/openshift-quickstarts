@@ -24,6 +24,26 @@ public class MainServlet extends HttpServlet {
 
     private TodoListService todoListService = new TodoListService();
 
+   
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+      // project id is generated --- will be use using sequence later
+    	
+		String name = req.getParameter("name");
+        String status = req.getParameter("status");   // getparamaeterValues() 
+    	String manager = req.getParameter("manager");
+        String organization = req.getParameter("organization"); // getparamaeterValues() 
+    	String startdt = req.getParameter("startdt");
+        String enddt = req.getParameter("enddt");
+        String description = req.getParameter("description");
+        
+        /// collect the data and pass the data to the service to create the project ---
+        todoListService.addEntry(new TodoEntry( name,startdt, enddt, organization, manager, status, description));
+        
+        resp.sendRedirect("index.html");
+    }
+    
+    
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html; charset=UTF-8");
@@ -52,7 +72,9 @@ public class MainServlet extends HttpServlet {
                         );
                     }
                 } else if (insideLoop) {
-                    sb.append(line).append("\n");
+                   //sb.append(line).append("\n");
+                   sb.append(line).append("");
+                  
                 } else {
                     out.println(line);
                 }
@@ -66,21 +88,4 @@ public class MainServlet extends HttpServlet {
         return text.replace("<", "&lt;");
     }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-      // project id is generated --- will be use using sequence later
-    	
-		String name = req.getParameter("name");
-        String status = req.getParameter("status");   // getparamaeterValues() 
-    	String manager = req.getParameter("manager");
-        String organization = req.getParameter("organization"); // getparamaeterValues() 
-    	String startdt = req.getParameter("startdt");
-        String enddt = req.getParameter("enddt");
-        String description = req.getParameter("description");
-        
-        /// collect the data and pass the data to the service to create the project ---
-        todoListService.addEntry(new TodoEntry( name,startdt, enddt, organization, manager, status, description));
-        
-        resp.sendRedirect("index.html");
-    }
 }
