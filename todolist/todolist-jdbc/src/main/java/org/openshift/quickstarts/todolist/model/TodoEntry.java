@@ -106,10 +106,23 @@ public class TodoEntry {
 	
     @Override 
         public String toString() { 
-            return "TodoEntry{" + 
+    	return "TodoEntry{" + 
+
                     "id=" + id + 
+
                      ", name='" + name + '\'' + 
+
                      ", status='" +  status + '\'' + 
+
+                        ", manager='" + manager + '\'' + 
+
+                        ", organization='" +  organization + '\'' + 
+
+                        ", startdt='" +  startdt + '\'' + 
+
+                         ", enddt='" +  enddt + '\'' + 
+
+                         ", description='" +  description + '\'' + 
                      '}'; 
 
     }
