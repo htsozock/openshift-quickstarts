@@ -31,25 +31,40 @@
 
             <!-- begin repeat for each entry -->
             <div class="panel panel-default">
+			    
+			    <div class="panel-heading">
+                   <label for="id">Project ID  </label>
+                   <h4 class="panel-title">{{ id }}</h4>
+                </div>
 			     <div class="panel-heading">
-                    <h3 class="panel-title">{{name }}</h3>
+                    <label for="name">Project Name </label>
+                    <h4 class="panel-title">{{ name }}</h4>
                 </div>
                 <div class="panel-heading">
+                     <label for="organization">Organization </label>
                     <h4 class="panel-title">{{ organization }}</h4>
                 </div>
-                <div class="panel-heading">
+                
+                 <div class="panel-heading">
+                    <label for="manager">Project Manager </label>
                     <h4 class="panel-title">{{ manager }}</h4>
                 </div>
-                <div class="panel-heading">
-                    <h3 class="panel-title">{{ startdt }}</h3>
+                 
+                  <div class="panel-heading">
+                    <label for="status">Status </label>
+                    <h4 class="panel-title">{{ status }}</h4>
                 </div>
                 
-                <div class="panel-body">
-                    {{ status }}
+                <div class="panel-heading">
+                   <label for="startdt">Start Date </label>
+                    <h4 class="panel-title">{{ startdt }}</h4>
                 </div>
-                <div class="panel-body">
-                    {{ enddt }}
+                
+                  <div class="panel-heading">
+                   <label for="enddt">End  Date </label>
+                    <h4 class="panel-title">{{ enddt }}</h4>
                 </div>
+                
             </div> 
             <!-- end repeat for each entry -->
 
@@ -58,33 +73,57 @@
 			
 			    <div class="form-group">
                     <label for="name">Project Name : </label>
-                    <input type="text" name="name" id="name" class="form-control" placeholder="Project name">
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Enter the Project name">
+                </div>
+                
+                <div class="form-group">
+                                       <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Organization
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a href="#">South Africa</a></li>
+    <li><a href="#">France</a></li>
+    <li><a href="#">West Africa</a></li>
+  </ul>
+</div>
+      
+                </div>
+
+                <div class="form-group">
+                    <label for="manager">Manager : </label>
+                     <input type="text" name="manager" id="manager" class="form-control" placeholder="Enter the Manager of the project" >
+                </div>
+                
+                 <div class="form-group">
+                   
+                   <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Project Status
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a href="#">Active</a></li>
+    <li><a href="#">Inactive</a></li>
+    <li><a href="#">Unknown</a></li>
+  </ul>
+</div>
+                   
+              
                 </div>
                 
                 <div class="form-group">
                     <label for="startdt">Project Start Date : </label>
-                    <input type="text" name="startdt" id="startdt" class="form-control" placeholder="Project  Start Date">
+                    <input type="text" name="startdt" id="startdt" class="form-control" placeholder="Enter the Project  Start Date">
                 </div>
                 <div class="form-group">
                     <label for="enddt">Project End Date </label>
-                    <input type="text" name="enddt" id="enddt" class="form-control" placeholder="Project End Date">
+                    <input type="text" name="enddt" id="enddt" class="form-control" placeholder="Enter the Project End Date">
                 </div>
                 
-                <div class="form-group">
-                    <label for="status">Project status : </label>
-                    <input type="text" name="status" id="status" class="form-control" placeholder="Project status">
-                </div>
-                <div class="form-group">
-                    <label for="organization">Organization </label>
-                     <input type="text" name="organization" id="organization" class="form-control" placeholder="Organization the project belong to" >
-                </div>
-                 <div class="form-group">
-                    <label for="manager">Manager </label>
-                     <input type="text" name="manager" id="manager" class="form-control" placeholder="Manger of the project" >
-                </div>
+               
+                 
                  <div class="form-group">
                     <label for="description">Description </label>
-                     <input type="text" name="description" id="description" class="form-control" placeholder="Description of the project" >
+                     <textarea name="description" id="description" class="form-control" placeholder="Full description of the project" rows="4"></textarea> 
+              
                 </div>
                 <button type="submit" class="btn btn-default">Save</button>
             </form>

@@ -41,7 +41,7 @@ public class MainServlet extends HttpServlet {
                     for (TodoEntry entry : todoListService.getAllEntries()) {
                         out.println(
                                 entryTemplate
-								       // .replace("{{ id }}", escapeHtml(entry.getId()))
+								        .replace("{{ id }}", escapeHtml(entry.getId()))
                                         .replace("{{ name }}", escapeHtml(entry.getName()))
                                         .replace("{{ status }}", escapeHtml(entry.getStatus()))
                                         .replace("{{ manager }}", escapeHtml(entry.getManager()))
@@ -68,6 +68,7 @@ public class MainServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
       // project id is generated --- will be use using sequence 
+    	
 		String name = req.getParameter("name");
         String status = req.getParameter("status");
     	String manager = req.getParameter("manager");
