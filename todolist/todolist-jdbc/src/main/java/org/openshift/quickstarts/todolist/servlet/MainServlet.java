@@ -14,8 +14,9 @@ import java.io.PrintWriter;
 import java.util.Date;
 
 /** 
-  * The MainServlet returns the to-do list html on GET requests and handles the 
-  * creation of new to-do list entries on POST requests. 
+  * The MainServlet returns the the project list html on GET requests and handles the 
+  * creation of new project entries on POST requests. 
+  * 
   * *
  */ 
 
@@ -41,7 +42,7 @@ public class MainServlet extends HttpServlet {
                     for (TodoEntry entry : todoListService.getAllEntries()) {
                         out.println(
                                 entryTemplate
-								        .replace("{{ id }}", escapeHtml(entry.getId()))
+								       // .replace("{{ id }}", escapeHtml(entry.getId()))
                                         .replace("{{ name }}", escapeHtml(entry.getName()))
                                         .replace("{{ status }}", escapeHtml(entry.getStatus()))
                                         .replace("{{ manager }}", escapeHtml(entry.getManager()))
@@ -67,16 +68,17 @@ public class MainServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-      // project id is generated --- will be use using sequence 
+      // project id is generated --- will be use using sequence later
     	
 		String name = req.getParameter("name");
-        String status = req.getParameter("status");
+        String status = req.getParameter("status");   // getparamaeterValues() 
     	String manager = req.getParameter("manager");
-        String organization = req.getParameter("organization");
+        String organization = req.getParameter("organization"); // getparamaeterValues() 
     	String startdt = req.getParameter("startdt");
         String enddt = req.getParameter("enddt");
         String description = req.getParameter("description");
         
+        /// collect the data and pass the data to the service to create the project ---
         todoListService.addEntry(new TodoEntry( name,startdt, enddt, organization, manager, status, description));
         
         resp.sendRedirect("index.html");
