@@ -24,18 +24,18 @@
 <body>
 
 <div class="container-fluid">
+ <B> <h1>USAID</h1></B>
+  <B><p>Development Information Solution (DIS)</p></B>
     <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
 
-          <b> <h1>Complete Project List</h1> </b> 
+       <div class="col-sm-6 col-sm-offset-3">
+
+          <b> <h2>Complete Project List</h2> </b> 
 
             <!-- begin repeat for each entry -->
             <div class="panel panel-default">
 			    
-			    <div class="panel-heading">
-                   <label for="id">Project ID  </label>
-                   <h4 class="panel-title">{{ id }}</h4>
-                </div>
+			    
 			     <div class="panel-heading">
                     <label for="name">Project Name </label>
                     <h4 class="panel-title">{{ name }}</h4>
@@ -77,37 +77,30 @@
                 </div>
                 
                 <div class="form-group">
-                                       <div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Organization
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#">South Africa</a></li>
-    <li><a href="#">France</a></li>
-    <li><a href="#">West Africa</a></li>
-  </ul>
-</div>
-      
-                </div>
+                  <label for="organization">Organization : </label>
+                     <input type="text" name="organization" id="organization" class="form-control" placeholder="Organization the project belong to" >
+                 </div>
 
                 <div class="form-group">
-                    <label for="manager">Manager : </label>
-                     <input type="text" name="manager" id="manager" class="form-control" placeholder="Enter the Manager of the project" >
+                    <label for="manager">Project Manager : </label>
+                     <input type="text" name="manager" id="manager" class="form-control" placeholder="Enter the Project Manager " >
                 </div>
                 
                  <div class="form-group">
-                   
-                   <div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Project Status
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#">Active</a></li>
-    <li><a href="#">Inactive</a></li>
-    <li><a href="#">Unknown</a></li>
-  </ul>
-</div>
-                   
+                 <label for="status">Project Status : </label>
+                     <label class="radio-inline">
+      <input type="radio" name="status">Active
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="status">Inactive
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="status">Unknown
+    </label>
               
-                </div>
+                 </div>
+                               
+                 
                 
                 <div class="form-group">
                     <label for="startdt">Project Start Date : </label>
