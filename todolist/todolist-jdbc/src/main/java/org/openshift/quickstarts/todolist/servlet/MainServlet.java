@@ -14,10 +14,10 @@ import java.io.PrintWriter;
 import java.util.Date;
 
 /** 
-  * The MainServlet returns the the project list html on GET requests and handles the 
+  * The MainServlet returns the  project list html on GET requests and handles the 
   * creation of new project entries on POST requests. 
   * 
-  * *
+  * The servlet uses the service and the class data (todoentry)
  */ 
 
 public class MainServlet extends HttpServlet {
@@ -27,9 +27,9 @@ public class MainServlet extends HttpServlet {
    
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-      // project id is generated --- will be use using sequence later
-    	
-		String name = req.getParameter("name");
+        	
+    	String name = req.getParameter("id");
+    	String name = req.getParameter("name");
         String status = req.getParameter("status");   // getparamaeterValues() 
     	String manager = req.getParameter("manager");
         String organization = req.getParameter("organization"); // getparamaeterValues() 
@@ -38,7 +38,15 @@ public class MainServlet extends HttpServlet {
         String description = req.getParameter("description");
         
         /// collect the data and pass the data to the service to create the project ---
-        todoListService.addEntry(new TodoEntry( name,startdt, enddt, organization, manager, status, description));
+        todoListService.addEntry(new TodoEntry(id,name,startdt, enddt, organization, manager, status, description));
+        
+        //todoListService.updateProject(new TodoEntry(id,name,startdt, enddt, organization, manager, status, description));
+       
+       //  todoListService.deleteProject(new TodoEntry(id,name,startdt, enddt, organization, manager, status, description));
+        
+        //  todoListService.getProject(new TodoEntry(id,name,startdt, enddt, organization, manager, status, description));
+        
+        //  todoListService.getSearchProject(new TodoEntry(id,name,startdt, enddt, organization, manager, status, description));
         
         resp.sendRedirect("index.html");
     }
@@ -59,10 +67,10 @@ public class MainServlet extends HttpServlet {
                 } else if (line.trim().equals("<!-- end repeat for each entry -->")) {
                     insideLoop = false;
                     String entryTemplate = sb.toString();
-                    for (TodoEntry entry : todoListService.getAllEntries()) {
+                    for (TodoEntry entry : todoListService.getAllEntries()) {   ///get all the projects
                         out.println(
                                 entryTemplate
-								       // .replace("{{ id }}", escapeHtml(entry.getId()))
+								        .replace("{{ id }}", escapeHtml(entry.getId()))
                                         .replace("{{ name }}", escapeHtml(entry.getName()))
                                         .replace("{{ status }}", escapeHtml(entry.getStatus()))
                                         .replace("{{ manager }}", escapeHtml(entry.getManager()))
@@ -72,8 +80,8 @@ public class MainServlet extends HttpServlet {
                         );
                     }
                 } else if (insideLoop) {
-                   //sb.append(line).append("\n");
-                   sb.append(line).append("");
+                   sb.append(line).append("\n");
+                  
                   
                 } else {
                     out.println(line);

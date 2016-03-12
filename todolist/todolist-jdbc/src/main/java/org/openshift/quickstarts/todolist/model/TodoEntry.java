@@ -3,12 +3,13 @@ package org.openshift.quickstarts.todolist.model;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
+/**Hide data access behind an API 
  *
  */
 public class TodoEntry {
 
-    private Serializable id;
+   
+	private String id;
     private String name;
     private String status;
     private String startdt; 
@@ -16,8 +17,7 @@ public class TodoEntry {
     private String organization;
     private String manager;
     private String description;
-   // private String startdt = new Date().parse("yyyy-MM-dd'T'HH:mm:ss", "2013-04-14T16:11:48.000");
-  //  private String enddt   = new Date().parse("yyyy-MM-dd'T'HH:mm:ss", "2013-04-14T16:11:48.000");
+      
     // overloaded constructors --- 
     
     public TodoEntry() {
@@ -27,7 +27,7 @@ public class TodoEntry {
        this(null, name,startdt, enddt ,organization,manager, status, description);
     }
 
-    public TodoEntry(Serializable id, String name, String startdt, String enddt, String organization, String manager,  String status, String description) {
+    public TodoEntry(String id, String name, String startdt, String enddt, String organization, String manager,  String status, String description) {
         this.id= id;
         this.name = name;
         this.startdt = startdt;
@@ -96,11 +96,11 @@ public class TodoEntry {
         this.description = description;
     }
       
-    public Serializable getId() {
+    public String getId() {
       return id;
     }
    
-    public void setId(Serializable id) {
+    public void setId(String  id) {
       this.id = id;
     }
 	
@@ -108,11 +108,11 @@ public class TodoEntry {
         public String toString() { 
     	return "TodoEntry{" + 
 
-                    "id=" + id + 
+                     "id=" + id + 
 
-                     ", name='" + name + '\'' + 
+                      ", name='" + name + '\'' + 
 
-                     ", status='" +  status + '\'' + 
+                      ", status='" +  status + '\'' + 
 
                         ", manager='" + manager + '\'' + 
 
