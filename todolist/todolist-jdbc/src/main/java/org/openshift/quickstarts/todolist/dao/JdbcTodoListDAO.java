@@ -109,16 +109,17 @@ public class JdbcTodoListDAO implements TodoListDAO {
     //// Implement the "delete" interface method -- delete an existing project
     
     @Override
-    public void delete(TodoEntry entry) {
+    public void delete(String project_id) {
         try {
             Connection connection = getConnection();
             try {
                 connection.setAutoCommit(true);
                 PreparedStatement statement = connection.prepareStatement("DELETE FROM project WHERE id =?");
 			   try {
-                     statement.setString(1, entry.getId());
+                     statement.setString(1, project_id);
+                   //  statement.setString(1, entry.getId());
                      statement.executeUpdate();
-                     System.out.println("Project  "  + entry.getName() +  " is deleted!");
+                    // System.out.println("Project  "  + entry.getName() +  " is deleted!");
                
                 } finally {
                     statement.close();
@@ -132,7 +133,7 @@ public class JdbcTodoListDAO implements TodoListDAO {
     }
 ////Implement the "update" interface method -- update record for  an existing project
     
-    @Override
+   /* @Override
     public void update(TodoEntry entry) {
         try {
             Connection connection = getConnection();
@@ -253,7 +254,7 @@ public class JdbcTodoListDAO implements TodoListDAO {
             throw new RuntimeException(e);
         }
     }
-
+*/
     
    ///    Implement the "List"  interface method - --return  all the existing projects 
 

@@ -108,11 +108,11 @@ public class TodoEntry {
         public String toString() { 
     	return "TodoEntry{" + 
 
-                     "id=" + id + 
+                         "id=" + id + 
 
-                      ", name='" + name + '\'' + 
+                       ", name='" + name + '\'' + 
 
-                      ", status='" +  status + '\'' + 
+                       ", status='" +  status + '\'' + 
 
                         ", manager='" + manager + '\'' + 
 

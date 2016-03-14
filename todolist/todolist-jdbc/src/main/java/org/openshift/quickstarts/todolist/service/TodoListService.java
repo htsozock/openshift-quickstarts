@@ -19,23 +19,23 @@ public class TodoListService {
     }
 
     public void deleteProject(TodoEntry entry) {
-        dao.delete(entry); ///call JdbcTodoListDAO() methods
+        dao.delete(entry.getId); ///call JdbcTodoListDAO() methods
     } 
      
-    public void updateProject(TodoEntry entry) {
-        dao.update(entry); ///call JdbcTodoListDAO() methods
-    } 
+    //public void updateProject(TodoEntry entry) {
+      //  dao.update(entry); ///call JdbcTodoListDAO() methods
+    //} 
     public List<TodoEntry> getAllEntries() {  // will return ALL the projects
         return dao.list();
     }
     
-    public List<TodoEntry> getProject() {    // will return ONLY one project
-        return dao.read();
-    }
+  //  public List<TodoEntry> getProject() {    // will return ONLY one project
+     //   return dao.read();
+   // }
     
-    public List<TodoEntry> getSearchProject() {    // will return one or many  projecs
-        return dao.search();
-    }
+   // public List<TodoEntry> getSearchProject() {    // will return one or many  projecs
+     //   return dao.search();
+    //}
 }
 
 
