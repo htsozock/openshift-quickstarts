@@ -108,7 +108,7 @@ public class JdbcTodoListDAO implements TodoListDAO {
 
     //// Implement the "delete" interface method -- delete an existing project
     
-    @Override
+   /* @Override
     public void delete(String project_id) {
         try {
             Connection connection = getConnection();
@@ -130,7 +130,7 @@ public class JdbcTodoListDAO implements TodoListDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-    }
+    }*/
 ////Implement the "update" interface method -- update record for  an existing project
     
    /* @Override
