@@ -18,9 +18,9 @@ public class TodoListService {
         dao.save(entry); ///call JdbcTodoListDAO() methods
     }
 
-    public void deleteProject(TodoEntry entry) {
-        dao.delete(entry.getId); ///call JdbcTodoListDAO() methods
-    } 
+    //public void deleteProject(TodoEntry entry) {
+      //  dao.delete(entry.getId); ///call JdbcTodoListDAO() methods
+  //  } 
      
     //public void updateProject(TodoEntry entry) {
       //  dao.update(entry); ///call JdbcTodoListDAO() methods

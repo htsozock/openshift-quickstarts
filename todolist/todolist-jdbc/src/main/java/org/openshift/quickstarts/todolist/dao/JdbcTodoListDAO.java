@@ -295,10 +295,7 @@ public class JdbcTodoListDAO implements TodoListDAO {
         }
     }
 
-    
-    
-    
-    
+   
     public Connection getConnection() throws SQLException {
         return getDataSource().getConnection();
     }

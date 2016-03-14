@@ -108,7 +108,7 @@ public class TodoEntry {
         public String toString() { 
     	return "TodoEntry{" + 
 
-                         "id=" + id + 
+                         "id='" + id + '\'' + 
 
                        ", name='" + name + '\'' + 
 
