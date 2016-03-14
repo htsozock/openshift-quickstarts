@@ -28,7 +28,7 @@ public class MainServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         	
-    	String name = req.getParameter("id");
+    	String id = req.getParameter("id");
     	String name = req.getParameter("name");
         String status = req.getParameter("status");   // getparamaeterValues() 
     	String manager = req.getParameter("manager");
