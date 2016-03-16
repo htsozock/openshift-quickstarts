@@ -18,8 +18,7 @@ import java.util.Date;
  *  - Initialize schema whenever necessary (what if db is not persistent and is restarted while app is running)
  *  - Contains the logic for Project object operations (CRUD)
  */
-public class JdbcTodoListDAO  {
-	//public class JdbcTodoListDAO implements TodoListDAO {
+  public class JdbcTodoListDAO implements TodoListDAO {
 
     private final DataSource dataSource;
 
