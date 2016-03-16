@@ -15,27 +15,31 @@ public class TodoListService {
     private TodoListDAO dao = new JdbcTodoListDAO(); //Using polymorphism 
 
     public void addEntry(TodoEntry entry) {
-        dao.save(entry); ///call JdbcTodoListDAO() methods
+        dao.addProject(entry); ///call JdbcTodoListDAO() methods
     }
 
-    //public void deleteProject(TodoEntry entry) {
-      //  dao.delete(entry.getId); ///call JdbcTodoListDAO() methods
-  //  } 
-     
-    //public void updateProject(TodoEntry entry) {
-      //  dao.update(entry); ///call JdbcTodoListDAO() methods
-    //} 
-    public List<TodoEntry> getAllEntries() {  // will return ALL the projects
-        return dao.list();
+    public void delete(int projectI) {
+        dao.deleteProject(int projectId);
+    } 
+ 
+    
+    public void update(TodoEntry entry) {
+        dao.updateProject(TodoEntry entry); 
     }
     
-  //  public List<TodoEntry> getProject() {    // will return ONLY one project
-     //   return dao.read();
-   // }
+    public List<TodoEntry> getAllEntries() {  
+        return dao.getAllProjects();
+    }
     
-   // public List<TodoEntry> getSearchProject() {    // will return one or many  projecs
-     //   return dao.search();
-    //}
+    public TodoEntry getProject(int projectId) {    // will return ONLY one project
+           return dao.getProjectById(projectId);
+       }
+    
+   
+    
+    
+
+    
 }
 
 

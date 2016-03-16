@@ -10,14 +10,16 @@ import javax.sql.DataSource;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.Date;
 
+
 /**
- *  TODO: proper exception handling
- *  TODO: initialize schema whenever necessary (what if db is not persistent and is restarted while app is running)
+ *  - Proper exception handling
+ *  - Initialize schema whenever necessary (what if db is not persistent and is restarted while app is running)
+ *  - Contains the logic for Project object operations (CRUD)
  */
-public class JdbcTodoListDAO implements TodoListDAO {
+public class JdbcTodoListDAO  {
+	//public class JdbcTodoListDAO implements TodoListDAO {
 
     private final DataSource dataSource;
 
@@ -51,9 +53,9 @@ public class JdbcTodoListDAO implements TodoListDAO {
                     connection.setAutoCommit(true);
                     Statement statement = connection.createStatement();
                     try {
-                         statement.executeUpdate(" CREATE TABLE project (id VARCHAR(10), name VARCHAR(50), startdt VARCHAR(50), enddt VARCHAR(50), organization "
-                        		+ "VARCHAR(50), manager VARCHAR(50), status VARCHAR(25), description  TEXT,	PRIMARY KEY(id))");
-                       
+                         statement.executeUpdate(" CREATE TABLE project (id int(11) NOT NULL AUTO_INCREMENT , name VARCHAR(50), startdt DATE, enddt DATE, organization "
+                        		+ "VARCHAR(50), manager VARCHAR(50), status VARCHAR(25), description  TEXT,	PRIMARY KEY(id))ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8");
+                                  
                     } finally {
                         statement.close();
                     }
@@ -75,27 +77,33 @@ public class JdbcTodoListDAO implements TodoListDAO {
         }
     }
 
-  //// Implement the "save" interface method -- Create a new project
+    /**
+     *  Implement the project object CRUD operations
+     *  
+     */
+    
+    
+    //// Implement the "addProject" interface method -- Create a new project
     
     @Override
-    public void save(TodoEntry entry) {
+    public void addProject(TodoEntry entry) {
         try {
             Connection connection = getConnection();
             try {
                 connection.setAutoCommit(true);
-                PreparedStatement statement = connection.prepareStatement("INSERT INTO project (id, name,startdt, enddt ,organization,manager, status,description ) "
-				   		+ "VALUES (?, ?, ?,?, ?, ?,?, ?)");
+                PreparedStatement statement = connection.prepareStatement("INSERT INTO project (name,startdt, enddt ,organization,manager, status,description ) "
+				   		+ "VALUES ( ?, ?,?, ?, ?,?, ?)");
+                // Parameters start with 1
 				  try {
-                    statement.setString(1, entry.getId());
-                    statement.setString(2, entry.getName());
-                    statement.setString(3, entry.getStartdt());
-                    statement.setString(4, entry.getEnddt());
-                    statement.setString(5, entry.getOrganization());
-                    statement.setString(6, entry.getManager());
-                    statement.setString(7, entry.getStatus());
-                    statement.setString(8, entry.getDescription());
+                    statement.setString(1, entry.getName());
+                    statement.setDate(2, new java.sql.Date(entry.getStartdt().getTime()));
+                    statement.setDate(3, new java.sql.Date(entry.getEnddt().getTime()));
+                    statement.setString(4, entry.getOrganization());
+                    statement.setString(5, entry.getManager());
+                    statement.setString(6, entry.getStatus());
+                    statement.setString(7, entry.getDescription());
                     statement.executeUpdate();
-                } finally {
+                  } finally {
                     statement.close();
                 }
             } finally {
@@ -106,21 +114,20 @@ public class JdbcTodoListDAO implements TodoListDAO {
         }
     }
 
-    //// Implement the "delete" interface method -- delete an existing project
     
-   /* @Override
-    public void delete(String project_id) {
+    //// Implement the "deleteProject" interface method -- delete an existing project
+    
+    @Override
+    public void deleteProject(int projectId) {
         try {
             Connection connection = getConnection();
             try {
                 connection.setAutoCommit(true);
                 PreparedStatement statement = connection.prepareStatement("DELETE FROM project WHERE id =?");
 			   try {
-                     statement.setString(1, project_id);
-                   //  statement.setString(1, entry.getId());
+                     statement.setInt(1, projectId);
                      statement.executeUpdate();
-                    // System.out.println("Project  "  + entry.getName() +  " is deleted!");
-               
+                                
                 } finally {
                     statement.close();
                 }
@@ -130,11 +137,14 @@ public class JdbcTodoListDAO implements TodoListDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-    }*/
-////Implement the "update" interface method -- update record for  an existing project
+    }
     
-   /* @Override
-    public void update(TodoEntry entry) {
+  
+    
+////Implement the "updateProject" interface method -- update record for  an existing project
+    
+    @Override
+    public void updateProject(TodoEntry entry) {
         try {
             Connection connection = getConnection();
             try {
@@ -149,12 +159,12 @@ public class JdbcTodoListDAO implements TodoListDAO {
                    statement.setString(3, entry.getOrganization());
                    statement.setString(4, entry.getStatus());
                    statement.setString(5, entry.getDescription());
-                   statement.setString(6, entry.getEnddt());
-                   statement.setString(7, entry.getStartdt());
-                   statement.setString(8, entry.getId());
+                   statement.setDate(6, new java.sql.Date(entry.getEnddt().getTime()));
+                   statement.setDate(7, new java.sql.Date(entry.getStartdt().getTime()));
+                   statement.setInt(8, entry.getId());
           
                    statement.executeUpdate();
-                     System.out.println("Project  "  + entry.getName() +  " is updated!");
+                   System.out.println("Project  "  + entry.getName() +  " is updated!");
                
                 } finally {
                     statement.close();
@@ -167,118 +177,65 @@ public class JdbcTodoListDAO implements TodoListDAO {
         }
     }
     
+      
     
-    
-////Implement the "read" interface method -- search for a only one  existing project
+////Implement the "getProjectById" interface method -- search project by id
     
     @Override
-    public List<TodoEntry> read() {
-    	try {
-            Connection connection = getConnection();
+    public TodoEntry getProjectById(int projectId) {
+    	  TodoEntry entry = new TodoEntry();
+         
             try {
-                Statement statement = connection.createStatement();
-                List<TodoEntry> list;
-                try {
-                    ResultSet rset = statement.executeQuery(" SELECT  id, name,startdt, enddt ,organization,manager, status, description  FROM project WHERE id =? ");
-                    try {
-                    	 statement.setString(1, entry.getId());
-                    	 list = new ArrayList<TodoEntry>();
-                        while (rset.next()) {
-                        	String  id = rset.getString(1);
-                            String  name = rset.getString(2);
-                            String  startdt = rset.getString(3);
-                            String  enddt = rset.getString(4);
-                            String  organization = rset.getString(5);
-                            String  manager= rset.getString(6);
-                            String status = rset.getString(7);
-                            String description  = rset.getString(8);
-                            list.add(new TodoEntry(id, name,startdt, enddt ,organization,manager, status, description)); ///only one record is processed
-                        }
-                    } finally {
-                        rset.close();
-                    }
-                } finally {
-                    statement.close();
-                }
-                return list;
-            } finally {
-                connection.close();
+               Connection connection = getConnection();
+               PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM project WHERE id =? ");
+               preparedStatement.setInt(1, projectId);
+               ResultSet rs = preparedStatement.executeQuery();
+               if (rs.next()){
+            	   entry.setId(rset.getInt("id"));
+                   entry.setName(rset.getString("name");
+                   entry.setStartdt(rset.getDate("startdt");
+                   entry.setEnddt(rset.getDate("enddt");
+                   entry.setOrganization(rset.getString("organization"); 
+                   entry.setManager(rset.getString("manager");
+                   entry.setStatus(rset.getString("status");
+                   entry.setDescription(rset.getString("description");
+                
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+      } catch (SQLException e) {
+        e.printStackTrace();
     }
 
-////Implement the "search" interface method -- search for some   existing projects
+    return entry;
+}
+}
+   
     
-    @Override
-    public List<TodoEntry> search() {
-    	try {
-            Connection connection = getConnection();
-            try {
-                Statement statement = connection.createStatement();
-                List<TodoEntry> list;
-                try {
-                    ResultSet rset = statement.executeQuery(" SELECT  id, name,startdt, enddt ,organization,manager, status, description "
-                    		+ " FROM project WHERE id =?  OR name=? OR  organization =? OR manager=? OR status=? ");
-                    try {
-                    	 statement.setString(1, entry.getId());
-                    	 statement.setString(2, entry.getName());
-                    	 statement.setString(3, entry.getOrganization());
-                         statement.setString(4, entry.getManager());
-                         statement.setString(5, entry.getStatus());
-                    
-                    	 list = new ArrayList<TodoEntry>();
-                        while (rset.next()) {
-                        	String  id = rset.getString(1);
-                            String  name = rset.getString(2);
-                            String  startdt = rset.getString(3);
-                            String  enddt = rset.getString(4);
-                            String  organization = rset.getString(5);
-                            String  manager= rset.getString(6);
-                            String status = rset.getString(7);
-                            String description  = rset.getString(8);
-                            list.add(new TodoEntry(id, name,startdt, enddt ,organization,manager, status, description)); ///may return one or many projects
-                        }
-                    } finally {
-                        rset.close();
-                    }
-                } finally {
-                    statement.close();
-                }
-                return list;
-            } finally {
-                connection.close();
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-*/
-    
-   ///    Implement the "List"  interface method - --return  all the existing projects 
+   ///    Implement the "getAllProjects()"  interface method - --return  all the existing projects 
 
     @Override
-    public List<TodoEntry> list() {
+    public List<TodoEntry> getAllProjects() {
         try {
             Connection connection = getConnection();
             try {
                 Statement statement = connection.createStatement();
                 List<TodoEntry> list;
                 try {
-                    ResultSet rset = statement.executeQuery(" SELECT  id, name,startdt, enddt ,organization,manager, status, description  FROM project ");
+                    ResultSet rset = statement.executeQuery(" SELECT  *  FROM project ");
                     try {
                         list = new ArrayList<TodoEntry>();
                         while (rset.next()) {
-                        	String  id = rset.getString(1);
-                            String  name = rset.getString(2);
-                            String  startdt = rset.getString(3);
-                            String  enddt = rset.getString(4);
-                            String  organization = rset.getString(5);
-                            String  manager= rset.getString(6);
-                            String status = rset.getString(7);
-                            String description  = rset.getString(8);
-                            list.add(new TodoEntry(id, name,startdt, enddt ,organization,manager, status, description));
+                        	TodoEntry entry = new TodoEntry();
+                        	entry.setId(rset.getInt("id"));
+                            entry.setName(rset.getString("name");
+                            entry.setStartdt(rset.getDate("startdt");
+                            entry.setEnddt(rset.getDate("enddt");
+                         
+                            entry.setOrganization(rset.getString("organization"); 
+                            entry.setManager(rset.getString("manager");
+                            entry.setStatus(rset.getString("status");
+                            entry.setDescription(rset.getString("description");
+                            
+                            list.add(entry);
                         }
                     } finally {
                         rset.close();
@@ -296,6 +253,11 @@ public class JdbcTodoListDAO implements TodoListDAO {
     }
 
    
+        
+    
+    
+    
+    
     public Connection getConnection() throws SQLException {
         return getDataSource().getConnection();
     }

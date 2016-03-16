@@ -13,6 +13,17 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.Date;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+import javax.servlet.RequestDispatcher;
+
+
+import org.openshift.quickstarts.todolist.dao.JdbcTodoListDAO;
+import org.openshift.quickstarts.todolist.dao.TodoListDAO;
+
+
+
 /** 
   * The MainServlet returns the  project list html on GET requests and handles the 
   * creation of new project entries on POST requests. 
@@ -22,13 +33,61 @@ import java.util.Date;
 
 public class MainServlet extends HttpServlet {
 
-    private TodoListService todoListService = new TodoListService();
+	    private static final long serialVersionUID = 1L;
+	    private static String INSERT_OR_EDIT = "/project.jsp";
+	    private static String LIST_PROJECT = "/listProject.jsp";
+	    private JdbcTodoListDAO dao;
+	
+   // private TodoListService todoListService = new TodoListService();
 
+	    public MainServlet() {
+	        super();
+	        dao = new JdbcTodoListDAO();
+	    }
+
+ 
    
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         	
-    	String id = req.getParameter("id");
+    	TodoEntry entry = new TodoEntry();
+    	
+    	entry.setName(req.getParameter("name"));
+    	entry.setStatus(req.getParameter("status"));
+    	entry.setManager(req.getParameter("manager"));
+    	entry.setOrganization(req.getParameter("organization"));
+    	entry.setDescription(req.getParameter("description"));
+    
+        try {
+            Date startdt = new SimpleDateFormat("MM/dd/yyyy").parse(request.getParameter("startdt"));
+            entry.setStartdt(startdt);
+            
+            Date enddt = new SimpleDateFormat("MM/dd/yyyy").parse(request.getParameter("enddt"));
+            entry.setEnddt(Enddt);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    
+        String id = request.getParameter("id");
+        if(id == null || id.isEmpty())
+        {
+            dao.addProject(entry);
+        }
+        else
+        {
+            entry.setId(Integer.parseInt(id));
+            dao.updateProject(entry);
+        }
+        RequestDispatcher view = request.getRequestDispatcher(LIST_PROJECT);
+        request.setAttribute("list", dao.getAllProjects());
+        view.forward(request, response);
+    }
+}
+
+        
+        
+    	
+    	/*String id = req.getParameter("id");
     	String name = req.getParameter("name");
         String status = req.getParameter("status");   // getparamaeterValues() 
     	String manager = req.getParameter("manager");
@@ -50,11 +109,40 @@ public class MainServlet extends HttpServlet {
         
         resp.sendRedirect("index.html");
     }
+    */
+    
+   
     
     
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType("text/html; charset=UTF-8");
+        
+    	 String forward="";
+         String action = request.getParameter("action");
+         
+         if (action.equalsIgnoreCase("delete")){
+             int projectId = Integer.parseInt(request.getParameter("projectId"));
+             dao.deleteProject(projectId);
+             forward = LIST_PROJECT;
+             request.setAttribute("list", dao.getAllProjects());  
+         } else if (action.equalsIgnoreCase("edit")){
+             forward = INSERT_OR_EDIT;
+             int projectId = Integer.parseInt(request.getParameter("projectId"));
+             TodoEntry entry = dao.getProjectById(projectId);
+             request.setAttribute("entry", entry);
+         } else if (action.equalsIgnoreCase("listProject")){
+             forward = LIST_PROJECT;
+             request.setAttribute("list", dao.getAllProjects());  
+         } else {
+             forward = INSERT_OR_EDIT;
+         }
+         
+         RequestDispatcher view = request.getRequestDispatcher(forward);
+         view.forward(request, response);
+     }
+
+         
+ /*   	resp.setContentType("text/html; charset=UTF-8");
         PrintWriter out = resp.getWriter();
         BufferedReader reader = new BufferedReader(new InputStreamReader(req.getServletContext().getResourceAsStream("/WEB-INF/index.html"), "UTF-8"));
         try {
@@ -91,9 +179,17 @@ public class MainServlet extends HttpServlet {
             reader.close();
         }
     } 
+*/
+        
 
-    private String escapeHtml(String text) {
-        return text.replace("<", "&lt;");
-    }
+  //      RequestDispatcher view = request.getRequestDispatcher(forward);
+    //    view.forward(request, response);
+   // }
+
+     
+    
+  //  private String escapeHtml(String text) {
+    //    return text.replace("<", "&lt;");
+   // }
 
 }

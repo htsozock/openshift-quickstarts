@@ -1,33 +1,42 @@
 package org.openshift.quickstarts.todolist.model;
 
+
+//Loading required libraries
+
 import java.io.Serializable;
 import java.util.Date;
 
 /**Hide data access behind an API 
- *
+ * contains the POJO (Plain Old Java Object). Each class in this package represents the database table.
+ * TodoEntry =Project table
  */
 public class TodoEntry {
 
    
-	private String id;
+	private int    id;
     private String name;
     private String status;
-    private String startdt; 
-    private String enddt;
+    private Date   startdt; 
+    private Date   enddt;
     private String organization;
     private String manager;
     private String description;
-      
+       
+       
     // overloaded constructors --- 
     
     public TodoEntry() {
     }
-
-    public TodoEntry( String name,String startdt, String enddt,  String organization, String manager,  String status, String description) {
+    
+    public TodoEntry(int id) {
+    	this(id,  null, null,  null , null, null,  null,  null);
+    }
+    
+    public TodoEntry( String name, Date startdt, Date enddt,  String organization, String manager,  String status, String description) {
        this(null, name,startdt, enddt ,organization,manager, status, description);
     }
 
-    public TodoEntry(String id, String name, String startdt, String enddt, String organization, String manager,  String status, String description) {
+    public TodoEntry(int id, String name, Date startdt, Date enddt, String organization, String manager,  String status, String description) {
         this.id= id;
         this.name = name;
         this.startdt = startdt;
@@ -38,71 +47,71 @@ public class TodoEntry {
         this.description = description;
     }
 
-// SETTERS AND GETTERS   -- 
+     // SETTERS AND GETTERS   -- 
     
-     public String getStartdt() {
+     public Date getStartdt() {
         return startdt;
      }
 
-     public void setStartdt( String startdt) {
+     public void setStartdt(Date startdt) {
         this.startdt = startdt;
      }
      
-     public  String getEnddt() {
+     public Date getEnddt() {
          return enddt;
       }
 
-      public void setEnddt( String enddt) {
+      public void setEnddt(Date enddt) {
          this.enddt = enddt;
       }
-    
+     
       public String getOrganization() {
           return organization;
       }
 
-      public void setOrganization(String organization) {
+     public void setOrganization(String organization) {
           this.organization = organization;
        }
     
-       public String getManager() {
+     public String getManager() {
            return manager;
        }
 
-        public void setManager(String manager) {
+     public void setManager(String manager) {
            this.manager = manager;
         }
     
-    public String getName() {
+     public String getName() {
         return name;
-    }
+        }
 
      public void setName(String name) {
-        this.name = name;
+         this.name = name;
+        }
+
+     public String getStatus() {
+        return status;
      }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
+     public void setStatus(String status) {
         this.status = status;
-    }
+     }
 
-    public String getDescription() {
+     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+     public void setDescription(String description) {
         this.description = description;
     }
       
-    public String getId() {
+     public int getId() {
       return id;
-    }
+     }
    
-    public void setId(String  id) {
+    public void setId(int  id) {
       this.id = id;
-    }
+     }
 	
     @Override 
         public String toString() { 
@@ -126,4 +135,7 @@ public class TodoEntry {
                      '}'; 
 
     }
+    
+  
+    
 }
