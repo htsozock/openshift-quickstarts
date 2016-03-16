@@ -36,15 +36,15 @@ public class MainServlet extends HttpServlet {
 	    private static final long serialVersionUID = 1L;
 	    private static String INSERT_OR_EDIT = "/project.jsp";
 	    private static String LIST_PROJECT = "/listProject.jsp";
-	    private JdbcTodoListDAO dao;
+	    //private JdbcTodoListDAO dao;
 	
-   // private TodoListService todoListService = new TodoListService();
+      private TodoListService dao = new TodoListService();
 
-	    public MainServlet() {
+	   /* public MainServlet() {
 	        super();
 	        dao = new JdbcTodoListDAO();
 	    }
-
+*/
  
    
     @Override
@@ -71,21 +71,23 @@ public class MainServlet extends HttpServlet {
         String id = request.getParameter("id");
         if(id == null || id.isEmpty())
         {
-            dao.addProject(entry);
+            dao.addEntry(entry);
         }
-        else
+       /* else
         {
             entry.setId(Integer.parseInt(id));
             dao.updateProject(entry);
-        }
+        }*/
         RequestDispatcher view = request.getRequestDispatcher(LIST_PROJECT);
-        request.setAttribute("list", dao.getAllProjects());
+        request.setAttribute("list", dao.getAllEntries());
         view.forward(request, response);
     }
 }
 
         
-        
+
+
+
     	
     	/*String id = req.getParameter("id");
     	String name = req.getParameter("name");
@@ -122,17 +124,19 @@ public class MainServlet extends HttpServlet {
          
          if (action.equalsIgnoreCase("delete")){
              int projectId = Integer.parseInt(request.getParameter("projectId"));
-             dao.deleteProject(projectId);
+            // dao.deleteProject(projectId);
+             dao.getAllEntries());  
              forward = LIST_PROJECT;
-             request.setAttribute("list", dao.getAllProjects());  
+             request.setAttribute("list", dao.getAllEntries());  
          } else if (action.equalsIgnoreCase("edit")){
              forward = INSERT_OR_EDIT;
              int projectId = Integer.parseInt(request.getParameter("projectId"));
-             TodoEntry entry = dao.getProjectById(projectId);
+            // TodoEntry entry = dao.getProjectById(projectId);
+            TodoEntry entry = dao.getAllEntries());  
              request.setAttribute("entry", entry);
          } else if (action.equalsIgnoreCase("listProject")){
              forward = LIST_PROJECT;
-             request.setAttribute("list", dao.getAllProjects());  
+             request.setAttribute("list", dao.getAllEntries());  
          } else {
              forward = INSERT_OR_EDIT;
          }

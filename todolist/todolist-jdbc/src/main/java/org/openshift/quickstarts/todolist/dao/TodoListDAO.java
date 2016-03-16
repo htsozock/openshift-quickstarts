@@ -11,9 +11,9 @@ import java.util.List;
 public interface TodoListDAO {
 
     void addProject(TodoEntry entry);
-    void deleteProject(int projectId);
-    void updateProject(TodoEntry entry);
+  /*  void deleteProject(int projectId);
+    void updateProject(TodoEntry entry);*/
     
     List<TodoEntry> getAllProjects();
-    TodoEntry getProjectById(int projectId);
+  //  TodoEntry getProjectById(int projectId);
 }

@@ -28,10 +28,7 @@ public class TodoEntry {
     public TodoEntry() {
     }
     
-    public TodoEntry(int id) {
-    	this(id,  null, null,  null , null, null,  null,  null);
-    }
-    
+       
     public TodoEntry( String name, Date startdt, Date enddt,  String organization, String manager,  String status, String description) {
        this(null, name,startdt, enddt ,organization,manager, status, description);
     }

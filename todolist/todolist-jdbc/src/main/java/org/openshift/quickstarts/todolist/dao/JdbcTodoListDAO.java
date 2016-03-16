@@ -18,7 +18,7 @@ import java.util.Date;
  *  - Initialize schema whenever necessary (what if db is not persistent and is restarted while app is running)
  *  - Contains the logic for Project object operations (CRUD)
  */
-  public class JdbcTodoListDAO implements TodoListDAO {
+public class JdbcTodoListDAO implements TodoListDAO {
 
     private final DataSource dataSource;
 
@@ -42,7 +42,7 @@ import java.util.Date;
             throw new RuntimeException("Could not look up datasource", e);
         }
     }
-// create project table if it does not exist
+    
     
    private void initializeSchemaIfNeeded() {
         try {
@@ -114,7 +114,7 @@ import java.util.Date;
     }
 
     
-    //// Implement the "deleteProject" interface method -- delete an existing project
+   /* //// Implement the "deleteProject" interface method -- delete an existing project
     
     @Override
     public void deleteProject(int projectId) {
@@ -208,7 +208,7 @@ import java.util.Date;
 }
 }
    
-    
+      */
    ///    Implement the "getAllProjects()"  interface method - --return  all the existing projects 
 
     @Override
@@ -252,7 +252,7 @@ import java.util.Date;
     }
 
    
-        
+      
     
     
     

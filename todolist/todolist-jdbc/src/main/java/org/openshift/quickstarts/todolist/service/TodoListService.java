@@ -18,7 +18,11 @@ public class TodoListService {
         dao.addProject(entry); ///call JdbcTodoListDAO() methods
     }
 
-    public void delete(int projectI) {
+    public List<TodoEntry> getAllEntries() {  
+        return dao.getAllProjects();
+    }
+    
+   /* public void delete(int projectI) {
         dao.deleteProject(int projectId);
     } 
  
@@ -27,14 +31,12 @@ public class TodoListService {
         dao.updateProject(TodoEntry entry); 
     }
     
-    public List<TodoEntry> getAllEntries() {  
-        return dao.getAllProjects();
-    }
+
     
     public TodoEntry getProject(int projectId) {    // will return ONLY one project
            return dao.getProjectById(projectId);
        }
-    
+    */
    
     
     
