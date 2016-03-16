@@ -15,12 +15,11 @@ import java.util.Date;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-
 import javax.servlet.RequestDispatcher;
 
 
-import org.openshift.quickstarts.todolist.dao.JdbcTodoListDAO;
-import org.openshift.quickstarts.todolist.dao.TodoListDAO;
+//import org.openshift.quickstarts.todolist.dao.JdbcTodoListDAO;
+//import org.openshift.quickstarts.todolist.dao.TodoListDAO;
 
 
 
@@ -82,39 +81,7 @@ public class MainServlet extends HttpServlet {
         request.setAttribute("list", dao.getAllEntries());
         view.forward(request, response);
     }
-}
-
-        
-
-
-
-    	
-    	/*String id = req.getParameter("id");
-    	String name = req.getParameter("name");
-        String status = req.getParameter("status");   // getparamaeterValues() 
-    	String manager = req.getParameter("manager");
-        String organization = req.getParameter("organization"); // getparamaeterValues() 
-    	String startdt = req.getParameter("startdt");
-        String enddt = req.getParameter("enddt");
-        String description = req.getParameter("description");
-        
-        /// collect the data and pass the data to the service to create the project ---
-        todoListService.addEntry(new TodoEntry(id,name,startdt, enddt, organization, manager, status, description));
-        
-        //todoListService.updateProject(new TodoEntry(id,name,startdt, enddt, organization, manager, status, description));
-       
-       //  todoListService.deleteProject(new TodoEntry(id,name,startdt, enddt, organization, manager, status, description));
-        
-        //  todoListService.getProject(new TodoEntry(id,name,startdt, enddt, organization, manager, status, description));
-        
-        //  todoListService.getSearchProject(new TodoEntry(id,name,startdt, enddt, organization, manager, status, description));
-        
-        resp.sendRedirect("index.html");
-    }
-    */
-    
    
-    
     
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -146,54 +113,6 @@ public class MainServlet extends HttpServlet {
      }
 
          
- /*   	resp.setContentType("text/html; charset=UTF-8");
-        PrintWriter out = resp.getWriter();
-        BufferedReader reader = new BufferedReader(new InputStreamReader(req.getServletContext().getResourceAsStream("/WEB-INF/index.html"), "UTF-8"));
-        try {
-            String line;
-            boolean insideLoop = false;
-            StringBuilder sb = new StringBuilder();
-            while ((line = reader.readLine()) != null) {
-                if (line.trim().equals("<!-- begin repeat for each entry -->")) {
-                    insideLoop = true;
-                } else if (line.trim().equals("<!-- end repeat for each entry -->")) {
-                    insideLoop = false;
-                    String entryTemplate = sb.toString();
-                    for (TodoEntry entry : todoListService.getAllEntries()) {   ///get all the projects
-                        out.println(
-                                entryTemplate
-								        .replace("{{ id }}", escapeHtml(entry.getId()))
-                                        .replace("{{ name }}", escapeHtml(entry.getName()))
-                                        .replace("{{ status }}", escapeHtml(entry.getStatus()))
-                                        .replace("{{ manager }}", escapeHtml(entry.getManager()))
-                                        .replace("{{ organization }}", escapeHtml(entry.getOrganization()))
-                                        .replace("{{ startdt }}", escapeHtml(entry.getStartdt()))
-                                        .replace("{{ enddt }}", escapeHtml(entry.getEnddt()))
-                        );
-                    }
-                } else if (insideLoop) {
-                   sb.append(line).append("\n");
-                  
-                  
-                } else {
-                    out.println(line);
-                }
-            }
-        } finally {
-            reader.close();
-        }
-    } 
-*/
+ 
         
-
-  //      RequestDispatcher view = request.getRequestDispatcher(forward);
-    //    view.forward(request, response);
-   // }
-
-     
-    
-  //  private String escapeHtml(String text) {
-    //    return text.replace("<", "&lt;");
-   // }
-
 }
