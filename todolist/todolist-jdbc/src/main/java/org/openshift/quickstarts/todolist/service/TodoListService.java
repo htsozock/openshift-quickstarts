@@ -23,12 +23,12 @@ public class TodoListService {
     }
     
      public void delete(int projectId) {
-        dao.deleteProject(int projectId);
+        dao.deleteProject(projectId);
     } 
  
     
     public void update(TodoEntry entry) {
-        dao.updateProject(TodoEntry entry); 
+        dao.updateProject(entry); 
     }
     
 

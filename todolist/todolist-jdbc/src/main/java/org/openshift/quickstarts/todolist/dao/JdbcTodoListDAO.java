@@ -188,8 +188,8 @@ public class JdbcTodoListDAO implements TodoListDAO {
                Connection connection = getConnection();
                PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM project WHERE id =? ");
                preparedStatement.setInt(1, projectId);
-               ResultSet rs = preparedStatement.executeQuery();
-               if (rs.next()){
+               ResultSet rset = preparedStatement.executeQuery();
+               if (rset.next()){
             	   entry.setId(rset.getInt("id"));
                    entry.setName(rset.getString("name");
                    entry.setStartdt(rset.getDate("startdt");
@@ -206,7 +206,7 @@ public class JdbcTodoListDAO implements TodoListDAO {
 
     return entry;
 }
-}
+
    
    ///    Implement the "getAllProjects()"  interface method - --return  all the existing projects 
 
