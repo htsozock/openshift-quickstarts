@@ -92,14 +92,14 @@ public class MainServlet extends HttpServlet {
          if (action.equalsIgnoreCase("delete")){
              int projectId = Integer.parseInt(request.getParameter("projectId"));
             // dao.deleteProject(projectId);
-             dao.getAllEntries());  
+           null;  
              forward = LIST_PROJECT;
              request.setAttribute("list", dao.getAllEntries());  
          } else if (action.equalsIgnoreCase("edit")){
              forward = INSERT_OR_EDIT;
              int projectId = Integer.parseInt(request.getParameter("projectId"));
             // TodoEntry entry = dao.getProjectById(projectId);
-            TodoEntry entry = dao.getAllEntries());  
+           null;
              request.setAttribute("entry", entry);
          } else if (action.equalsIgnoreCase("listProject")){
              forward = LIST_PROJECT;
