@@ -29,17 +29,21 @@
     
 <body>
  
- <img src="usaid_logo.png" alt="USAID Logo" style="width:328px;height:328px;">  <b><p>Development Information Solution (DIS)  </p></b>
-
+<header>
+    <h1><img src="usaid_logo.png" alt="USAID Logo" style="width:400px;height:280px;">  <b><p>Development Information Solution (DIS)  </p></b></h1>
+  
+  </header>
+  <hr>
+  
     <B> <h2>Edit Project</h2></B>
     <br />
   
     <form method="POST" action='MainServlet' name="frmAddProject">
     
-        Project ID        <input type="text" readonly="readonly" name="id"  size="10"  disabled 
+        Project ID    &nbsp;&nbsp;    <input type="text" readonly="readonly" name="id"  size="10"  disabled 
             value="<c:out value="${entry.id}" />" /> <br /> 
              <br />
-        Project  Name   <input       type="text" name="name" size="50" 
+        Project  Name &nbsp;&nbsp;  <input       type="text" name="name" size="50" 
             value="<c:out value="${entry.name}" />" /> &nbsp;
          Organization   <input
             type="text" name="organization" size="40"
@@ -61,13 +65,14 @@
      
             
             <label for="description">Description </label>
-                     <textarea name="description" id="description"  rows="4"></textarea> 
+                     <textarea name="description" id="description"  size="40"  rows="4"></textarea> 
             <%--  <input type="text" name="description" 
             value="<c:out value="${entry.description}" />" />  --%><br /> 
             <br /><br />
+            <hr>
           <b> <button type="submit" class="btn btn-default">Submit</button></b>
-                <b> <button type="reset" formaction=""/MainServlet?action=project">Reset</button></b>
-                 <b> <button type="submit" formaction=""/MainServlet?action=listProject" ">Return</button></b>
+                <b> <button type="reset" formaction="/MainServlet?action=project">Reset</button>
+                 <button type="submit" formaction="/MainServlet?action=listProject" >Return</button>
                 
     </form>
 

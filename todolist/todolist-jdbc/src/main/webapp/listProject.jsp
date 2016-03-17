@@ -14,10 +14,13 @@
 <title>  USAID - Development Information Solution (DIS) </title>
 </head>
 <body>
- <B> <h1>USAID</h1></B>
- <img src="usaid_logo.png" alt="USAID Logo" style="width:328px;height:328px;">  <b><p>Development Information Solution (DIS)  </p></b>
-  <B><p>Development Information Solution (DIS)</p></B>
-<table style="width:100%"  border=1>
+ 
+    <header>
+    <h1><img src="usaid_logo.png" alt="USAID Logo" style="width:400px;height:280px;">  <b><p>Development Information Solution (DIS)  </p></b></h1>
+  
+  </header>
+  <hr>
+<table style="width:90%"  border=1>
        <thead>
             <tr>
                 
@@ -48,6 +51,8 @@
             </c:forEach>
         </tbody>
     </table>
+     <hr>
+     <br />
    <b> <p><a href="MainServlet?action=insert" >[+]Add Project</a></p></b>
 </body>
 </html>
