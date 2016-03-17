@@ -102,7 +102,7 @@ public class MainServlet extends HttpServlet {
              int projectId = Integer.parseInt(req.getParameter("projectId"));
             // TodoEntry entry = dao.getProjectById(projectId);
           
-             req.setAttribute("entry", entry);
+            // req.setAttribute("entry", entry);
          } else if (action.equalsIgnoreCase("listProject")){
              forward = LIST_PROJECT;
              req.setAttribute("list", dao.getAllEntries());  
