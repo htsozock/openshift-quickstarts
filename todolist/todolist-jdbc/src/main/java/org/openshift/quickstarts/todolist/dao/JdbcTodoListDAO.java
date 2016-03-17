@@ -191,13 +191,13 @@ public class JdbcTodoListDAO implements TodoListDAO {
                ResultSet rset = preparedStatement.executeQuery();
                if (rset.next()){
             	   entry.setId(rset.getInt("id"));
-                   entry.setName(rset.getString("name");
-                   entry.setStartdt(rset.getDate("startdt");
-                   entry.setEnddt(rset.getDate("enddt");
-                   entry.setOrganization(rset.getString("organization"); 
-                   entry.setManager(rset.getString("manager");
-                   entry.setStatus(rset.getString("status");
-                   entry.setDescription(rset.getString("description");
+                   entry.setName(rset.getString("name"));
+                   entry.setStartdt(rset.getDate("startdt"));
+                   entry.setEnddt(rset.getDate("enddt"));
+                   entry.setOrganization(rset.getString("organization")); 
+                   entry.setManager(rset.getString("manager"));
+                   entry.setStatus(rset.getString("status"));
+                   entry.setDescription(rset.getString("description"));
                 
             }
       } catch (SQLException e) {
