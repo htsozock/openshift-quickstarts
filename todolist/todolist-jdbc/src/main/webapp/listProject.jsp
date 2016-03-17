@@ -20,15 +20,17 @@
 <body>
  
     <header>
-    <h1><img src="usaid_logo.png" alt="USAID Logo" style="width:400px;height:280px;">  ></h1>
+    <h1><img src="usaid_logo.png" alt="USAID Logo" style="width:400px;height:280px;">  </h1>
     </header>
     <div class="container">
-  <h3><b><p>Development Information Solution (DIS)  </p></b</h3>
+  <h1><b><p>Development Information Solution (DIS)  </p></b</h1>
     <ul class="nav nav-tabs">
-    <li class="active"> <a href="<big><p><a href="MainServlet?action=listProject" >Home</a></p></big>">Projects</a></li>
+    <li class="active" <a href="MainServlet?action=listProject" >Projects</a></li>
     <li><a href="#">Activities</a></li>
     <li><a href="#">Indicators</a></li>
     <li><a href="#">Tags</a></li>
+    <li><a href="#">Search</a></li>
+    <li><a href="#">Reports</a></li>
   </ul>
 
 
