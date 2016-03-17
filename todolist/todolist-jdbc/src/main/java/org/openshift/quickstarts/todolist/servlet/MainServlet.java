@@ -62,7 +62,7 @@ public class MainServlet extends HttpServlet {
             entry.setStartdt(startdt);
             
             Date enddt = new SimpleDateFormat("MM/dd/yyyy").parse(req.getParameter("enddt"));
-            entry.setEnddt(Enddt);
+            entry.setEnddt(enddt);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -110,7 +110,7 @@ public class MainServlet extends HttpServlet {
              forward = INSERT_OR_EDIT;
          }
          
-         RequestDispatcher view = request.getRequestDispatcher(forward);
+         RequestDispatcher view = req.getRequestDispatcher(forward);
          view.forward(req, resp);
      }
 
