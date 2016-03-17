@@ -18,8 +18,8 @@ import java.text.SimpleDateFormat;
 import javax.servlet.RequestDispatcher;
 
 
-//import org.openshift.quickstarts.todolist.dao.JdbcTodoListDAO;
-//import org.openshift.quickstarts.todolist.dao.TodoListDAO;
+import org.openshift.quickstarts.todolist.dao.JdbcTodoListDAO;
+import org.openshift.quickstarts.todolist.dao.TodoListDAO;
 
 
 
@@ -67,6 +67,8 @@ public class MainServlet extends HttpServlet {
             e.printStackTrace();
         }
     
+    
+        
         String id = request.getParameter("id");
         if(id == null || id.isEmpty())
         {
