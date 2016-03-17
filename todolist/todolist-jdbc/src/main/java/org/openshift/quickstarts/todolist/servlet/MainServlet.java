@@ -24,10 +24,9 @@ import org.openshift.quickstarts.todolist.dao.TodoListDAO;
 
 
 /** 
-  * The MainServlet returns the  project list html on GET requests and handles the 
-  * creation of new project entries on POST requests. 
+  * The MainServlet is the controller
   * 
-  * The servlet uses the service and the class data (todoentry)
+  * The servlet uses the service and the model(todoentry)
  */ 
 
 public class MainServlet extends HttpServlet {
@@ -35,17 +34,10 @@ public class MainServlet extends HttpServlet {
 	    private static final long serialVersionUID = 1L;
 	    private static String INSERT_OR_EDIT = "/project.jsp";
 	    private static String LIST_PROJECT = "/listProject.jsp";
-	    //private JdbcTodoListDAO dao;
-	
-      private TodoListService dao = new TodoListService();
+	 
+	    private TodoListService dao = new TodoListService();
 
-	   /* public MainServlet() {
-	        super();
-	        dao = new JdbcTodoListDAO();
-	    }
-*/
- 
-   
+	    
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         	
@@ -60,15 +52,12 @@ public class MainServlet extends HttpServlet {
         try {
             Date startdt = new SimpleDateFormat("MM/dd/yyyy").parse(req.getParameter("startdt"));
             entry.setStartdt(startdt);
-            
             Date enddt = new SimpleDateFormat("MM/dd/yyyy").parse(req.getParameter("enddt"));
             entry.setEnddt(enddt);
         } catch (ParseException e) {
             e.printStackTrace();
         }
     
-    
-        
         String id = req.getParameter("id");
         if(id == null || id.isEmpty())
         {

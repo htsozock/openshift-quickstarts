@@ -53,7 +53,7 @@ public class JdbcTodoListDAO implements TodoListDAO {
                     Statement statement = connection.createStatement();
                     try {
                          statement.executeUpdate(" CREATE TABLE project (id int(11) NOT NULL AUTO_INCREMENT , name VARCHAR(50), startdt DATE, enddt DATE, organization "
-                        		+ "VARCHAR(50), manager VARCHAR(50), status VARCHAR(25), description  TEXT,	PRIMARY KEY(id))ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8");
+                        		+ "VARCHAR(50), manager VARCHAR(50), status VARCHAR(25), description  TEXT,	PRIMARY KEY(id))ENGINE=InnoDB AUTO_INCREMENT=001 DEFAULT CHARSET=utf8");
                                   
                     } finally {
                         statement.close();
@@ -102,6 +102,7 @@ public class JdbcTodoListDAO implements TodoListDAO {
                     statement.setString(6, entry.getStatus());
                     statement.setString(7, entry.getDescription());
                     statement.executeUpdate();
+                	System.out.println("Record is Created!");
                   } finally {
                     statement.close();
                 }
@@ -126,7 +127,7 @@ public class JdbcTodoListDAO implements TodoListDAO {
 			   try {
                      statement.setInt(1, projectId);
                      statement.executeUpdate();
-                                
+                 	 System.out.println("Record is deleted!");          
                 } finally {
                     statement.close();
                 }
@@ -251,10 +252,6 @@ public class JdbcTodoListDAO implements TodoListDAO {
     }
 
    
-      
-    
-    
-    
     
     public Connection getConnection() throws SQLException {
         return getDataSource().getConnection();

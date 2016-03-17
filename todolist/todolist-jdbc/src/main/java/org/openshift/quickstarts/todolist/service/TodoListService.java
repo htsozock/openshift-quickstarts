@@ -7,8 +7,8 @@ import org.openshift.quickstarts.todolist.model.TodoEntry;
 import java.util.List;
 
 /**
- * The service will call JdbcTodoListDAO class methods and this calss  implements  TodoListDAO interface - 
- * Using TodoEntry data class 
+ * The service will call JdbcTodoListDAO class methods and this class  implements  TodoListDAO interface - 
+ *
  */
 public class TodoListService {
 
@@ -26,13 +26,10 @@ public class TodoListService {
         dao.deleteProject(projectId);
     } 
  
-    
-    public void update(TodoEntry entry) {
+     public void update(TodoEntry entry) {
         dao.updateProject(entry); 
     }
-    
-
-    
+        
     public TodoEntry get(int projectId) {    // will return ONLY one project
            return dao.getProjectById(projectId);
        }

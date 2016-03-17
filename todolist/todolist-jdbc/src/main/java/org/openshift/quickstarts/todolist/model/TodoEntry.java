@@ -1,8 +1,5 @@
 package org.openshift.quickstarts.todolist.model;
 
-
-//Loading required libraries
-
 import java.io.Serializable;
 import java.util.Date;
 
@@ -28,8 +25,7 @@ public class TodoEntry {
     public TodoEntry() {
     }
     
-       
-   // public TodoEntry( String name, Date startdt, Date enddt,  String organization, String manager,  String status, String description) {
+    // public TodoEntry( String name, Date startdt, Date enddt,  String organization, String manager,  String status, String description) {
      //  this(null, name,startdt, enddt ,organization,manager, status, description);
     //}
 

@@ -23,7 +23,7 @@
     <version>1.2.0.Final</version>
     <packaging>war</packaging>
     <name>OpenShift Quickstarts: Todo List: JDBC</name>
-    <description>Todo list</description>
+    <description>Project Operation</description>
 
     <url>http://jboss.org/jbossas</url>
     <licenses>
@@ -72,6 +72,12 @@
         <artifactId>jstl</artifactId>
         <version>1.2</version>
     </dependency>
+ <!--    this library gives you a way to drop jQuery into your project as a Maven dependency, which means you don't have to include these third party files in your own source control. -->
+    <dependency>
+    <groupId>com.efsavage.jquery</groupId>
+    <artifactId>jquery-maven</artifactId>
+    <version>1.7.2</version>
+</dependency>
 
     </dependencies>
 
