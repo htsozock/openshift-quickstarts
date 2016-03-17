@@ -22,7 +22,7 @@ public class TodoListService {
         return dao.getAllProjects();
     }
     
-   /* public void delete(int projectI) {
+     public void delete(int projectId) {
         dao.deleteProject(int projectId);
     } 
  
@@ -33,10 +33,10 @@ public class TodoListService {
     
 
     
-    public TodoEntry getProject(int projectId) {    // will return ONLY one project
+    public TodoEntry get(int projectId) {    // will return ONLY one project
            return dao.getProjectById(projectId);
        }
-    */
+    
    
     
     

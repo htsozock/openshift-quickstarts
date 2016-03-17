@@ -114,7 +114,7 @@ public class JdbcTodoListDAO implements TodoListDAO {
     }
 
     
-   /* //// Implement the "deleteProject" interface method -- delete an existing project
+   //// Implement the "deleteProject" interface method -- delete an existing project
     
     @Override
     public void deleteProject(int projectId) {
@@ -208,7 +208,6 @@ public class JdbcTodoListDAO implements TodoListDAO {
 }
 }
    
-      */
    ///    Implement the "getAllProjects()"  interface method - --return  all the existing projects 
 
     @Override

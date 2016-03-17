@@ -46,7 +46,7 @@
             value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.enddt}" />" /> <br /> 
         Description : <input type="text" name="description"
             value="<c:out value="${entry.description}" />" /> <br /> <input
-            type="submit" value="Submit" />
+            type="submit" value="submit" />
     </form>
 
 

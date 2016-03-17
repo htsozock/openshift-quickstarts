@@ -14,7 +14,7 @@
 <table border=1>
         <thead>
             <tr>
-                <th> ID</th>
+                <th>Project ID</th>
                 <th>Project Name</th>
                 <th>Organization</th>
                 <th>Project Manager</th>
