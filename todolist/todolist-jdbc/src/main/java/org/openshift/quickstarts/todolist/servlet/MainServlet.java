@@ -58,10 +58,10 @@ public class MainServlet extends HttpServlet {
     	entry.setDescription(req.getParameter("description"));
     
         try {
-            Date startdt = new SimpleDateFormat("MM/dd/yyyy").parse(request.getParameter("startdt"));
+            Date startdt = new SimpleDateFormat("MM/dd/yyyy").parse(req.getParameter("startdt"));
             entry.setStartdt(startdt);
             
-            Date enddt = new SimpleDateFormat("MM/dd/yyyy").parse(request.getParameter("enddt"));
+            Date enddt = new SimpleDateFormat("MM/dd/yyyy").parse(req.getParameter("enddt"));
             entry.setEnddt(Enddt);
         } catch (ParseException e) {
             e.printStackTrace();
@@ -69,7 +69,7 @@ public class MainServlet extends HttpServlet {
     
     
         
-        String id = request.getParameter("id");
+        String id = req.getParameter("id");
         if(id == null || id.isEmpty())
         {
             dao.addEntry(entry);
@@ -79,9 +79,9 @@ public class MainServlet extends HttpServlet {
             entry.setId(Integer.parseInt(id));
             dao.updateProject(entry);
         }*/
-        RequestDispatcher view = request.getRequestDispatcher(LIST_PROJECT);
-        request.setAttribute("list", dao.getAllEntries());
-        view.forward(request, response);
+        RequestDispatcher view = req.getRequestDispatcher(LIST_PROJECT);
+        req.setAttribute("list", dao.getAllEntries());
+        view.forward(req, resp);
     }
    
     
@@ -89,29 +89,29 @@ public class MainServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
     	 String forward="";
-         String action = request.getParameter("action");
+         String action = req.getParameter("action");
          
          if (action.equalsIgnoreCase("delete")){
-             int projectId = Integer.parseInt(request.getParameter("projectId"));
-            // dao.deleteProject(projectId);
+             int projectId = Integer.parseInt(req.getParameter("projectId"));
+             //dao.deleteProject(projectId);
           
              forward = LIST_PROJECT;
-             request.setAttribute("list", dao.getAllEntries());  
+             req.setAttribute("list", dao.getAllEntries());  
          } else if (action.equalsIgnoreCase("edit")){
              forward = INSERT_OR_EDIT;
-             int projectId = Integer.parseInt(request.getParameter("projectId"));
+             int projectId = Integer.parseInt(req.getParameter("projectId"));
             // TodoEntry entry = dao.getProjectById(projectId);
           
-             request.setAttribute("entry", entry);
+             req.setAttribute("entry", entry);
          } else if (action.equalsIgnoreCase("listProject")){
              forward = LIST_PROJECT;
-             request.setAttribute("list", dao.getAllEntries());  
+             req.setAttribute("list", dao.getAllEntries());  
          } else {
              forward = INSERT_OR_EDIT;
          }
          
          RequestDispatcher view = request.getRequestDispatcher(forward);
-         view.forward(request, response);
+         view.forward(req, resp);
      }
 
          
