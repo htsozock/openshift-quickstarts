@@ -29,60 +29,66 @@
     
 <body>
  
- <img src="usaid_logo.png" alt="USAID Logo" style="width:128px;height:128px;">
-  <B><p>Development Information Solution (DIS)</p></B>
+ <img src="usaid_logo.png" alt="USAID Logo" style="width:228px;height:228px;">
+  <big><h1 align="right" >Development Information Solution (DIS)  </h1></big>
     <B> <h2>Edit Project</h2></B>
+    <br />
+     <br />
     <form method="POST" action='MainServlet' name="frmAddProject">
     
-        Project ID : <input type="text" readonly="readonly" name="id"  size="10" placeholder="Project ID is generated" disabled 
+        Project ID     <input type="text" readonly="readonly" name="id"  size="10"  disabled 
             value="<c:out value="${entry.id}" />" /> <br /> 
-        Project  Name : <input
+             <br />
+        Project  Name   <input
             type="text" name="name" size="50" 
-            value="<c:out value="${entry.name}" />" /> 
-        Organization : <select>
+            value="<c:out value="${entry.name}" />" /> &nbsp;
+            
+         <!--  Organization  <select>
             	<option value="South Africa" selected>South Africa</option>
   				<option value="Mali">Mali</option>
   				<option value="Afghanistan">Afghanistan</option>
  			    <option value="Egypt">Egypt</option>
 				</select>
-  
+   -->
         
-        <input
-            type="text" name="organization" size="30"
+        Organization   <input
+            type="text" name="organization" size="40"
             value="<c:out value="${entry.organization}" />" /> <br /> 
-            
-       Project Manager : <input
+            <br />
+       Project Manager <input
             type="text" name="manager" size="50"
             value="<c:out value="${entry.manager}" />" /> 
        
-       Status :
+      <!--  Status :
        
           <select>
             	<option value="Active" selected>Active</option>
   				<option value="Inactive">Inactive</option>
   				<option value="Unknown">Unknown</option>
  			 
-				</select>
+				</select> -->
        
-        <input
-            type="text" name="status" size="30"
+         Status   <input
+            type="text" name="status" size="40"
             value="<c:out value="${entry.status}" />" /> <br />    
-            
+            <br />
         Start Date : <input
-            type="text" name="startdt" size="30"
-            value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.startdt}" />" /> 
+            type="text" name="startdt" size="40"
+            value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.startdt}" />" /> &nbsp;&nbsp;
         End  Date : <input
             type="text" name="enddt" size="30"
             value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.enddt}" />" /> <br /> 
      
             
             <label for="description">Description </label>
-                     <textarea name="description" id="description"  placeholder="Full description of the project" rows="4"></textarea> 
-             <input type="text" name="description" 
-            value="<c:out value="${entry.description}" />" /> <br /> 
-            
-          <b> <button type="submit" class="btn btn-default">Save</button></b>
-                <b> <button type="reset" class="btn btn-default">Reset</button></b>
+                     <textarea name="description" id="description"  rows="4"></textarea> 
+            <%--  <input type="text" name="description" 
+            value="<c:out value="${entry.description}" />" />  --%><br /> 
+            <br /><br />
+          <b> <button type="submit" class="btn btn-default">Submit</button></b>
+                <b> <button type="reset" formaction="project.jsp">Reset</button></b>
+                 <b> <button type="submit" formaction="listProject.jsp">Return</button></b>
+                
     </form>
 
 
