@@ -15,12 +15,12 @@
 </head>
 <body>
  <B> <h1>USAID</h1></B>
- <img src="usaid_logo.png" alt="USAID Logo" style="width:128px;height:128px;">
+ <img src="usaid_logo.png" alt="USAID Logo" style="width:328px;height:328px;">  <b><p>Development Information Solution (DIS)  </p></b>
   <B><p>Development Information Solution (DIS)</p></B>
 <table style="width:100%"  border=1>
        <thead>
             <tr>
-                <th colspan=3>Action</th>
+                
                 <th> ID</th>
                 <th>Project Name</th>
                 <th>Organization</th>
@@ -28,7 +28,7 @@
                 <th>Start Date</th>
                  <th>End Date</th>
                  <th>Status</th>
-               
+               <th colspan=2>Action</th>
             </tr>
       </thead> 
         <tbody>
@@ -43,12 +43,12 @@
                     <td><c:out value="${entry.status}" /></td>
                     <td><a href="MainServlet?action=edit&projectId=<c:out value="${entry.id}"/>">Update</a></td>
                     <td><a href="MainServlet?action=delete&projectId=<c:out value="${entry.id}"/>">Delete</a></td>
-                    <td><a href="MainServlet?action=edit&projectId=<c:out value="${entry.id}"/>">Edit</a></td>
+                    
                 </tr>
             </c:forEach>
         </tbody>
     </table>
-   <b> <p><a href="MainServlet?action=insert" target="_ref">[+]Add Project</a></p></b>
+   <b> <p><a href="MainServlet?action=insert" >[+]Add Project</a></p></b>
 </body>
 </html>
 
