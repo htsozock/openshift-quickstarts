@@ -37,7 +37,7 @@
   
     <B> <h2>Edit Project</h2></B>
     <br />
-  
+  <hr size="15">
     <form method="POST" action='MainServlet' name="frmAddProject">
     
         Project ID    &nbsp;&nbsp;    <input type="text" readonly="readonly" name="id"  size="10"  disabled 
@@ -65,13 +65,12 @@
      
             
             <label for="description">Description </label>
-                     <textarea name="description" id="description"  size="40"  rows="4"></textarea> 
-            <%--  <input type="text" name="description" 
-            value="<c:out value="${entry.description}" />" />  --%><br /> 
+                     <textarea name="description" id="description"  rows="4" cols="80"></textarea> 
+     
             <br /><br />
-            <hr>
+          <hr size="15">
           <b> <button type="submit" class="btn btn-default">Submit</button></b>
-                <b> <button type="reset" formaction="/MainServlet?action=project">Reset</button>
+               <button type="reset" formaction="/MainServlet?action=project">Reset</button>
                  <button type="submit" formaction="/MainServlet?action=listProject" >Return</button>
                 
     </form>

@@ -17,9 +17,10 @@
  
     <header>
     <h1><img src="usaid_logo.png" alt="USAID Logo" style="width:400px;height:280px;">  <b><p>Development Information Solution (DIS)  </p></b></h1>
+    </header>
   
-  </header>
-  <hr>
+ <big> <h2> List of Projects</h2></big>
+ <hr size="15">
 <table style="width:90%"  border=1>
        <thead>
             <tr>
@@ -51,9 +52,9 @@
             </c:forEach>
         </tbody>
     </table>
-     <hr>
+    <hr size="15">
      <br />
-   <b> <p><a href="MainServlet?action=insert" >[+]Add Project</a></p></b>
+   <big> <p><a href="MainServlet?action=insert" >[+]Add Project</a></p></big>
 </body>
 </html>
 
