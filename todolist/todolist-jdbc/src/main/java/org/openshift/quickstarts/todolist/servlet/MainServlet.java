@@ -94,7 +94,7 @@ public class MainServlet extends HttpServlet {
          } else if (action.equalsIgnoreCase("update")){
              forward = INSERT_OR_EDIT;
              int projectId = Integer.parseInt(req.getParameter("projectId"));
-             TodoEntry entry = dao.update(projectId);
+             TodoEntry entry = dao.update(entry);
              req.setAttribute("entry", entry);   
          } else if (action.equalsIgnoreCase("listProject")){
              forward = LIST_PROJECT;
