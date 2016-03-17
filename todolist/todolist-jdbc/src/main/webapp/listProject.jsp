@@ -37,10 +37,10 @@
     <li><a href="#">Search</a></li>
     <li><a href="#">Reports</a></li>
   </ul>
-
+ </div> 
 
  <hr size="15">
-<table style="width:95%"  border=1>
+<table style="width:98%"  border=2>
        <thead>
             <tr>
                 
@@ -74,7 +74,7 @@
     </table>
     
    
-   </div> 
+  
 </body>
 </html>
 
