@@ -10,16 +10,28 @@
  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link type="text/css" rel="stylesheet" media="screen" href="resources/css/bootstrap.min.css"/>
     <link type="text/css" rel="stylesheet" media="screen" href="resources/css/bootstrap-theme.min.css"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 <title>  USAID - Development Information Solution (DIS) </title>
 </head>
 <body>
  
     <header>
-    <h1><img src="usaid_logo.png" alt="USAID Logo" style="width:400px;height:280px;">  <b><p>Development Information Solution (DIS)  </p></b></h1>
+    <h1><img src="usaid_logo.png" alt="USAID Logo" style="width:400px;height:280px;">  ></h1>
     </header>
-  
- <big> <h2> List of Projects</h2></big>
+    <div class="container">
+  <h3><b><p>Development Information Solution (DIS)  </p></b</h3>
+    <ul class="nav nav-tabs">
+    <li class="active"> <a href="<big><p><a href="MainServlet?action=listProject" >Home</a></p></big>">Projects</a></li>
+    <li><a href="#">Activities</a></li>
+    <li><a href="#">Indicators</a></li>
+    <li><a href="#">Tags</a></li>
+  </ul>
+
+
  <hr size="15">
 <table style="width:80%"  border=1>
        <thead>
@@ -53,9 +65,11 @@
             </c:forEach>
         </tbody>
     </table>
+    
     <hr size="15">
      <br />
    <big> <p><a href="MainServlet?action=insert" >[+]Add Project</a></p></big>
+   </div> 
 </body>
 </html>
 
