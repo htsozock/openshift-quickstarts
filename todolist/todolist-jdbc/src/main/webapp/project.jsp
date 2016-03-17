@@ -42,38 +42,23 @@
   <hr size="15">
     <form method="POST" action='MainServlet' name="frmAddProject">
     
-           Project ID    &nbsp;&nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text" readonly="readonly" name="id"  size="10"  disabled 
-            value="<c:out value="${entry.id}" />" /> <br /> 
+         Project ID    &nbsp;&nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text" readonly="readonly" name="id"  size="10"  disabled  value="<c:out value="${entry.id}" />" /> <br /> 
              <br />
-         Project  Name &nbsp;&nbsp; &nbsp;&nbsp;  <input       type="text" name="name" size="50" 
-            value="<c:out value="${entry.name}" />" /> &nbsp;
-         Organization   <input
-            type="text" name="organization" size="40"
-            value="<c:out value="${entry.organization}" />" /> <br /> 
+         Project  Name &nbsp;&nbsp; &nbsp;&nbsp;  <input       type="text" name="name" size="50"        value="<c:out value="${entry.name}" />" /> &nbsp;&nbsp;
+         Organization   <input        type="text" name="organization" size="40"      value="<c:out value="${entry.organization}" />" /> <br /> 
             <br />
-         Project Manager  <input      type="text" name="manager" size="50"
-                    value="<c:out value="${entry.manager}" />" /> 
-                   
-            Status   &nbsp;&nbsp;&nbsp;&nbsp; <input
-            type="text" name="status" size="40"
-            value="<c:out value="${entry.status}" />" /> <br />    
+         Project Manager  <input   type="text" name="manager" size="50"  value="<c:out value="${entry.manager}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;
+         Status   &nbsp;&nbsp;&nbsp;&nbsp; <input   type="text" name="status" size="40"  value="<c:out value="${entry.status}" />" /> <br />    
             <br />
-            Start Date   &nbsp;&nbsp;&nbsp;&nbsp; <input
-            type="text" name="startdt" size="40"
-            value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.startdt}" />" /> &nbsp;&nbsp;
-            End  Date  &nbsp;&nbsp;&nbsp;&nbsp;   <input
-            type="text" name="enddt" size="40"
-            value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.enddt}" />" /> <br /> 
-     
-            <br /> <br /> 
-            Description
-                     <textarea name="description" id="description"  rows="4" cols="95"></textarea> 
-     
-            <br /><br />
+         Start Date   &nbsp;&nbsp;&nbsp;&nbsp; <input   type="text" name="startdt" size="40"  value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.startdt}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;
+         End  Date    &nbsp;&nbsp;&nbsp;&nbsp;  <input    type="text" name="enddt" size="40"  value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.enddt}" />" /> <br /> 
+           <br /> <br /> 
+         Description
+          <textarea name="description" id="description"  rows="4" cols="95"></textarea> 
+          <br /><br />
           <hr size="15">
           <b> <button type="submit" class="btn btn-default">Save</button></b>
-          
-                
+                    
                 
     </form>
 
