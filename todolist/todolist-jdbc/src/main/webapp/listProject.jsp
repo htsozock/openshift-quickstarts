@@ -21,7 +21,7 @@
   
  <big> <h2> List of Projects</h2></big>
  <hr size="15">
-<table style="width:90%"  border=1>
+<table style="width:80%"  border=1>
        <thead>
             <tr>
                 
@@ -32,7 +32,7 @@
                 <th>Start Date</th>
                  <th>End Date</th>
                  <th>Status</th>
-               <th colspan=2>Action</th>
+               <th colspan=3>Action</th>
             </tr>
       </thead> 
         <tbody>
@@ -47,7 +47,7 @@
                     <td><c:out value="${entry.status}" /></td>
                     <td><a href="MainServlet?action=edit&projectId=<c:out value="${entry.id}"/>">Update</a></td>
                     <td><a href="MainServlet?action=delete&projectId=<c:out value="${entry.id}"/>">Delete</a></td>
-                    
+                     <td><a href="MainServlet?action=edit&projectId=<c:out value="${entry.id}"/>">Edit</a></td>
                 </tr>
             </c:forEach>
         </tbody>
