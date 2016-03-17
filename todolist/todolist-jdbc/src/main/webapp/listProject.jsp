@@ -45,7 +45,7 @@
                     <td><fmt:formatDate pattern="dd-MMM-yyyy" value="${entry.startdt}" /></td>
                     <td><fmt:formatDate pattern="dd-MMM-yyyy" value="${entry.enddt}" /></td>
                     <td><c:out value="${entry.status}" /></td>
-                    <td><a href="MainServlet?action=update&projectId=<c:out value="${entry.id}"/>">Update</a></td>
+                 
                     <td><a href="MainServlet?action=delete&projectId=<c:out value="${entry.id}"/>">Delete</a></td>
                      <td><a href="MainServlet?action=edit&projectId=<c:out value="${entry.id}"/>">Edit</a></td>
                 </tr>

@@ -91,11 +91,11 @@ public class MainServlet extends HttpServlet {
              int projectId = Integer.parseInt(req.getParameter("projectId"));
              TodoEntry entry = dao.get(projectId);
              req.setAttribute("entry", entry);
-         } else if (action.equalsIgnoreCase("update")){
+        /* } else if (action.equalsIgnoreCase("update")){
              forward = INSERT_OR_EDIT;
              int projectId = Integer.parseInt(req.getParameter("projectId"));
              TodoEntry entry = dao.update(entry);
-             req.setAttribute("entry", entry);   
+             req.setAttribute("entry", entry);   */
          } else if (action.equalsIgnoreCase("listProject")){
              forward = LIST_PROJECT;
              req.setAttribute("list", dao.getAllEntries());  
