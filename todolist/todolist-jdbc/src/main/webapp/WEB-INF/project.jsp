@@ -29,9 +29,13 @@
     
 <body>
  
- <img src="usaid_logo.png" alt="USAID Logo" style="width:128px;height:128px;">
-  <B><p>Development Information Solution (DIS)</p></B>
-    <B> <h2>Edit Project</h2></B>
+   <header>
+    <h1><img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">  </h1>
+    </header>
+    <b> <h3><b><p>Development Information Solution (DIS)  </p></b</h3> </b>
+      <hr size="15">
+ 
+    <B> <h2>Add Project</h2></B>
     <form method="POST" action='MainServlet' name="frmAddProject">
     
         Project ID : <input type="text" readonly="readonly" name="id"  size="10" placeholder="Project ID is generated" disabled 

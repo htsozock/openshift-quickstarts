@@ -1,0 +1,9 @@
+.container { width: 1000px; }
+.logo { 
+  float: left; 
+  width: 300px;
+}
+.nav { 
+  float: right; 
+  width: 600px;
+}

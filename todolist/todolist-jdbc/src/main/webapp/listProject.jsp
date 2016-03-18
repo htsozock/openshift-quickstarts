@@ -8,12 +8,12 @@
 <html>
 <head>
  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<!--     <link type="text/css" rel="stylesheet" media="screen" href="resources/css/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" media="screen" href="resources/css/bootstrap.min.css"/>
     <link type="text/css" rel="stylesheet" media="screen" href="resources/css/bootstrap-theme.min.css"/>
  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
   
  <link href="//assets.cms.gov/Resources/libs/jquery-ui/1.10.3/css/jquery-ui.css" rel="stylesheet">
 <link href="//assets.cms.gov/resources/libs/bootstrap/2.2.2/css/bootstrap.css" rel="stylesheet">
@@ -23,6 +23,12 @@
 <link href="/resources/2.0/framework/css/style.css" rel="stylesheet">
 <link rel="stylesheet" href="//assets.cms.gov/resources/global/css/buttons-2.0.css" />
 <link rel="stylesheet" href="//assets.cms.gov/resources/libs/datepicker/v6/css/datepicker.css" />
+<link rel="stylesheet" href="//assets.cms.gov/resources/libs/datatables/1.9.1/css/datatables.css" />
+<script src="//assets.cms.gov/resources/libs/datatables/1.9.1/js/datatableinitiate.js" ></script>
+<link href="//assets.cms.gov/resources/libs/formvalidator/2.0/css/formvalidator.css" />
+<script src="//assets.cms.gov/resources/libs/formvalidator/2.0/js/formvalidatorconfig.js"></script>	
+<script src="//assets.cms.gov/resources/libs/formvalidator/2.0/js/formvalidator.js"></script>
+<link href="//assets.cms.gov/resources/libs/sharewidget/2.0/css/sharewidget-2.0.css" rel="stylesheet" />
 
 
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -42,18 +48,21 @@
 <title>  USAID - Development Information Solution (DIS) </title>
 </head>
 <body>
- 
-    <header>
-    <h1><img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">  </h1>
-    </header>
-    <<b> <h1><b><p>Development Information Solution (DIS)  </p></b</h1> </b>
+
+<div id="header">
+   <img  class="left src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">  
+    <b> <h3><b><p>Development Information Solution (DIS)  </p></b</h3> </b>
+ </div>
+    
       <hr size="15">
-     <br />
-  <h3 align="right"><big> <p><a href="MainServlet?action=insert" >[+]Add Project</a></p></big></h3> 
-    <div class="container">
+  <b>> <a href="#" id="508addthis" class="share_link">Share</a></b
+  
+  <h3 align="justify"> <p><a href="MainServlet?action=insert" >[+]Add Project</a></p></h3> 
+    <!-- <div class="container"> -->
+   <div id="tabs">
+  <ul>
  
- 
-    <ul class="nav nav-tabs">
+   <!--  <ul class="nav nav-tabs"> -->
     <li class="active" <a href="MainServlet?action=listProject" >Projects</a></li>
     <li><a href="#">Activities</a></li>
     <li><a href="#">Indicators</a></li>
@@ -63,21 +72,38 @@
   </ul>
  </div> 
 
+
+
  <hr size="15">
-<table style="width:90%"  border=2>
+<table style="width:90%"  border=1 align="center" frame="box" id="Projects List">
+ <caption>Projects List</caption>
        <thead>
             <tr>
                 
-                <th> ID</th>
-                <th>Project Name</th>
-                <th>Organization</th>
-                <th>Project Manager</th>
-                <th>Start Date</th>
-                 <th>End Date</th>
-                 <th>Status</th>
-               <th colspan=3>Action</th>
+                <th scope="col"> ID</th>
+                <th scope="col">Project Name</th>
+                <th scope="col">Organization</th>
+                <th scope="col">Project Manager</th>
+                <th scope="col">Start Date</th>
+                <th scope="col"> End Date</th>
+                <th scope="col">Status</th>
+               <th scope="col" colspan=3>Action</th>
             </tr>
       </thead> 
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
         <tbody>
             <c:forEach items="${list}" var="entry">
                 <tr>
