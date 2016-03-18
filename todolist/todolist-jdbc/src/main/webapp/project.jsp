@@ -12,7 +12,7 @@
  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <link type="text/css" rel="stylesheet" media="screen" href="../resources/css/bootstrap.min.css"/>
    <link type="text/css" rel="stylesheet" media="screen" href="../resources/css/bootstrap-theme.min.css"/>
-     <link type="text/css" rel="stylesheet" media="screen" href="../resources/css/container.css"/>
+     <link type="text/css" rel="stylesheet" media="screen" href="resources/css/container.css"/>
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <link rel="stylesheet" href="/resources/demos/style.css">
@@ -88,12 +88,13 @@
        <br> <br>
         <div class="form-group">
               <label class="col-sm-2 control-label" for="startdt">Start Date</label>
-         <input type="text" class="form-control"  title ="Enter Project start date .."  id="startdt" name="startdt" value="<fmt:formatDate pattern="MM/dd/yyyy"  />
-        
+         <input type="text"    name="startdt" value="<fmt:formatDate pattern="MM/dd/yyyy"  />
+      
         </div>  
         
+        
         <div class="form-group">
-              <label class="col-sm-2 control-label" for="startdt">End Date</label>
+              <label class="col-sm-2 control-label" for="enddt">End Date</label>
          <input type="text" class="form-control"  title ="Enter Project end  date .."  id="enddt" name="enddt" value="<fmt:formatDate pattern="MM/dd/yyyy"  />
          </div>  
              <br /> <br /> 

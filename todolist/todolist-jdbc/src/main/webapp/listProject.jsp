@@ -20,6 +20,7 @@
 <link href="//assets.cms.gov/resources/libs/bootstrap/2.2.2/css/bootstrap-responsive.css" rel="stylesheet">
 <link href="//assets.cms.gov/resources/libs/glyphicons/3.0/css/glyphicon.css" rel="stylesheet">
 <link href="//assets.cms.gov/resources/libs/font-awesome/3.0.2/css/symbol.css" rel="stylesheet">
+     <link type="text/css" rel="stylesheet" media="screen" href="resources/css/container.css"/>
 <link href="/resources/2.0/framework/css/style.css" rel="stylesheet">
 <link rel="stylesheet" href="//assets.cms.gov/resources/global/css/buttons-2.0.css" />
 <link rel="stylesheet" href="//assets.cms.gov/resources/libs/datepicker/v6/css/datepicker.css" />
@@ -49,8 +50,8 @@
 </head>
 <body>
 
-<div id="header">
-   <img  class="left src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">  
+<div id="container">
+   <img  class="left src="usaid_logo.png" alt=" Development Information Solution (DIS)" style="width:440px;height:220px;">  
     <b> <h3><b><p>Development Information Solution (DIS)  </p></b</h3> </b>
  </div>
     
