@@ -59,49 +59,33 @@
     <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
   
-    <form method="POST" action='MainServlet' name="frmAddProject" role="form">
-        
-         <div class="form-group">
-           <label class="col-sm-2 control-label" for="id">Project ID </label>
-              <input type="text" readonly="readonly" name="id"  id="id"  class="form-control"   disabled  /> <br /> 
-          </div>
-             <br />
-        <div class="form-group">
-         <label class="col-sm-2 control-label" for="name">Project Name </label>
-          <input type="text" name="name" id="name" class="form-control"  title ="Enter project name" >
-         </div>
-       <div class="form-group">
-         <label class="col-sm-2 control-label" for="organization"> Organization </label>
-        <input type="text" name="organization" id="organization" class="form-control"  title ="Enter project organization.." ><br />
-        </div>
-        <br />
-        <div class="form-group">
-        <label class="col-sm-2 control-label" for="organization"> Project Manager </label>
-        <input type="text" name="manager" id="manager" class="form-control"  title ="Enter project manager.." ><br />
-        </div>  
-         <div class="form-group">
-         <select name="status">
-        <option value="Active">Active</option>
-         <option value="Inactive">Inactive</option>
-        <option value="Unknown">Unknown</option>
+   <form method="POST" action='MainServlet' name="frmAddProject">
     
-           </select>
-        </div>
-       <br> <br>
-        Start Date <input    type="text" name="enddt" size="40"  value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.enddt}" />" />  
+         Project ID    &nbsp;&nbsp;  &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text" readonly="readonly" name="id"  size="10"  disabled  value="<c:out value="${entry.id}" />" /> <br /> 
+             <br />
+         Project  Name &nbsp;&nbsp; &nbsp;&nbsp;  <input       type="text" name="name" size="40"  title="Enter the project name..."      value="<c:out value="${entry.name}" />" /> &nbsp;&nbsp;
         
-        End Date <input    type="text" name="enddt" size="40"  value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.enddt}" />" /> <br  
-             <br /> <br /> 
+    
         
-         <div class="form-group">
-              <label class="col-sm-2 control-label" for="description">Description</label>
-             <textarea name="description" id="description"  class="form-control"  rows="4" cols="95"></textarea> 
+         Organization  &nbsp; <input        type="text" name="organization" size="40"      value="<c:out value="${entry.organization}" />" /> <br /> 
+            <br />
+         Project Manager &nbsp; <input   type="text" name="manager" size="50"  value="<c:out value="${entry.manager}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;
+         Status  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input   type="text" name="status" size="40"  value="<c:out value="${entry.status}" />" /> <br />    
+            <br />
+        
+         <label for="startdt">Start Date</label>
+         <input type="text" class="span5" id="startdt" name="startdt" value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.startdt}" />"  maxlength="10" aria-describedby="Projec start date" />
+        
+        
+         Start Date    &nbsp;&nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input   type="text" name="startdt" size="50"  value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.startdt}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+         End  Date     &nbsp;&nbsp;&nbsp; &nbsp;  <input    type="text" name="enddt" size="40"  value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.enddt}" />" /> <br /> 
+           <br /> <br /> 
+         Description &nbsp;&nbsp; &nbsp; &nbsp;     <textarea name="description" id="description"  rows="4" cols="95"></textarea> 
           <br /><br />
-          
-          
-  
+          <hr size="15">
+        <!--   <b> <button type="submit" class="btn btn-default">Save</button></b> -->
              <button type="submit"  class="btn app_button">SAVE &amp; CONTINUE</button>         
-                 <b> <button type="reset" class="btn btn-default">Reset</button></b>
+                
     </form>
 
 
