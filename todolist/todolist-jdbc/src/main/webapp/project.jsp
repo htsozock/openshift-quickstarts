@@ -6,14 +6,22 @@
 <html>
 <head>
  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link type="text/css"   href="css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="stylesheet" />
+<!-- <link type="text/css"   href="css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="stylesheet" />
  <link type="text/css" rel="stylesheet" media="screen" href="resources/css/bootstrap.min.css"/>
  <link type="text/css" rel="stylesheet" media="screen" href="resources/css/bootstrap-theme.min.css"/>
  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  <link rel="stylesheet" href="/resources/demos/style.css">
+  <link rel="stylesheet" href="/resources/demos/style.css"> -->
   
+  <link href="//assets.cms.gov/Resources/libs/jquery-ui/1.10.3/css/jquery-ui.css" rel="stylesheet">
+<link href="//assets.cms.gov/resources/libs/bootstrap/2.2.2/css/bootstrap.css" rel="stylesheet">
+<link href="//assets.cms.gov/resources/libs/bootstrap/2.2.2/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="//assets.cms.gov/resources/libs/glyphicons/3.0/css/glyphicon.css" rel="stylesheet">
+<link href="//assets.cms.gov/resources/libs/font-awesome/3.0.2/css/symbol.css" rel="stylesheet">
+<link href="/resources/2.0/framework/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="//assets.cms.gov/resources/global/css/buttons-2.0.css" />
+<link rel="stylesheet" href="//assets.cms.gov/resources/libs/datepicker/v6/css/datepicker.css" />
   
 <title>  USAID - Development Information Solution (DIS) </title>
 
@@ -50,14 +58,19 @@
          Project Manager &nbsp; <input   type="text" name="manager" size="50"  value="<c:out value="${entry.manager}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;
          Status  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input   type="text" name="status" size="40"  value="<c:out value="${entry.status}" />" /> <br />    
             <br />
-         Start Date    &nbsp;&nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input   type="text" name="startdt" size="50"  value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.startdt}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+         <label for="startdt">Start Date</label>
+         <input type="text" class="span5" id="startdt" name="startdt" value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.startdt}" />"  maxlength="10" aria-describedby="Projec start date" />
+        
+        
+       <%--   Start Date    &nbsp;&nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input   type="text" name="startdt" size="50"  value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.startdt}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --%>
          End  Date     &nbsp;&nbsp;&nbsp; &nbsp;  <input    type="text" name="enddt" size="40"  value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.enddt}" />" /> <br /> 
            <br /> <br /> 
          Description &nbsp;&nbsp; &nbsp; &nbsp;     <textarea name="description" id="description"  rows="4" cols="95"></textarea> 
           <br /><br />
           <hr size="15">
-          <b> <button type="submit" class="btn btn-default">Save</button></b>
-                    
+        <!--   <b> <button type="submit" class="btn btn-default">Save</button></b> -->
+             <button type="submit"  class="btn app_button">SAVE &amp; CONTINUE</button>         
                 
     </form>
 
