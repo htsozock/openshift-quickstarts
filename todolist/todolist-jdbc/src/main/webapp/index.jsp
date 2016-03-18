@@ -9,15 +9,15 @@
 < <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link type="text/css" rel="stylesheet" media="screen" href="resources/css/bootstrap.min.css"/>
     <link type="text/css" rel="stylesheet" media="screen" href="resources/css/bootstrap-theme.min.css"/>
-     <link type="text/css" rel="stylesheet" media="screen" href="resources/css/container.css"/>
+     
 
 <title>  USAID - Development Information Solution (DIS) </title>
 </head>
 <body>
  <B> <h1>USAID</h1></B>
- <div id="container">
+ <div id="left">
    <img  class="left" src="usaid_logo.png" alt=" Development Information Solution (DIS)" style="width:440px;height:220px;">  
-   <b><img  class="center" src="usaid_logo3.png" alt=" Development Information Solution (DIS)" style="width:440px;height:220px;">  </b>
+ 
  </div>
    
    <jsp:forward page="/MainServlet?action=listProject" />
