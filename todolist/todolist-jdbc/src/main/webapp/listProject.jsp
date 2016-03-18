@@ -51,19 +51,18 @@
 <body>
 
 <div id="container">
-   <img  class="left src="usaid_logo.png" alt=" Development Information Solution (DIS)" style="width:440px;height:220px;">  
+   <img  class="left" src="usaid_logo.png" alt=" Development Information Solution (DIS)" style="width:440px;height:220px;">  
     <b> <h3><b><p>Development Information Solution (DIS)  </p></b</h3> </b>
  </div>
     
       <hr size="15">
-  <b>> <a href="#" id="508addthis" class="share_link">Share</a></b
   
-  <h3 align="justify"> <p><a href="MainServlet?action=insert" >[+]Add Project</a></p></h3> 
-    <!-- <div class="container"> -->
-   <div id="tabs">
-  <ul>
+  <h3 align="right"> <p><a href="MainServlet?action=insert" >[+]Add Project</a></p></h3> 
+   < <div class="container"> 
+  
  
-   <!--  <ul class="nav nav-tabs"> -->
+ 
+  <ul class="nav nav-tabs">
     <li class="active" <a href="MainServlet?action=listProject" >Projects</a></li>
     <li><a href="#">Activities</a></li>
     <li><a href="#">Indicators</a></li>

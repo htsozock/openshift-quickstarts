@@ -86,12 +86,7 @@
            </select>
         </div>
        <br> <br>
-        <div class="form-group">
-              <label class="col-sm-2 control-label" for="startdt">Start Date</label>
-         <input type="text"    name="startdt" value="<fmt:formatDate pattern="MM/dd/yyyy"  />
-      
-        </div>  
-        
+        Start Date <input    type="text" name="enddt" size="40"  value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.enddt}" />" />  
         
         <div class="form-group">
               <label class="col-sm-2 control-label" for="enddt">End Date</label>
