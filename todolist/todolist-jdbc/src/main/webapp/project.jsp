@@ -33,6 +33,8 @@
 <title>  USAID - Development Information Solution (DIS) </title>
 
 <div id="container" style="text-align: left;"> <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;"></div>
+<div id="container" style="text-align: center;"> <img src="usaid_logo5.png" alt="USAID Logo"  alt=" Development Information Solution (DIS)" style="width:440px;height:220px;"></div>
+
  <script>
         $(function() {
             $('input[name=startdt]').datepicker();

@@ -17,7 +17,7 @@
  <B> <h1>USAID</h1></B>
  <div id="left">
    <img  class="left" src="usaid_logo.png" alt=" Development Information Solution (DIS)" style="width:440px;height:220px;">  
- 
+  
  </div>
    
    <jsp:forward page="/MainServlet?action=listProject" />
