@@ -88,10 +88,7 @@
        <br> <br>
         Start Date <input    type="text" name="enddt" size="40"  value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.enddt}" />" />  
         
-        <div class="form-group">
-              <label class="col-sm-2 control-label" for="enddt">End Date</label>
-         <input type="text" class="form-control"  title ="Enter Project end  date .."  id="enddt" name="enddt" value="<fmt:formatDate pattern="MM/dd/yyyy"  />
-         </div>  
+        End Date <input    type="text" name="enddt" size="40"  value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.enddt}" />" /> <br  
              <br /> <br /> 
         
          <div class="form-group">
