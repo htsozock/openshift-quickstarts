@@ -51,11 +51,10 @@
  </head>
 <body>
  
-  <h5 align="right"> <p><a href="MainServlet?action=insert" >[+]Add Project</a></p></h5> 
- 
    <div class="container" align ="left"> 
-     <h3>  USAID - Development Information Solution (DIS) </h3>
+     <h3>  USAID - Development Information Solution (DIS) </h3><
       <hr size="15">
+      
     <ul class="nav nav-tabs">
    <li class="active" <a href="MainServlet?action=listProject" >Projects</a></li>
     <li><a href="#">Activities</a></li>
@@ -67,7 +66,7 @@
      <br>
   
 <table style="width:98%"  border=1 align="center" frame="box" id="Projects List"  >
-<big> <h3>Projects List</h3>h3></big>
+<big> <h3>Projects List</h3></big>
        <thead>
             <tr>
                 <th scope="col"> ID</th>
@@ -100,11 +99,13 @@
         </tbody>
     </table>
   
+    <h5 align="left"> <p><a href="MainServlet?action=insert" >[+]Add Project</a></p></h5> 
+   </div>   
  <script src="//assets.cms.gov/resources/libs/jquery/1.8.2/js/jquery-1.8.2.js" type="text/javascript" />
 <script src="//assets.cms.gov/resources/libs/jquery-ui/1.9.1/js/jquery-ui-1.9.1.js" type="text/javascript" />
 <script src="//assets.cms.gov/resources/libs/bootstrap/2.1.1/js/bootstrap.js" type="text/javascript" />
 <script src="//assets.cms.gov/resources/libs/hcmode-detection/js/hcmode-detection.js" type="text/javascript" />
-  </div>   
+   
   
 </body>
 </html>

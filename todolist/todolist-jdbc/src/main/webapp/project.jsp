@@ -16,14 +16,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
   
- <link href="//assets.cms.gov/Resources/libs/jquery-ui/1.10.3/css/jquery-ui.css" rel="stylesheet">
+<!--  <link href="//assets.cms.gov/Resources/libs/jquery-ui/1.10.3/css/jquery-ui.css" rel="stylesheet">
 <link href="//assets.cms.gov/resources/libs/bootstrap/2.2.2/css/bootstrap.css" rel="stylesheet">
 <link href="//assets.cms.gov/resources/libs/bootstrap/2.2.2/css/bootstrap-responsive.css" rel="stylesheet">
 <link href="//assets.cms.gov/resources/libs/glyphicons/3.0/css/glyphicon.css" rel="stylesheet">
 <link href="//assets.cms.gov/resources/libs/font-awesome/3.0.2/css/symbol.css" rel="stylesheet">
 
 <link href="/resources/2.0/framework/css/style.css" rel="stylesheet">
-<!-- <link rel="stylesheet" href="//assets.cms.gov/resources/global/css/buttons-2.0.css" />
+<link rel="stylesheet" href="//assets.cms.gov/resources/global/css/buttons-2.0.css" />
 <link rel="stylesheet" href="//assets.cms.gov/resources/libs/datepicker/v6/css/datepicker.css" />
 <link rel="stylesheet" href="//assets.cms.gov/resources/libs/datatables/1.9.1/css/datatables.css" />
 <script src="//assets.cms.gov/resources/libs/datatables/1.9.1/js/datatableinitiate.js" ></script>
@@ -33,9 +33,7 @@
 <link href="//assets.cms.gov/resources/libs/sharewidget/2.0/css/sharewidget-2.0.css" rel="stylesheet" /> -->
   <title>  USAID - Development Information Solution (DIS) </title>
  <script>
- <div id="container" style="text-align: left;">
- <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">
-  </div>
+ 
         $(function() {
             $('input[name=startdt]').datepicker();
             $('input[name=enddt]').datepicker();
@@ -44,11 +42,13 @@
 </head>   
     
 <body>
-<div id="container" style="text-align: left;"><h2>  USAID - Development Information Solution (DIS) </h2>  </div>
+
+<div id="container" style="text-align: left;">
+ <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">
+  <h2>  USAID - Development Information Solution (DIS) </h2>  
   <h4>Add Project</h4><
        <br />
-        <big><p><a href="MainServlet?action=listProject" >HOME</a></p></big>
-         
+               
    <form method="POST" action='MainServlet' name="frmAddProject">
     
         Project ID     &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text" readonly="readonly" name="id"  size="10"  disabled  value="<c:out value="${entry.id}" />" /> <br /> 
@@ -73,7 +73,8 @@
                 
     </form>
     
-    
+     <big><p><a href="MainServlet?action=listProject" >HOME</a></p></big> 
+     </div>
     
 </body>
 </html>
