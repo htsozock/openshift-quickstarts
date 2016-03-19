@@ -47,10 +47,14 @@
   <![endif]-->
    <div id="container" style="text-align: left;">
   <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">
-  <</div>
+   <div id="container" style="text-align: center;">
+    <big> <h1>Development Information Solution (DIS)</h1></big>
+  </div>
+      <big> <h1>Development Information Solution (DIS 2)</h1></big>
+ </div>
 <div id="container" style="text-align: center;">
-  <p>Development Information Solution (DIS)</p>p>
-  <</div>
+ <big> <h1>Development Information Solution (DIS)1</h1></big>
+  </div>
 
 </head>
 <body>
@@ -75,12 +79,15 @@ cellpadding="5" cellspacing="1"
    </ul>
   </div> 
 <!--  <hr size="15"> -->
-<form> <input type="text" name="searchstring" size=30 placeholder="search">
-   <input type="button" value="Search"></form>
-   
-  </h3>
 
-<table style="width:90%"  border=1 align="center" frame="box" id="Projects List" cellpadding="3" cellspacing="1" >
+ 
+  <form action="listProject.jsp">
+  Search Project:
+  <input type="search" name="projectsearch">
+  <input type="submit">
+</form>
+
+<table style="width:90%"  border=1 align="center" frame="box" id="Projects List"  >
 <big> <caption>Projects List</caption></big>
        <thead>
             <tr>

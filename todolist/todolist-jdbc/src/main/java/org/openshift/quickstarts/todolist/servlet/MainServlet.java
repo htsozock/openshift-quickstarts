@@ -17,6 +17,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import javax.servlet.RequestDispatcher;
 
+import java.util.Date; 
+
 
 import org.openshift.quickstarts.todolist.dao.JdbcTodoListDAO;
 import org.openshift.quickstarts.todolist.dao.TodoListDAO;

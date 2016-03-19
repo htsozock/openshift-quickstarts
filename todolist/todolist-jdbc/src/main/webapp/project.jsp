@@ -23,15 +23,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   
-  <link href="//assets.cms.gov/Resources/libs/jquery-ui/1.10.3/css/jquery-ui.css" rel="stylesheet">
+<!--   <link href="//assets.cms.gov/Resources/libs/jquery-ui/1.10.3/css/jquery-ui.css" rel="stylesheet">
 <link href="//assets.cms.gov/resources/libs/bootstrap/2.2.2/css/bootstrap.css" rel="stylesheet">
 <link href="//assets.cms.gov/resources/libs/bootstrap/2.2.2/css/bootstrap-responsive.css" rel="stylesheet">
 <link href="//assets.cms.gov/resources/libs/glyphicons/3.0/css/glyphicon.css" rel="stylesheet">
 <link href="//assets.cms.gov/resources/libs/font-awesome/3.0.2/css/symbol.css" rel="stylesheet">
 <link href="/resources/2.0/framework/css/style.css" rel="stylesheet">
 <link rel="stylesheet" href="//assets.cms.gov/resources/global/css/buttons-2.0.css" />
-<!-- <link rel="stylesheet" href="//assets.cms.gov/resources/libs/datepicker/v6/css/datepicker.css" /> -->
-  <link href="//assets.cms.gov/resources/libs/sharewidget/2.0/css/sharewidget-2.0.css" rel="stylesheet" />
+<link rel="stylesheet" href="//assets.cms.gov/resources/libs/datepicker/v6/css/datepicker.css" />
+  <link href="//assets.cms.gov/resources/libs/sharewidget/2.0/css/sharewidget-2.0.css" rel="stylesheet" /> -->
   
 <title>  USAID - Development Information Solution (DIS) </title>
 
@@ -45,18 +45,18 @@
         });
     </script>
     
+    <div id="container" style="text-align: left >
+ <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;"></div>
+</div>
+  <div id="container" style="text-align: center >
+ <big> <h1> Development Information Solution (DIS)</h1></head><big>
+</div>
+    
  </head>   
     
 <body>
 
- <div id="header" style="text-align: left >
- <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;"></div>
-</div>
-  <div id="header" style="text-align: center >
-  <h1> Development Information Solution (DIS)</h1>
-</div>
-      <!-- <hr size="15"> -->
-      <B> <h2>Add Project</h2></B>
+         <B> <h2>Add Project</h2></B>
        <br />
         <big><p><a href="MainServlet?action=listProject" >HOME</a></p></big>
         
@@ -66,26 +66,25 @@
   
    <form method="POST" action='MainServlet' name="frmAddProject">
     
-         Project ID :  <input type="text" readonly="readonly" name="id"  size="10"  disabled  value="<c:out value="${entry.id}" />" /> &nbsp;&nbsp; &nbsp;&nbsp;
-          
-         Project  Name : &nbsp;&nbsp; &nbsp;&nbsp;  <input       type="text" name="name" size="40"  title="Enter the project name..."      value="<c:out value="${entry.name}" />" /> &nbsp;&nbsp;
+        Project ID    &nbsp;&nbsp;  &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text" readonly="readonly" name="id"  size="10"  disabled  value="<c:out value="${entry.id}" />" /> <br /> 
+             <br />
+         Project  Name &nbsp;&nbsp; &nbsp;&nbsp;  <input       type="text" name="name" size="40"  title="Enter the project name..."      value="<c:out value="${entry.name}" />" /> &nbsp;&nbsp;
                 
-         Organization :  <input   type="text" name="organization" size="40"      value="<c:out value="${entry.organization}" />" /> <br /> 
+         Organization  &nbsp; <input        type="text" name="organization" size="40"      value="<c:out value="${entry.organization}" />" /> <br /> 
+            <br />
+         Project Manager &nbsp; <input   type="text" name="manager" size="50"  value="<c:out value="${entry.manager}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;
+         Status  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input   type="text" name="status" size="40"  value="<c:out value="${entry.status}" />" /> <br />    
+            <br />
          
-         Project Manager : &nbsp; <input   type="text" name="manager" size="50"  value="<c:out value="${entry.manager}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;
-         
-         Status : &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input   type="text" name="status" size="40"  value="<c:out value="${entry.status}" />" /> <br />    
-        
-         Start Date :   <input   type="text" name="startdt" size="50"  value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.startdt}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-         
-         End  Date  :     &nbsp;&nbsp;&nbsp; &nbsp;  <input    type="text" name="enddt" size="40"  value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.enddt}" />" /> <br /> 
+         Start Date    &nbsp;&nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input   type="text" name="startdt" size="50"  value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.startdt}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+         End  Date     &nbsp;&nbsp;&nbsp; &nbsp;  <input    type="text" name="enddt" size="40"  value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.enddt}" />" /> <br /> 
            <br /> <br /> 
-        
-         Description :  &nbsp;&nbsp; &nbsp; &nbsp;     <textarea name="description"  rows="4" cols="95"></textarea> 
-          <br /><br />
+         Description &nbsp;&nbsp; &nbsp; &nbsp;     <textarea name="description" id="description"  rows="4" cols="95"></textarea> 
+   
+          
           <hr size="15">
-        <!--   <b> <button type="submit" class="btn btn-default">Save</button></b> -->
-             <button type="submit"  class="btn app_button">SAVE &amp; CONTINUE</button>         
+         <b> <button type="submit" class="btn btn-default">Save</button></b>
+          <!--    <button type="submit"  class="btn app_button">SAVE &amp; CONTINUE</button>    -->      
                 
     </form>
     
