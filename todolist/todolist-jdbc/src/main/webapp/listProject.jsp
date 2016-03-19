@@ -52,7 +52,7 @@
 <body>
  
    <div class="container" align ="left"> 
-     <h3>  USAID - Development Information Solution (DIS) </h3><
+     <h3>  USAID - Development Information Solution (DIS) </h3>
       <hr size="15">
       
     <ul class="nav nav-tabs">
