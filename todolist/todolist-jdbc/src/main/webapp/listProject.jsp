@@ -47,32 +47,26 @@
   <![endif]-->
    <div id="container" style="text-align: left;">
   <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">
-   <div id="container" style="text-align: top;">
-    <big> <h1>Development Information Solution (DIS)</h1></big>
-  </div>
+  
+   </div>
  </head>
 <body>
 
  
   <h5 align="right"> <p><a href="MainServlet?action=insert" >[+]Add Project</a></p></h5> 
+ 
    <div class="container" align ="left"> 
+     <h3>Projects List</h3>
     <ul class="nav nav-tabs">
-   <big> <li class="active" <a href="MainServlet?action=listProject" >Projects</a></li>
+   <li class="active" <a href="MainServlet?action=listProject" >Projects</a></li>
     <li><a href="#">Activities</a></li>
     <li><a href="#">Indicators</a></li>
     <li><a href="#">Tags</a></li>
     <li><a href="#">Search</a></li>
-    <li><a href="#">Reports</a></li></big>
+    <li><a href="#">Reports</a></li>
    </ul>
-  </div> 
- <hr size="15"> 
- 
-  <form action="listProject.jsp">
-  Search :
-  <input type="search" name="projectsearch">
-  <input type="submit">
-</form>
-
+     <br>
+  
 <table style="width:90%"  border=1 align="center" frame="box" id="Projects List"  >
 <big> <caption>Projects List</caption></big>
        <thead>
@@ -112,7 +106,7 @@
 <script src="//assets.cms.gov/resources/libs/jquery-ui/1.9.1/js/jquery-ui-1.9.1.js" type="text/javascript" />
 <script src="//assets.cms.gov/resources/libs/bootstrap/2.1.1/js/bootstrap.js" type="text/javascript" />
 <script src="//assets.cms.gov/resources/libs/hcmode-detection/js/hcmode-detection.js" type="text/javascript" />
-   
+  </div>   
   
 </body>
 </html>

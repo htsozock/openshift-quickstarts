@@ -8,6 +8,7 @@
 <html>
 <head>
  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
     <link type="text/css" rel="stylesheet" media="screen" href="resources/css/bootstrap.min.css"/>
     <link type="text/css" rel="stylesheet" media="screen" href="resources/css/bootstrap-theme.min.css"/>
  <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,35 +34,24 @@
   
 <title>  USAID - Development Information Solution (DIS) </title>
 
-<!-- <div id="container" style="text-align: left;"> <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;"></div>
-<div id="container" style="text-align: center;"> <img src="usaid_logo5.png" alt="USAID Logo"  alt=" Development Information Solution (DIS)" style="width:440px;height:220px;"></div> -->
-
  <script>
         $(function() {
             $('input[name=startdt]').datepicker();
             $('input[name=enddt]').datepicker();
         });
     </script>
-    
-    <div id="container" style="text-align: left >
- <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;"></div>
-</div>
-  <div id="container" style="text-align: center >
- <big> <h1> Development Information Solution (DIS)</h1></head><big>
-</div>
+      
     
  </head>   
     
 <body>
+<div id="container" style="text-align: left;"> <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;"></div>
+<div id="container" style="text-align: center;"> <img src="usaid_logo5.png" alt="USAID Logo"  alt=" Development Information Solution (DIS)" style="width:440px;height:220px;"></div> 
 
-         <B> <h2>Add Project</h2></B>
+        <h2>Add Project</h2><
        <br />
         <big><p><a href="MainServlet?action=listProject" >HOME</a></p></big>
-        
-  <div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
-  
+         
    <form method="POST" action='MainServlet' name="frmAddProject">
     
         Project ID     &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text" readonly="readonly" name="id"  size="10"  disabled  value="<c:out value="${entry.id}" />" /> <br /> 
