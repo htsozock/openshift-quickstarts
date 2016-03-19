@@ -42,15 +42,18 @@
 </head>   
     
 <body>
- <h3 align ="center">  USAID - Development Information Solution (DIS) </h3> 
 
-<div id="container" style="text-align: center;">
- <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">
-<!--   <h3>  USAID - Development Information Solution (DIS) </h3>  --> 
+
+<div id="container" style="text-align: left;">
+ <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;"></div>
+ 
+ <div id="container" style="text-align: center;">
+ <h3>  USAID - Development Information Solution (DIS) </h3>  
+   <big><p><a href="MainServlet?action=listProject" >HOME</a></p></big>      -->
       <hr size="15">
   <h4>Add Project</h4>
        <br />
-     <hr size="15">           
+     <hr size="25">           
    <form method="POST" action='MainServlet' name="frmAddProject">
     
         Project ID     &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text" readonly="readonly" name="id"  size="10"  disabled  value="<c:out value="${entry.id}" />" /> <br /> 
@@ -69,10 +72,10 @@
          Description &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;     <textarea name="description" id="description"  rows="4" cols="95"></textarea> 
    
           
-          <hr size="15">
-         <b> <button type="submit" class="btn btn-default">Save</button></b>
-          <!--    <button type="submit"  class="btn app_button">SAVE &amp; CONTINUE</button>    -->      
-               <!-- <big><p><a href="MainServlet?action=listProject" >HOME</a></p></big>      -->
+          <hr size="25">
+         <<!-- b> <button type="submit" class="btn btn-default">Save</button></b> -->
+           <button type="submit"  class="btn app_button">SAVE &amp; CONTINUE</button>         
+               
     </form>
     
   
