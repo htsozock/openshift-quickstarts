@@ -23,32 +23,29 @@
 <link href="//assets.cms.gov/resources/libs/font-awesome/3.0.2/css/symbol.css" rel="stylesheet">
 
 <link href="/resources/2.0/framework/css/style.css" rel="stylesheet">
-<link rel="stylesheet" href="//assets.cms.gov/resources/global/css/buttons-2.0.css" />
+<!-- <link rel="stylesheet" href="//assets.cms.gov/resources/global/css/buttons-2.0.css" />
 <link rel="stylesheet" href="//assets.cms.gov/resources/libs/datepicker/v6/css/datepicker.css" />
 <link rel="stylesheet" href="//assets.cms.gov/resources/libs/datatables/1.9.1/css/datatables.css" />
 <script src="//assets.cms.gov/resources/libs/datatables/1.9.1/js/datatableinitiate.js" ></script>
 <link href="//assets.cms.gov/resources/libs/formvalidator/2.0/css/formvalidator.css" />
 <script src="//assets.cms.gov/resources/libs/formvalidator/2.0/js/formvalidatorconfig.js"></script>	
 <script src="//assets.cms.gov/resources/libs/formvalidator/2.0/js/formvalidator.js"></script>
-<link href="//assets.cms.gov/resources/libs/sharewidget/2.0/css/sharewidget-2.0.css" rel="stylesheet" />
-  
-<title>  USAID - Development Information Solution (DIS) </title>
-
+<link href="//assets.cms.gov/resources/libs/sharewidget/2.0/css/sharewidget-2.0.css" rel="stylesheet" /> -->
+  <title>  USAID - Development Information Solution (DIS) </title>
  <script>
+ <div id="container" style="text-align: left;">
+ <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">
+  </div>
         $(function() {
             $('input[name=startdt]').datepicker();
             $('input[name=enddt]').datepicker();
         });
     </script>
-      
-    
- </head>   
+</head>   
     
 <body>
-<div id="container" style="text-align: left;"> <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;"></div>
-<div id="container" style="text-align: center;"> <img src="usaid_logo5.png" alt="USAID Logo"  alt=" Development Information Solution (DIS)" style="width:440px;height:220px;"></div> 
-
-        <h2>Add Project</h2><
+<div id="container" style="text-align: left;"><h2>  USAID - Development Information Solution (DIS) </h2>  </div>
+  <h4>Add Project</h4><
        <br />
         <big><p><a href="MainServlet?action=listProject" >HOME</a></p></big>
          

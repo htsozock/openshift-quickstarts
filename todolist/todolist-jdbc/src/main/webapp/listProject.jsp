@@ -47,16 +47,15 @@
   <![endif]-->
    <div id="container" style="text-align: left;">
   <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">
-  
    </div>
  </head>
 <body>
-
  
   <h5 align="right"> <p><a href="MainServlet?action=insert" >[+]Add Project</a></p></h5> 
  
    <div class="container" align ="left"> 
-     <h3>Projects List</h3>
+     <h3>  USAID - Development Information Solution (DIS) </h3>
+      <hr size="15">
     <ul class="nav nav-tabs">
    <li class="active" <a href="MainServlet?action=listProject" >Projects</a></li>
     <li><a href="#">Activities</a></li>
@@ -67,11 +66,10 @@
    </ul>
      <br>
   
-<table style="width:90%"  border=1 align="center" frame="box" id="Projects List"  >
-<big> <caption>Projects List</caption></big>
+<table style="width:98%"  border=1 align="center" frame="box" id="Projects List"  >
+<big> <h3>Projects List</h3>h3></big>
        <thead>
             <tr>
-                
                 <th scope="col"> ID</th>
                 <th scope="col">Project Name</th>
                 <th scope="col">Organization</th>
