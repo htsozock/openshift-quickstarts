@@ -30,7 +30,7 @@
 <script src="//assets.cms.gov/resources/libs/formvalidator/2.0/js/formvalidatorconfig.js"></script>	
 <script src="//assets.cms.gov/resources/libs/formvalidator/2.0/js/formvalidator.js"></script>
 <link href="//assets.cms.gov/resources/libs/sharewidget/2.0/css/sharewidget-2.0.css" rel="stylesheet" />
-
+ 
 
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -47,25 +47,12 @@
   <![endif]-->
    <div id="container" style="text-align: left;">
   <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">
-   <div id="container" style="text-align: center;">
+   <div id="container" style="text-align: top;">
     <big> <h1>Development Information Solution (DIS)</h1></big>
   </div>
-      <big> <h1>Development Information Solution (DIS 2)</h1></big>
- </div>
-<div id="container" style="text-align: center;">
- <big> <h1>Development Information Solution (DIS)1</h1></big>
-  </div>
-
-</head>
+ </head>
 <body>
 
-cellpadding="5" cellspacing="1" 
-
-<!-- <div id="container">
-   <img  class="left" src="usaid_logo.png" alt=" Development Information Solution (DIS)" style="width:440px;height:220px;">  
-   <b><img  class="center" src="usaid_logo3.png" alt=" Development Information Solution (DIS)" style="width:440px;height:220px;">  </b>
- </div>
-    -->
  
   <h5 align="right"> <p><a href="MainServlet?action=insert" >[+]Add Project</a></p></h5> 
    <div class="container" align ="left"> 
@@ -78,11 +65,10 @@ cellpadding="5" cellspacing="1"
     <li><a href="#">Reports</a></li></big>
    </ul>
   </div> 
-<!--  <hr size="15"> -->
-
+ <hr size="15"> 
  
   <form action="listProject.jsp">
-  Search Project:
+  Search :
   <input type="search" name="projectsearch">
   <input type="submit">
 </form>
