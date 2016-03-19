@@ -45,39 +45,43 @@
       }
     </style>
   <![endif]-->
-  
-  <div id="container" style="text-align: left;"> <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;"></div>
-<div id="container" style="text-align: center;"> <img src="usaid_logo5.png"   alt=" Development Information Solution (DIS)" style="width:440px;height:220px;"></div>
+   <div id="container" style="text-align: left;">
+  <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">
+  <</div>
+<div id="container" style="text-align: center;">
+  <p>Development Information Solution (DIS)</p>p>
+  <</div>
 
-<title>  USAID - Development Information Solution (DIS) </title>
 </head>
 <body>
+
+cellpadding="5" cellspacing="1" 
 
 <!-- <div id="container">
    <img  class="left" src="usaid_logo.png" alt=" Development Information Solution (DIS)" style="width:440px;height:220px;">  
    <b><img  class="center" src="usaid_logo3.png" alt=" Development Information Solution (DIS)" style="width:440px;height:220px;">  </b>
  </div>
     -->
-
-   <!--    <hr size="15"> -->
-  
+ 
   <h5 align="right"> <p><a href="MainServlet?action=insert" >[+]Add Project</a></p></h5> 
    <div class="container" align ="left"> 
     <ul class="nav nav-tabs">
-    <li class="active" <a href="MainServlet?action=listProject" >Projects</a></li>
+   <big> <li class="active" <a href="MainServlet?action=listProject" >Projects</a></li>
     <li><a href="#">Activities</a></li>
     <li><a href="#">Indicators</a></li>
     <li><a href="#">Tags</a></li>
     <li><a href="#">Search</a></li>
-    <li><a href="#">Reports</a></li>
+    <li><a href="#">Reports</a></li></big>
    </ul>
- </div> 
+  </div> 
+<!--  <hr size="15"> -->
+<form> <input type="text" name="searchstring" size=30 placeholder="search">
+   <input type="button" value="Search"></form>
+   
+  </h3>
 
-
-
- <hr size="15">
-<table style="width:90%"  border=1 align="center" frame="box" id="Projects List">
- <caption>Projects List</caption>
+<table style="width:90%"  border=1 align="center" frame="box" id="Projects List" cellpadding="3" cellspacing="1" >
+<big> <caption>Projects List</caption></big>
        <thead>
             <tr>
                 
@@ -91,11 +95,7 @@
                <th scope="col" colspan=3>Action</th>
             </tr>
       </thead> 
-      
-      
-      
-      
-      
+     
         <tbody>
             <c:forEach items="${list}" var="entry">
                 <tr>
@@ -108,8 +108,8 @@
                     <td><c:out value="${entry.status}" /></td>
                  
                     <td><a href="MainServlet?action=delete&projectId=<c:out value="${entry.id}"/>">Delete</a></td>
-                     <td><a href="MainServlet?action=edit&projectId=<c:out value="${entry.id}"/>">Edit</a></td>
-                       <td><a href="MainServlet?action=edit&projectId=<c:out value="${entry.id}"/>">Update</a></td>
+                    <td><a href="MainServlet?action=edit&projectId=<c:out value="${entry.id}"/>">Edit</a></td>
+                    <td><a href="MainServlet?action=edit&projectId=<c:out value="${entry.id}"/>">Update</a></td>
                 </tr>
             </c:forEach>
         </tbody>
