@@ -51,9 +51,9 @@
  </head>
 <body>
  
-   <div class="container" align ="left"> 
-     <h3>  USAID - Development Information Solution (DIS) </h3>
-      <hr size="15">
+   <div class="container" align ="center"> 
+     <h4>  USAID - Development Information Solution (DIS) </h4>
+      <hr size="35">
       
     <ul class="nav nav-tabs">
    <li class="active" <a href="MainServlet?action=listProject" >Projects</a></li>

@@ -48,12 +48,12 @@
  <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;"></div>
  
  <div id="container" style="text-align: center;">
- <h3>  USAID - Development Information Solution (DIS) </h3>  
-   <big><p><a href="MainServlet?action=listProject" >HOME</a></p></big>      -->
+ <b><h2>  USAID - Development Information Solution (DIS) </h2>  </b>
+   <big><p><a href="MainServlet?action=listProject" >HOME</a></p></big>      
       <hr size="15">
-  <h4>Add Project</h4>
+  <b><h3>Add Project</h3></b>
        <br />
-     <hr size="25">           
+     <hr size="35">           
    <form method="POST" action='MainServlet' name="frmAddProject">
     
         Project ID     &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text" readonly="readonly" name="id"  size="10"  disabled  value="<c:out value="${entry.id}" />" /> <br /> 
@@ -62,8 +62,8 @@
                 
          Organization    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <input        type="text" name="organization" size="40"      value="<c:out value="${entry.organization}" />" /> <br /> 
             <br />
-         Project Manager &nbsp; <input   type="text" name="manager" size="50"  value="<c:out value="${entry.manager}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-         Status  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input   type="text" name="status" size="40"  value="<c:out value="${entry.status}" />" /> <br />    
+         Project Manager &nbsp;&nbsp;&nbsp; <input   type="text" name="manager" size="50"  value="<c:out value="${entry.manager}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+         Status  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input   type="text" name="status" size="40"  value="<c:out value="${entry.status}" />" /> <br />    
             <br />
          
          Start Date    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input   type="text" name="startdt" size="50"  value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.startdt}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
@@ -72,9 +72,9 @@
          Description &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;     <textarea name="description" id="description"  rows="4" cols="95"></textarea> 
    
           
-          <hr size="25">
-         <<!-- b> <button type="submit" class="btn btn-default">Save</button></b> -->
-           <button type="submit"  class="btn app_button">SAVE &amp; CONTINUE</button>         
+          <hr size="35">
+        
+          <big><button type="submit"  class="btn app_button">SAVE &amp; CONTINUE</button>  </big>        
                
     </form>
     
