@@ -20,7 +20,7 @@ import javax.servlet.RequestDispatcher;
 import java.util.Date; 
 
 
-import org.openshift.quickstarts.todolist.dao.JJdbcProjectActivitiesDAO;
+import org.openshift.quickstarts.todolist.dao.JdbcProjectActivitiesDAO;
 import org.openshift.quickstarts.todolist.dao.ProjectActivitiesDAO;
 
 
