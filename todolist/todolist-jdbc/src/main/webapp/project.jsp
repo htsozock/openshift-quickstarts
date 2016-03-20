@@ -16,21 +16,21 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
   
- <link href="//assets.cms.gov/Resources/libs/jquery-ui/1.10.3/css/jquery-ui.css" rel="stylesheet">
-<link href="//assets.cms.gov/resources/libs/bootstrap/2.2.2/css/bootstrap.css" rel="stylesheet">
-<link href="//assets.cms.gov/resources/libs/bootstrap/2.2.2/css/bootstrap-responsive.css" rel="stylesheet">
-<link href="//assets.cms.gov/resources/libs/glyphicons/3.0/css/glyphicon.css" rel="stylesheet">
-<link href="//assets.cms.gov/resources/libs/font-awesome/3.0.2/css/symbol.css" rel="stylesheet">
+<!--  <link href="//assets.cms.gov/Resources/libs/jquery-ui/1.10.3/css/jquery-ui.css" rel="stylesheet"> -->
+<!-- <link href="//assets.cms.gov/resources/libs/bootstrap/2.2.2/css/bootstrap.css" rel="stylesheet"> -->
+<!-- <link href="//assets.cms.gov/resources/libs/bootstrap/2.2.2/css/bootstrap-responsive.css" rel="stylesheet"> -->
+<!-- <link href="//assets.cms.gov/resources/libs/glyphicons/3.0/css/glyphicon.css" rel="stylesheet"> -->
+<!-- <link href="//assets.cms.gov/resources/libs/font-awesome/3.0.2/css/symbol.css" rel="stylesheet"> -->
 
-<link href="/resources/2.0/framework/css/style.css" rel="stylesheet">
-<link rel="stylesheet" href="//assets.cms.gov/resources/global/css/buttons-2.0.css" />
-<link rel="stylesheet" href="//assets.cms.gov/resources/libs/datepicker/v6/css/datepicker.css" />
-<link rel="stylesheet" href="//assets.cms.gov/resources/libs/datatables/1.9.1/css/datatables.css" />
-<script src="//assets.cms.gov/resources/libs/datatables/1.9.1/js/datatableinitiate.js" ></script>
-<link href="//assets.cms.gov/resources/libs/formvalidator/2.0/css/formvalidator.css" />
-<script src="//assets.cms.gov/resources/libs/formvalidator/2.0/js/formvalidatorconfig.js"></script>	
-<script src="//assets.cms.gov/resources/libs/formvalidator/2.0/js/formvalidator.js"></script>
-<link href="//assets.cms.gov/resources/libs/sharewidget/2.0/css/sharewidget-2.0.css" rel="stylesheet" /> 
+<!-- <link href="/resources/2.0/framework/css/style.css" rel="stylesheet"> -->
+<!-- <link rel="stylesheet" href="//assets.cms.gov/resources/global/css/buttons-2.0.css" /> -->
+<!-- <link rel="stylesheet" href="//assets.cms.gov/resources/libs/datepicker/v6/css/datepicker.css" /> -->
+<!-- <link rel="stylesheet" href="//assets.cms.gov/resources/libs/datatables/1.9.1/css/datatables.css" /> -->
+<!-- <script src="//assets.cms.gov/resources/libs/datatables/1.9.1/js/datatableinitiate.js" ></script> -->
+<!-- <link href="//assets.cms.gov/resources/libs/formvalidator/2.0/css/formvalidator.css" /> -->
+<!-- <script src="//assets.cms.gov/resources/libs/formvalidator/2.0/js/formvalidatorconfig.js"></script>	 -->
+<!-- <script src="//assets.cms.gov/resources/libs/formvalidator/2.0/js/formvalidator.js"></script> -->
+<!-- <link href="//assets.cms.gov/resources/libs/sharewidget/2.0/css/sharewidget-2.0.css" rel="stylesheet" />  -->
   <title>  USAID - Development Information Solution (DIS) </title>
  <script>
  
@@ -50,10 +50,15 @@
  <div id="container" style="text-align: center;">
  <b><h2>  USAID - Development Information Solution (DIS) </h2>  </b>
    <big><p><a href="MainServlet?action=listProject" >HOME</a></p></big>      
-      <hr size="15">
-  <b><h3>Add/Edit Project</h3></b>
-       <br />
-     <hr size="35">           
+     <!--  <hr size="15"> -->
+      
+       
+    <div id="q28" class="q full_width">
+<a class="item_anchor" name="ItemAnchor2"></a>
+<div class="segment_header" style="background:#0000FF;width:100%;text-align:Center;"><h1 style="font-size:30px;padding:10px 1em 10px ;">Add / Edit Project</h1></div>
+</div>
+
+    <!--  <hr size="35">    -->        
    <form method="POST" action='MainServlet' name="frmAddProject">
     
         Project ID     &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text" readonly="readonly" name="id"  size="10"  disabled  value="<c:out value="${entry.id}" />" 
