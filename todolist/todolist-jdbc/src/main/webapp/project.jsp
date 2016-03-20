@@ -1,7 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- I am using JSTL to connect between the jsp and the servlet -->
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<base href="https://fs3.formsite.com/tguimbang/" />
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+ 
+<!--  <base href="https://fs3.formsite.com/tguimbang/" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="expires" content="0" />
 <meta name="twitter:card" content="summary" />
@@ -12,7 +22,7 @@
 <meta property="og:site_name" content="FormSite" />
 <meta property="og:description" content="View this form on FormSite" />
 <meta property="og:image" content="https://www.formsite.com/apple-touch-icon.png" />
-<meta property="fb:admins" content="150429050199"/>
+<meta property="fb:admins" content="150429050199"/> -->
 <title>USAID - Development Information Solution (DIS)</title>
 <link rel="stylesheet" type="text/css" media="screen" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" />
 <link rel="stylesheet" type="text/css" media="all" href="/include/form/fonts7.css?1504" />
@@ -290,36 +300,18 @@ tr.highlight td{
 }
 
 </style>
-  <link type="text/css" rel="stylesheet" media="screen" href="resources/css/bootstrap.min.css"/>
+
+ 
+ 
+ 
+    <link type="text/css" rel="stylesheet" media="screen" href="resources/css/bootstrap.min.css"/>
     <link type="text/css" rel="stylesheet" media="screen" href="resources/css/bootstrap-theme.min.css"/>
- <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//assets.cms.gov/resources/libs/datepicker/v6/css/datepicker.css" />
+
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
   
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-<script type="text/javascript" src="/include/form/form7.js?1504"></script>
-
- <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
-  
-  
-<!--  <link href="//assets.cms.gov/Resources/libs/jquery-ui/1.10.3/css/jquery-ui.css" rel="stylesheet">
-<link href="//assets.cms.gov/resources/libs/bootstrap/2.2.2/css/bootstrap.css" rel="stylesheet">
-<link href="//assets.cms.gov/resources/libs/bootstrap/2.2.2/css/bootstrap-responsive.css" rel="stylesheet">
-<link href="//assets.cms.gov/resources/libs/glyphicons/3.0/css/glyphicon.css" rel="stylesheet">
-<link href="//assets.cms.gov/resources/libs/font-awesome/3.0.2/css/symbol.css" rel="stylesheet">
-
-<link href="/resources/2.0/framework/css/style.css" rel="stylesheet">
-<link rel="stylesheet" href="//assets.cms.gov/resources/global/css/buttons-2.0.css" />
-<link rel="stylesheet" href="//assets.cms.gov/resources/libs/datepicker/v6/css/datepicker.css" />
-<link rel="stylesheet" href="//assets.cms.gov/resources/libs/datatables/1.9.1/css/datatables.css" />
-<script src="//assets.cms.gov/resources/libs/datatables/1.9.1/js/datatableinitiate.js" ></script>
-<link href="//assets.cms.gov/resources/libs/formvalidator/2.0/css/formvalidator.css" />
-<script src="//assets.cms.gov/resources/libs/formvalidator/2.0/js/formvalidatorconfig.js"></script>	
-<script src="//assets.cms.gov/resources/libs/formvalidator/2.0/js/formvalidator.js"></script>
-<link href="//assets.cms.gov/resources/libs/sharewidget/2.0/css/sharewidget-2.0.css" rel="stylesheet" /> -->
   <title>  USAID - Development Information Solution (DIS) </title>
  <script>
  
@@ -328,37 +320,19 @@ tr.highlight td{
             $('input[name=enddt]').datepicker();
         });
     </script>
-
-<div id="container" style="text-align: left;">
-  <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">
-   </div>
-
-</head>
-
+</head>   
+    
 <body>
 
-<!-- <form method="post" id="FSForm" action="https://fs3.formsite.com/res/submit" enctype="multipart/form-data" onsubmit="return Vromansys.Form.processSubmit(this);"> -->
 
+<div id="container" style="text-align: left;">
+ <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;"></div>
  
-
-  
-     
-     <!-- BEGIN_ITEMS -->
-<div class="form_table">
-   <h4>  USAID - Development Information Solution (DIS) </h4>
-<div class="clear"></div>
-
-<div id="q26" class="q full_width">
-<a class="item_anchor" name="ItemAnchor0"></a>
-
-</div>
-
-<div class="clear"></div>
-
-<div class="clear"></div>
-     
-     
-    <div id="q28" class="q full_width">
+ <div id="container" style="text-align: center;">
+ <b><h2>  USAID - Development Information Solution (DIS) </h2>  </b>
+   <big><p><a href="MainServlet?action=listProject" >HOME</a></p></big>      
+ 
+ <div id="q28" class="q full_width">
 <a class="item_anchor" name="ItemAnchor2"></a>
 <div class="segment_header" style="background:#0000FF;width:100%;text-align:Center;"><h1 style="font-size:30px;padding:10px 1em 10px ;">Add / Edit Project</h1></div>
 </div>
@@ -367,23 +341,10 @@ tr.highlight td{
 
 
 <div class="clear"></div>
-      
-           
-
-<form method="POST" action='MainServlet' name="frmAddProject">
-
-
-<div style="display:none;">
-<input type="hidden" name="locid" value="tguimbang/form2" />
-<input type="hidden" name="EParam" value="AT1kKIiyxDyL+9U5mMmmu4njqh0+izcTGONOmeHEbhJBern7D7VM8GQhMDO7M+XC" />
-<input type="hidden" name="ElapsedTime" id="ElapsedTime" value="0" />
-<input type="hidden" name="Referrer" id="Referrer" value="" />
-<input type="text" name="subject_line" id="subject_line" autocomplete="off" /><label for="subject_line">subject_line</label>
-</div>
-
-
-
-
+                 
+   <form method="POST" action='MainServlet' name="frmAddProject">
+    
+       
 <div id="q2" class="q">
 <a class="item_anchor" name="ItemAnchor4"></a>
 <label class="question left_question_first" for="RESULT_TextField-4">Project ID</label>
@@ -664,11 +625,14 @@ tr.highlight td{
 
 </div>
 <!-- END_ITEMS -->
-
- <big><button type="submit"  class="btn app_button">SAVE &amp; CONTINUE</button>  </big>  
-
-
-</form>
+        
+          <big><button type="submit"  class="btn app_button">SAVE &amp; CONTINUE</button>  </big>        
+               
+    </form>
+    
+  
+     </div>
+    
 </body>
 </html>
 
