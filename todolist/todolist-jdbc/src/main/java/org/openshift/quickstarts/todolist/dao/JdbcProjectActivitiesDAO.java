@@ -1,6 +1,6 @@
 package org.openshift.quickstarts.todolist.dao;
 
-import org.openshift.quickstarts.todolist.model.Project_Activities;
+import org.openshift.quickstarts.todolist.model.ProjectActivities;
  
 import javax.naming.Context;
 import javax.naming.InitialContext;
