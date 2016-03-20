@@ -51,7 +51,7 @@ public class MainServletActivities extends HttpServlet {
     	entry.setAward_number(req.getParameter("award_number"));
     	entry.setId(req.getParameter("id"));
     	entry.setDescription(req.getParameter("description"));
-        try {
+       
            String id_activity = req.getParameter("id_activity");
         if(id_activity == null || id_activity.isEmpty())
         {
