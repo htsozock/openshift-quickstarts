@@ -31,7 +31,7 @@ public JdbcProjectActivitiesDAO() {
 
  dataSource = lookupDataSource();// retrurn the datasource
 
- initializeSchemaIfNeeded();
+ //initializeSchemaIfNeeded();
 }
  private DataSource lookupDataSource() { 
  try {
@@ -49,7 +49,7 @@ throw new RuntimeException("Could not look up datasource", e);
 }
 
 }
- private void initializeSchemaIfNeeded() {
+private void initializeSchemaIfNeeded() {
 try {
   Connection connection = getConnection();
   try {
@@ -75,7 +75,7 @@ try {
 
  private boolean isSchemaInitialized(Connection connection) throws SQLException {
 
- ResultSet rset = connection.getMetaData().getTables(null, null, "project_activities", null);
+ ResultSet rset = connection.getMetaData().getTables(null, null, "project_activity", null);
  try {
   return rset.next();
    } finally {
@@ -99,7 +99,7 @@ try {
   Connection connection = getConnection();
  try {
  connection.setAutoCommit(true);
- PreparedStatement statement = connection.prepareStatement("INSERT INTO project_activities (activity_name,country, description, award_number, "
+ PreparedStatement statement = connection.prepareStatement("INSERT INTO project_activity (activity_name,country, description, award_number, "
  + "obligation_amount, id ) "
  + "VALUES ( ?, ?,?, ?, ?,?)");
 
@@ -134,7 +134,7 @@ throw new RuntimeException(e);
   Connection connection = getConnection();
   try {
    connection.setAutoCommit(true);
-   PreparedStatement statement = connection.prepareStatement("DELETE FROM project_activities WHERE id_activity =?");
+   PreparedStatement statement = connection.prepareStatement("DELETE FROM project_activity  WHERE id_activity =?");
    try {
    statement.setInt(1, project_activityId);
    statement.executeUpdate();
@@ -162,7 +162,7 @@ try {
   Connection connection = getConnection();
   try {
    connection.setAutoCommit(true);
-   PreparedStatement statement = connection.prepareStatement("UPDATE project SET activity_name=?, country=?, award_number=?, obligation_amount=?, description=?, enddt=?,startdt=? "
+   PreparedStatement statement = connection.prepareStatement("UPDATE project_activity  SET activity_name=?, country=?, award_number=?, obligation_amount=?, description=? "
     + "WHERE id_activity =? ");
  	try {
      statement.setString(1, entry.getActivity_name());
@@ -192,7 +192,7 @@ try {
   ProjectActivities entry = new ProjectActivities();
    try {
    Connection connection = getConnection();
-   PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM project_activities WHERE id_activity =? ");
+   PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM project_activity  WHERE id_activity =? ");
    preparedStatement.setInt(1, project_activityId);
    ResultSet rset = preparedStatement.executeQuery();
    if (rset.next()){
@@ -226,7 +226,7 @@ try {
     Statement statement = connection.createStatement();
   List<ProjectActivities> list;
   try {
-   ResultSet rset = statement.executeQuery(" SELECT * FROM project_activities ");
+   ResultSet rset = statement.executeQuery(" SELECT * FROM project_activity  ");
   try {
   list = new ArrayList<ProjectActivities>();
   while (rset.next()) {
