@@ -45,12 +45,18 @@
       }
     </style>
   <![endif]-->
-   <div id="container" style="text-align: left;">
+<!--    <div id="container" style="text-align: left;">
   <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">
     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <h3 Development Information Solution (DIS) </h3>
-   </div>
+   </div> -->
  </head>
 <body>
+<div id="container" style="text-align: left;">
+ <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">
+ &nbsp;&nbsp; &nbsp;&nbsp; <h2>  Development Information Solution (DIS) </h2>  
+   <big><p><a href="MainServlet?action=listProject" >HOME</a></p></big>  
+    <hr size="15">
+ </div>
     <div class="container" align ="center"> 
      <!-- <h4>  USAID - Development Information Solution (DIS) </h4> -->
       <hr size="35">
