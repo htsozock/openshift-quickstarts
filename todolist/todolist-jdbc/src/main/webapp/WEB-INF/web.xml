@@ -11,12 +11,17 @@
     <servlet>
         <display-name>MainServlet</display-name>
         <servlet-name>MainServlet</servlet-name>
+        <display-name>MainServletActivities</display-name>
+        <servlet-name>MainServletActivities</servlet-name>
         <servlet-class>org.openshift.quickstarts.todolist.servlet.MainServlet</servlet-class>
+        <servlet-class>org.openshift.quickstarts.todolist.servlet.MainServletActivities</servlet-class>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>MainServlet</servlet-name>
         <url-pattern>/MainServlet</url-pattern>
+        <servlet-name>MainServletActivities</servlet-name>
+        <url-pattern>/MainServletActivities</url-pattern>
     </servlet-mapping>
     
   
