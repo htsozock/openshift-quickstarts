@@ -66,7 +66,7 @@
      <br>
   
 <table style="width:98%"  border=1 align="center" frame="box" id="Projects List"  >
-<big> <h3>Projects List</h3></big>
+<b> <h3>Projects List</h3></b>
        <thead>
             <tr>
                 <th scope="col"> ID</th>
