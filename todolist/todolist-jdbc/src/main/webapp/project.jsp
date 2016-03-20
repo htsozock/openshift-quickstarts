@@ -48,7 +48,7 @@
  <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;"></div>
  
  <div id="container" style="text-align: center;">
- <b><h3>  USAID - Development Information Solution (DIS) </h3>  </b>
+ <h4>  USAID - Development Information Solution (DIS) </h4>  
    <big><p><a href="MainServlet?action=listProject" >HOME</a></p></big>      
      <!--  <hr size="15"> -->
       
@@ -61,19 +61,19 @@
     <!--  <hr size="35">    -->        
    <form method="POST" action='MainServlet' name="frmAddProject">
     
-        Project ID     &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text" readonly="readonly" name="id"  size="10"  disabled  value="<c:out value="${entry.id}" />" 
+        Project ID     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text" readonly="readonly" name="id"  size="10"  disabled  value="<c:out value="${entry.id}" />" 
 
 /> <br /> 
              <br />
          Project  Name &nbsp;&nbsp; &nbsp;&nbsp;  <input       type="text" name="name" size="40"  title="Enter the project name..."      value="<c:out value="${entry.name}" 
 
-/>" /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+/>" /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
                 
-         Organization    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <input        type="text" name="organization" size="40"      value="<c:out 
+         &nbsp;&nbsp; Organization    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <input        type="text" name="organization" size="40"      value="<c:out 
 
 value="${entry.organization}" />" /> <br /> 
             <br />
-         Project Manager &nbsp;&nbsp;&nbsp; <input   type="text" name="manager" size="50"  value="<c:out value="${entry.manager}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+         Project Manager &nbsp; <input   type="text" name="manager" size="50"  value="<c:out value="${entry.manager}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 
 &nbsp;&nbsp;
          Status  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input   type="text" name="status" size="40"  value="<c:out value="${entry.status}" />" /> <br />    
@@ -87,10 +87,10 @@ value="${entry.startdt}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 /> 
            <br /> <br /> 
-         Description &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;     <textarea name="description" id="description"  rows="4" cols="95"></textarea> 
+         Description &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;     <textarea name="description" id="description"  rows="4" cols="95"></textarea> 
    
       <div class="clear"></div>
-
+ <br /> <br /> 
 <div id="q29" class="q">
 <a class="item_anchor" name="ItemAnchor12"></a>
 <label class="question top_question" for="RESULT_FileUpload-12">Upload Documents</label>
@@ -101,8 +101,9 @@ value="${entry.startdt}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
    
           
           <hr size="35">
-        
-          <big><button type="submit"  class="btn app_button">SAVE &amp; CONTINUE</button>  </big>        
+       <div id="container" style="text-align: center;">
+ 
+          <big><button type="submit"  class="btn app_button">SAVE &amp; CONTINUE</button>  </big>             </div>
                
     </form>
     
