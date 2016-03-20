@@ -63,7 +63,7 @@
       
     <ul class="nav nav-tabs">
    <li class="active" <a href="MainServlet?action=listProject" >Projects</a></li>
-    <li><a href="#">Activities</a></li>
+    <li><a href="MainServletActivities?action=listProjectActivities" >Activities</a></li>
     <li><a href="#">Indicators</a></li>
     <li><a href="#">Tags</a></li>
     <li><a href="#">Search</a></li>
