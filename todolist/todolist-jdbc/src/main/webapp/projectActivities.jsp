@@ -47,7 +47,7 @@
 <div id="container" style="text-align: left;">
  <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">
  &nbsp;&nbsp; &nbsp;&nbsp; <h2>  Development Information Solution (DIS) </h2>  
-   <big><p><a href="MainServlet?action=listProject" >HOME</a></p></big>  
+   <big><p><a href="MainServletActivities?action=listProjectActivities" >HOME</a></p></big>  
     <hr size="15">
  </div>
  
@@ -57,11 +57,11 @@
        
     <div id="q28" class="q full_width">
 <a class="item_anchor" name="ItemAnchor2"></a>
-<div class="segment_header" style="background:#0000FF;width:60%;text-align:left;"><h1 style="font-size:30px;padding:10px 1em 10px ;">Add / Edit Project Activities</h1></div>
+<div class="segment_header" style="background:#0000FF;width:60%;text-align:left;"><h1 style="font-size:30px;padding:10px 1em 10px ;">Add / Edit Project Activity</h1></div>
 </div></div>
 <div id="container" style="text-align: left;">
     <hr size="35">           
-   <form method="POST" action='MainServlet' name="frmAddProject_activities">
+   <form method="POST" action='MainServletActivities' name="frmAddProject_activities">
     
        Activity ID     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text" readonly="readonly" name="id_activity"  size="10"  disabled  value="<c:out value="${entry.id_activity}" />" 
 

@@ -61,8 +61,8 @@
       <hr size="35">
       
     <ul class="nav nav-tabs">
-   <li class="active" <a href="MainServlet?action=listProject" >Projects</a></li>
-    <li><a href="MainServletActivities?action=listProjectActivities.jsp" >Activities</a></li>
+   <li> <a href="MainServlet?action=listProject" >Projects</a></li>
+    <li class="active" ><a href="MainServletActivities?action=listProjectActivities" >Activities</a></li>
     <li><a href="#">Indicators</a></li>
     <li><a href="#">Tags</a></li>
     <li><a href="#">Search</a></li>
@@ -70,10 +70,10 @@
    </ul>
      <br>
   
-<table style="width:98%"  border=1 align="center" frame="box" id="Projects_List"  >
+<table style="width:98%"  border=1 align="center" frame="box" id="Projects_activitiesList"  >
    <div class="container" align ="left"> 
      <!-- <h4>  USAID - Development Information Solution (DIS) </h4> -->
-     <b> <h3>Projects List</h3></b>
+     <b> <h3>Project Activities List</h3></b>
      </div>
        <thead>
             <tr>
