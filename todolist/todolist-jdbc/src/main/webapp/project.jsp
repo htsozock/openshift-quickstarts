@@ -46,7 +46,7 @@
 
 <div id="container" style="text-align: left;">
  <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">
- <h4>  USAID - Development Information Solution (DIS) </h4>  
+ &nbsp;&nbsp; &nbsp;&nbsp; <h2>  Development Information Solution (DIS) </h2>  
    <big><p><a href="MainServlet?action=listProject" >HOME</a></p></big>  
     <hr size="15">
  </div>
@@ -78,14 +78,14 @@ value="${entry.organization}" />" /> <br />
          Project Manager &nbsp; <input   type="text" name="manager" size="50"  value="<c:out value="${entry.manager}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 
 &nbsp;&nbsp;
-         Status  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input   type="text" name="status" size="40"  value="<c:out value="${entry.status}" />" /> <br />    
+         Status  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input   type="text" name="status" size="40"  value="<c:out value="${entry.status}" />" /> <br />    
             <br />
                  
          
          Start Date    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input   type="text" name="startdt" size="50"  value="<fmt:formatDate pattern="MM/dd/yyyy" 
 
 value="${entry.startdt}" />" /> &nbsp;&nbsp;&nbsp;&nbsp 
-         End  Date     &nbsp;&nbsp;&nbsp; &nbsp;  <input    type="text" name="enddt" size="40"  value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.enddt}" />" /> <br 
+         End  Date    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;  <input    type="text" name="enddt" size="40"  value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.enddt}" />" /> <br 
 
 /> 
            <br /> <br /> 

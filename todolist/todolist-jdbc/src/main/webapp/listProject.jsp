@@ -47,13 +47,11 @@
   <![endif]-->
    <div id="container" style="text-align: left;">
   <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">
-    <h4>  USAID - Development Information Solution (DIS) </h4>
+    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <h3 Development Information Solution (DIS) </h3>
    </div>
  </head>
 <body>
- 
-  
-   <div class="container" align ="center"> 
+    <div class="container" align ="center"> 
      <!-- <h4>  USAID - Development Information Solution (DIS) </h4> -->
       <hr size="35">
       
