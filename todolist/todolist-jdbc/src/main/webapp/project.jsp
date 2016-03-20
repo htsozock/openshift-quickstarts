@@ -48,16 +48,16 @@
  <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;"></div>
  
  <div id="container" style="text-align: center;">
- <b><h2>  USAID - Development Information Solution (DIS) </h2>  </b>
+ <b><h3>  USAID - Development Information Solution (DIS) </h3>  </b>
    <big><p><a href="MainServlet?action=listProject" >HOME</a></p></big>      
      <!--  <hr size="15"> -->
       
        
     <div id="q28" class="q full_width">
 <a class="item_anchor" name="ItemAnchor2"></a>
-<div class="segment_header" style="background:#0000FF;width:100%;text-align:Center;"><h1 style="font-size:30px;padding:10px 1em 10px ;">Add / Edit Project</h1></div>
-</div>
-
+<div class="segment_header" style="background:#0000FF;width:60%;text-align:Center;"><h1 style="font-size:30px;padding:10px 1em 10px ;">Add / Edit Project</h1></div>
+</div></div>
+<div id="container" style="text-align: left;">
     <!--  <hr size="35">    -->        
    <form method="POST" action='MainServlet' name="frmAddProject">
     
@@ -96,6 +96,7 @@ value="${entry.startdt}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <label class="question top_question" for="RESULT_FileUpload-12">Upload Documents</label>
 <div class=""><input type="file" name="RESULT_FileUpload-12" size="40" class="file_upload" id="RESULT_FileUpload-12" /><br/><span class="file_upload_info"></span>&nbsp;<input type="submit" name="Upload-12" value="Upload" class="file_upload_button" /> <input type="submit" name="Delete-12" value="Delete" class="file_upload_button" /></div>
 </div>
+
 <div class="clear"></div>
    
           
