@@ -61,7 +61,7 @@
 </div></div>
 <div id="container" style="text-align: left;">
     <hr size="35">           
-   <form method="POST" action='MainServlet' name="frmAddProject">
+   <form method="POST" action='MainServlet' name="frmAddProject_activities">
     
        Activity ID     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text" readonly="readonly" name="id_activity"  size="10"  disabled  value="<c:out value="${entry.id_activity}" />" 
 
