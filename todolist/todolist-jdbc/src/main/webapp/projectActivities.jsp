@@ -65,7 +65,7 @@
     
        Activity ID     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text" readonly="readonly" name="id_activity"  size="10"  disabled  value="<c:out value="${entry.id_activity}" />" 
 
-/> <br /> 
+/> <br /> <br> <br>
  
        Project ID     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text"  name="id"  size="10"   value="<c:out value="${entry.id}" />" 
 

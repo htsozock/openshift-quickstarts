@@ -20,7 +20,7 @@
   
  </div>
    
-   <jsp:forward page="/MainServletActivities?action=listProjectActivities.jsp" />
+  <jsp:forward page="/MainServlet?action=listProject" />
 </body>
 </html>
 

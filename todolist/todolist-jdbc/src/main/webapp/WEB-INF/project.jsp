@@ -40,6 +40,7 @@
     
         Project ID : <input type="text" readonly="readonly" name="id"  size="10" placeholder="Project ID is generated" disabled 
             value="<c:out value="${entry.id}" />" /> <br /> 
+            <br>
         Project  Name : <input
             type="text" name="name" size="50" 
             value="<c:out value="${entry.name}" />" /> 
