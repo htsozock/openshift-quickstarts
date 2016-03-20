@@ -329,17 +329,45 @@ tr.highlight td{
         });
     </script>
 
-
+<div id="container" style="text-align: left;">
+  <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">
+   </div>
 
 </head>
 
 <body>
 
 <!-- <form method="post" id="FSForm" action="https://fs3.formsite.com/res/submit" enctype="multipart/form-data" onsubmit="return Vromansys.Form.processSubmit(this);"> -->
-<div id="container" style="text-align: left;">
- <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;"></div>
+
  
 
+  
+     
+     <!-- BEGIN_ITEMS -->
+<div class="form_table">
+   <h4>  USAID - Development Information Solution (DIS) </h4>
+<div class="clear"></div>
+
+<div id="q26" class="q full_width">
+<a class="item_anchor" name="ItemAnchor0"></a>
+
+</div>
+
+<div class="clear"></div>
+
+<div class="clear"></div>
+     
+     
+    <div id="q28" class="q full_width">
+<a class="item_anchor" name="ItemAnchor2"></a>
+<div class="segment_header" style="background:#0000FF;width:100%;text-align:Center;"><h1 style="font-size:30px;padding:10px 1em 10px ;">Add / Edit Project</h1></div>
+</div>
+
+<div class="clear"></div>
+
+
+<div class="clear"></div>
+      
            
 
 <form method="POST" action='MainServlet' name="frmAddProject">
@@ -353,29 +381,8 @@ tr.highlight td{
 <input type="text" name="subject_line" id="subject_line" autocomplete="off" /><label for="subject_line">subject_line</label>
 </div>
 
-<!-- BEGIN_ITEMS -->
-<div class="form_table">
-
-<div class="clear"></div>
-
-<div id="q26" class="q full_width">
-<a class="item_anchor" name="ItemAnchor0"></a>
-
-</div>
-
-<div class="clear"></div>
-
-<div class="clear"></div>
-
-<div id="q28" class="q full_width">
-<a class="item_anchor" name="ItemAnchor2"></a>
-<div class="segment_header" style="background:#0000FF;width:100%;text-align:Center;"><h1 style="font-size:30px;padding:10px 1em 10px ;">Add / Edit Project</h1></div>
-</div>
-
-<div class="clear"></div>
 
 
-<div class="clear"></div>
 
 <div id="q2" class="q">
 <a class="item_anchor" name="ItemAnchor4"></a>
@@ -657,11 +664,9 @@ tr.highlight td{
 
 </div>
 <!-- END_ITEMS -->
-<input type="hidden" name="EParam" value="FzpUCZwnDno=" />
-<div class="outside_container">
 
  <big><button type="submit"  class="btn app_button">SAVE &amp; CONTINUE</button>  </big>  
-<</div>
+
 
 </form>
 </body>
