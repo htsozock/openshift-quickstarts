@@ -45,20 +45,22 @@
 
 
 <div id="container" style="text-align: left;">
- <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;"></div>
+ <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">
+ <h4>  USAID - Development Information Solution (DIS) </h4>  
+   <big><p><a href="MainServlet?action=listProject" >HOME</a></p></big>  
+    <hr size="15">
+ </div>
  
  <div id="container" style="text-align: center;">
- <h4>  USAID - Development Information Solution (DIS) </h4>  
-   <big><p><a href="MainServlet?action=listProject" >HOME</a></p></big>      
-     <!--  <hr size="15"> -->
-      
+ 
+     
        
     <div id="q28" class="q full_width">
 <a class="item_anchor" name="ItemAnchor2"></a>
-<div class="segment_header" style="background:#0000FF;width:60%;text-align:Center;"><h1 style="font-size:30px;padding:10px 1em 10px ;">Add / Edit Project</h1></div>
+<div class="segment_header" style="background:#0000FF;width:60%;text-align:left;"><h1 style="font-size:30px;padding:10px 1em 10px ;">Add / Edit Project</h1></div>
 </div></div>
 <div id="container" style="text-align: left;">
-    <!--  <hr size="35">    -->        
+    <hr size="35">           
    <form method="POST" action='MainServlet' name="frmAddProject">
     
         Project ID     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text" readonly="readonly" name="id"  size="10"  disabled  value="<c:out value="${entry.id}" />" 
@@ -69,7 +71,7 @@
 
 />" /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
                 
-         &nbsp;&nbsp; Organization    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <input        type="text" name="organization" size="40"      value="<c:out 
+         &nbsp;&nbsp; Organization   &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <input        type="text" name="organization" size="40"      value="<c:out 
 
 value="${entry.organization}" />" /> <br /> 
             <br />
@@ -82,7 +84,7 @@ value="${entry.organization}" />" /> <br />
          
          Start Date    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input   type="text" name="startdt" size="50"  value="<fmt:formatDate pattern="MM/dd/yyyy" 
 
-value="${entry.startdt}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+value="${entry.startdt}" />" /> &nbsp;&nbsp;&nbsp;&nbsp 
          End  Date     &nbsp;&nbsp;&nbsp; &nbsp;  <input    type="text" name="enddt" size="40"  value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.enddt}" />" /> <br 
 
 /> 
@@ -101,7 +103,7 @@ value="${entry.startdt}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
    
           
           <hr size="35">
-       <div id="container" style="text-align: center;">
+       <div id="container" style="text-align: left;">
  
           <big><button type="submit"  class="btn app_button">SAVE &amp; CONTINUE</button>  </big>             </div>
                

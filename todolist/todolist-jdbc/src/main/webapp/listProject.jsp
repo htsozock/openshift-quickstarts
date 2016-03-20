@@ -47,12 +47,14 @@
   <![endif]-->
    <div id="container" style="text-align: left;">
   <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">
+    <h4>  USAID - Development Information Solution (DIS) </h4>
    </div>
  </head>
 <body>
  
+  
    <div class="container" align ="center"> 
-     <h4>  USAID - Development Information Solution (DIS) </h4>
+     <!-- <h4>  USAID - Development Information Solution (DIS) </h4> -->
       <hr size="35">
       
     <ul class="nav nav-tabs">
@@ -65,8 +67,11 @@
    </ul>
      <br>
   
-<table style="width:98%"  border=1 align="center" frame="box" id="Projects List"  >
-<b> <h3>Projects List</h3></b>
+<table style="width:98%"  border=1 align="center" frame="box" id="Projects_List"  >
+   <div class="container" align ="left"> 
+     <!-- <h4>  USAID - Development Information Solution (DIS) </h4> -->
+     <b> <h3>Projects List</h3></b>
+     </div>
        <thead>
             <tr>
                 <th scope="col"> ID</th>
