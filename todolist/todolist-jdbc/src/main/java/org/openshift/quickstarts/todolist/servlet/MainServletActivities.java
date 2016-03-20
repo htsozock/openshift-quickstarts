@@ -47,11 +47,7 @@ public class MainServletActivities extends HttpServlet {
     	
     	entry.setActivity_name(req.getParameter("Activity_name"));
     	entry.setCountry(req.getParameter("country"));
-    	
-    	
-    	
-    	entry.setDescription(req.getParameter("description"));
-
+     	entry.setDescription(req.getParameter("description"));
         String award_number =  req.getParameter("award_number");
         entry.setAward_number(Integer.parseInt(award_number));
         
