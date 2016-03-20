@@ -98,7 +98,7 @@ return  obligation_amount;
 
  public String toString() { 
 
- return "Project_activities{" + 
+ return "ProjectActivities{" + 
 
 
  "id='" + id + '\'' + 
