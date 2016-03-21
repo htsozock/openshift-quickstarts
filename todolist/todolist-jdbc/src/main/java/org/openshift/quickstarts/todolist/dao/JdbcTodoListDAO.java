@@ -1,6 +1,7 @@
 package org.openshift.quickstarts.todolist.dao;
 
 import org.openshift.quickstarts.todolist.model.TodoEntry;
+import org.openshift.quickstarts.todolist.model.ProjectActivities;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -183,6 +184,7 @@ public class JdbcTodoListDAO implements TodoListDAO {
     @Override
     public TodoEntry getProjectDetailsById(int projectId) {
     	  TodoEntry entry = new TodoEntry();
+    	  ProjectActivities entry1 = new  ProjectActivities();
          
             try {
                Connection connection = getConnection();
@@ -213,7 +215,7 @@ public class JdbcTodoListDAO implements TodoListDAO {
              preparedStatement.setInt(1, projectId);
              ResultSet rset = preparedStatement.executeQuery();
              if (rset.next()){
-            	 TodoEntry entry = new TodoEntry();
+            	
              	entry.setId(rset.getInt("id"));
                  entry.setName(rset.getString("name"));
                  entry.setStartdt(rset.getDate("startdt"));
@@ -223,8 +225,8 @@ public class JdbcTodoListDAO implements TodoListDAO {
                  entry.setManager(rset.getString("manager"));
                  entry.setStatus(rset.getString("status"));
                  entry.setDescription(rset.getString("description"));
-                 
-                 list.add(entry);
+             
+             
              }
     } catch (SQLException e) {
       e.printStackTrace();
