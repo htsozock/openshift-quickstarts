@@ -182,14 +182,14 @@ public class JdbcTodoListDAO implements TodoListDAO {
 ////Implement the "getProjectById" interface method -- search project by id
     
     @Override
-    public ProjectActivities getProjectDetailsById(int projectId) {
+    public ProjectActivities getProjectDetailsById(int projectId1) {
     	 /* TodoEntry entry = new TodoEntry();*/
     	  ProjectActivities entry1 = new  ProjectActivities();
          
             try {
                Connection connection = getConnection();
                PreparedStatement preparedStatement = connection.prepareStatement("SELECT id, id_activity,name, activty_name, country, description  FROM project_activity  WHERE id=? ");
-               preparedStatement.setInt(1, projectId);
+               preparedStatement.setInt(1, projectId1);
                ResultSet rset = preparedStatement.executeQuery();
                if (rset.next()){
             	   entry1.setId(rset.getInt("id"));
