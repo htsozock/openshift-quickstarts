@@ -61,13 +61,11 @@ public class MainServlet extends HttpServlet {
        	entry1.setDescription(req.getParameter("description"));
         String id_activity = req.getParameter("id_activity");
         String id1 = req.getParameter("id");
-      
-       	entry1.setId_activity(Integer.parseInt(id_activity));
-       	 
-         	entry1.setId(Integer.parseInt(id1));
-         
-        
     
+       	entry1.setId_activity(Integer.parseInt(id_activity));
+       	entry1.setId(Integer.parseInt(id1));
+         
+         	
         try {
             Date startdt = new SimpleDateFormat("MM/dd/yyyy").parse(req.getParameter("startdt"));
             entry.setStartdt(startdt);
@@ -111,9 +109,21 @@ public class MainServlet extends HttpServlet {
              req.setAttribute("entry", entry);
          } else if (action.equalsIgnoreCase("details")){
              forward = LIST_PROJECT_DETAILS;
-             int projectId = Integer.parseInt(req.getParameter("projectId"));
-             ProjectActivities entry1 = dao.getdetails(projectId);
+             String id2 = req.getParameter("projectId1");
+         	try { 
+             int projectId1 = Integer.parseInt(id2);
+             ProjectActivities entry1 = dao.getdetails(projectId1);
              req.setAttribute("entry1", entry1);
+             
+         	} catch (NumberFormatException nfe) {
+         		 System.out.println("Project  "  + +  " is updated!");
+         	}
+            
+                    
+             
+             
+             
+             
              
          } else if (action.equalsIgnoreCase("listProject")){
              forward = LIST_PROJECT;
