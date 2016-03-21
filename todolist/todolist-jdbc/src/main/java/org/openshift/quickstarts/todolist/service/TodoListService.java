@@ -35,8 +35,10 @@ public class TodoListService {
            return dao.getProjectById(projectId);
        }
     
+
+    
     public ProjectActivities getdetails(int projectId) {    // will return ONLY one project awith all the activities
-        return dao.getProjectDeailsById(projectId);
+        return dao.getProjectDetailsById(projectId);
     }
  
     
