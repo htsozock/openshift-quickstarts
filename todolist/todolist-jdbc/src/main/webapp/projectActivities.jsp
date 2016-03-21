@@ -79,10 +79,10 @@
 
 value="${entry.country}" />" /> <br /> 
             <br />
-        Award Amount  &nbsp; <input   type="text" name="award_amount" size="50"  value="<c:out value="${entry.award_amount}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        Award Amount  &nbsp; <input   type="text" name="awardamount" size="50"  value="<c:out value="${entry.awardamount}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 
 &nbsp;&nbsp;
-         Obligation Amount   &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input   type="text" name="obligation_amount" size="40"  value="<c:out value="${entry.obligation_amount}" />" /> <br />    
+         Obligation Amount   &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input   type="text" name="obligationamount" size="40"  value="<c:out value="${entry.obligationamount}" />" /> <br />    
             <br />
                  
                     <br /> <br /> 

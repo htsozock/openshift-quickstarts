@@ -18,8 +18,8 @@ public class ProjectActivities {
 private int id_activity ;
 private int id ;
 private String activity_name;
-private int obligation_amount;
-private int award_number;
+private int obligationamount;
+private int awardnumber;
 private String country;
 private String description;
 
@@ -29,15 +29,15 @@ private String description;
 
 }
 
- public ProjectActivities(int id_activity, int id , String activity_name, String description, String country, int award_number, int obligation_amount) 
+ public ProjectActivities(int id_activity, int id , String activity_name, String description, String country, int awardnumber, int obligationamount) 
  {
   this.id_activity= id_activity;
   this.id=id;
   this.activity_name = activity_name;
   this.description = description;
   this.country = country;
-  this.award_number =award_number;
-  this.obligation_amount = obligation_amount;
+  this.award_number =awardnumber;
+  this.obligation_amount = obligationamount;
 
 }
 
@@ -78,20 +78,20 @@ public void setId_activity(int id_activity) {
  this.id_activity = id_activity;
 }
 
-public int getAward_number() {
- return award_number;
+public int getAwardnumber() {
+ return awardnumber;
 }
 
-public void setAward_number(int award_number) {
- this.award_number = award_number;
+public void setAwardnumber(int awardnumber) {
+ this.awardnumber = awardnumber;
 }
 
-public int getObligation_amount() {
-return  obligation_amount;
+public int getObligationamount() {
+return  obligationamount;
 }
 
- public void setObligation_amount(int obligation_amount) {
- this.obligation_amount = obligation_amount;
+ public void setObligation_amount(int obligationamount) {
+ this.obligationamount = obligationamount;
 }
 
  @Override 
@@ -111,10 +111,10 @@ return  obligation_amount;
  ", activity_name='" + activity_name + '\'' + 
 
 
- ", obligation_amount='" + obligation_amount + '\'' + 
+ ", obligationamount='" + obligationamount + '\'' + 
 
 
- ", award_number='" + award_number + '\'' + 
+ ", awardnumber='" + awardnumber + '\'' + 
  
  ", description='" + description + '\'' + 
 

@@ -99,8 +99,7 @@ try {
   Connection connection = getConnection();
  try {
  connection.setAutoCommit(true);
- PreparedStatement statement = connection.prepareStatement("INSERT INTO project_activity (activity_name,country, description, award_number, "
- + "obligation_amount, id ) "
+ PreparedStatement statement = connection.prepareStatement("INSERT INTO project_activity (activity_name,country, description, awardnumber, obligationamount, id ) "
  + "VALUES ( ?, ?,?, ?, ?,?)");
 
 // Parameters start with 1
@@ -108,8 +107,8 @@ try {
   statement.setString(1, entry.getActivity_name());
   statement.setString(2, entry.getCountry());
   statement.setString(3, entry.getDescription());
-  statement.setInt(4, entry.getAward_number());
-  statement.setInt(5, entry.getObligation_amount());
+  statement.setInt(4, entry.getAwardnumber());
+  statement.setInt(5, entry.getObligationamount());
   statement.setInt(6, entry.getId());
   statement.executeUpdate();
   System.out.println("Record is Created!");
@@ -162,13 +161,13 @@ try {
   Connection connection = getConnection();
   try {
    connection.setAutoCommit(true);
-   PreparedStatement statement = connection.prepareStatement("UPDATE project_activity  SET activity_name=?, country=?, award_number=?, obligation_amount=?, description=? "
+   PreparedStatement statement = connection.prepareStatement("UPDATE project_activity  SET activity_name=?, country=?, awardnumber=?, obligationamount=?, description=? "
     + "WHERE id_activity =? ");
  	try {
      statement.setString(1, entry.getActivity_name());
      statement.setString(2, entry.getCountry());
-     statement.setInt(3, entry.getAward_number());
-     statement.setInt(4, entry.getObligation_amount());
+     statement.setInt(3, entry.getAwardnumber());
+     statement.setInt(4, entry.getObligationamount());
      statement.setString(5, entry.getDescription());
      statement.executeUpdate();
 
@@ -199,8 +198,8 @@ try {
     entry.setId_activity(rset.getInt("id_activity"));
     entry.setActivity_name(rset.getString("activity_name"));
     entry.setCountry(rset.getString("country")); 
-    entry.setAward_number(rset.getInt("award_number"));
-    entry.setObligation_amount(rset.getInt("obligation_amount"));
+    entry.setAwardnumber(rset.getInt("awardnumber"));
+    entry.setObligationamount(rset.getInt("obligationamount"));
     entry.setDescription(rset.getString("description"));
     entry.setId(rset.getInt("id"));
   }
@@ -235,8 +234,8 @@ try {
    entry.setId(rset.getInt("id"));
    entry.setActivity_name(rset.getString("activity_name"));
    entry.setCountry(rset.getString("Country")); 
-   entry.setAward_number(rset.getInt("award_number"));
-   entry.setObligation_amount(rset.getInt("obligation_amount"));
+   entry.setAwardnumber(rset.getInt("awardnumber"));
+   entry.setObligationamount(rset.getInt("obligationamount"));
    entry.setDescription(rset.getString("description"));
    list.add(entry);
   }
