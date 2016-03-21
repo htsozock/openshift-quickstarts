@@ -82,8 +82,8 @@
                 <th scope="col"> Activity Name </th>
                 <th scope="col"> Country </th>
                 <th scope="col"> Description </th>
-                <th scope="col"> Award Number </th>
-                <th scope="col"> Total Obligation Amount </th>
+        <!--         <th scope="col"> Award Number </th>
+                <th scope="col"> Total Obligation Amount </th> -->
                <th scope="col" colspan=3> Action </th>
             </tr>
       </thead> 
@@ -96,8 +96,7 @@
                     <td><c:out value="${entry.activity_name}" /></td>
                     <td><c:out value="${entry.country}" /></td>
                     <td><c:out value="${entry.description}" /></td>
-                    <td><c:out value="${entry.description}" /></td>
-                    <%-- <td><c:out value="${entry.awardnumber}" /></td>
+                                     <%-- <td><c:out value="${entry.awardnumber}" /></td>
                      <td><c:out value="${entry.obligationamount}" /></td> --%>
                     
                     <td><a href="MainServletActivities?action=delete&projectId=<c:out value="${entry.id_activity}"/>">Delete</a></td>
