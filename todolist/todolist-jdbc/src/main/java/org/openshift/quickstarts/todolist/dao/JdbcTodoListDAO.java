@@ -183,22 +183,22 @@ public class JdbcTodoListDAO implements TodoListDAO {
     
     @Override
     public TodoEntry getProjectDetailsById(int projectId) {
-    	  TodoEntry entry = new TodoEntry();
-    	  ProjectActivities entry1 = new  ProjectActivities();
+    	 /* TodoEntry entry = new TodoEntry();*/
+    	  ProjectActivities entry = new  ProjectActivities();
          
             try {
                Connection connection = getConnection();
-               PreparedStatement preparedStatement = connection.prepareStatement("SELECT a.id, b.id_activity,a.name, a.manager, b.activty_name, b.country FROM project a, project_activity b  WHERE a.id =b.id and a.id=? ");
+               PreparedStatement preparedStatement = connection.prepareStatement("SELECT id, id_activity,name, activty_name, country, description  FROM project_activity  WHERE id=? ");
                preparedStatement.setInt(1, projectId);
                ResultSet rset = preparedStatement.executeQuery();
                if (rset.next()){
             	   entry.setId(rset.getInt("id"));
             	   entry.setId_activity(rset.getInt("id_activity"));
                    entry.setName(rset.getString("name"));
-                   entry.setManager(rset.getString("manager"));
                    entry.setActivity_name(rset.getString("activity_name"));
                    entry.setCountry(rset.getString("country"));
-               }
+                   entry.setDescription(rset.getString("description"));
+                          }
       } catch (SQLException e) {
         e.printStackTrace();
     }

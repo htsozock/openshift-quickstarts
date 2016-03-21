@@ -1,6 +1,7 @@
 package org.openshift.quickstarts.todolist.servlet;
 
 import org.openshift.quickstarts.todolist.model.TodoEntry;
+import org.openshift.quickstarts.todolist.model.ProjectActivities;
 import org.openshift.quickstarts.todolist.service.TodoListService;
 
 import javax.servlet.ServletException;
@@ -37,6 +38,7 @@ public class MainServlet extends HttpServlet {
 	    /*private static String INSERT_OR_EDIT = "/project.jsp";*/
 	    private static String INSERT_OR_EDIT = "/project.jsp";
 	    private static String LIST_PROJECT = "/listProject.jsp";
+	    private static String LIST_PROJECT_DETAILS = "/ProjectActivitiesDetails.jsp";
 	 
 	    private TodoListService dao = new TodoListService();
 
@@ -45,12 +47,34 @@ public class MainServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         	
     	TodoEntry entry = new TodoEntry();
+    	ProjectActivities entry1 = new ProjectActivities();
     	
     	entry.setName(req.getParameter("name"));
     	entry.setStatus(req.getParameter("status"));
     	entry.setManager(req.getParameter("manager"));
     	entry.setOrganization(req.getParameter("organization"));
     	entry.setDescription(req.getParameter("description"));
+    	
+     	entry1.setName(req.getParameter("name"));
+     	entry1.setActivity_name(req.getParameter("activity_name"));
+       	entry1.setCountry(req.getParameter("country"));
+       	entry1.setDescription(req.getParameter("description"))
+        String id_activity = req.getParameter("id_activity");
+        String id1 = req.getParameter("id");
+      
+       	entry1.setId_activity(Integer.parseInt(id_activity));
+       	
+        if(id1 == null || id1.isEmpty())
+        {
+            dao.addEntry(entry);
+        }
+        else
+        {
+         	entry1.setId(Integer.parseInt(id1));
+         
+            dao.getdetails(id1);
+        }
+       	
     
         try {
             Date startdt = new SimpleDateFormat("MM/dd/yyyy").parse(req.getParameter("startdt"));
@@ -60,7 +84,7 @@ public class MainServlet extends HttpServlet {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-    
+          
         String id = req.getParameter("id");
         if(id == null || id.isEmpty())
         {
@@ -70,7 +94,7 @@ public class MainServlet extends HttpServlet {
         {
             entry.setId(Integer.parseInt(id));
             dao.update(entry);
-        }
+         }
         RequestDispatcher view = req.getRequestDispatcher(LIST_PROJECT);
         req.setAttribute("list", dao.getAllEntries());
         view.forward(req, resp);
@@ -86,14 +110,19 @@ public class MainServlet extends HttpServlet {
          if (action.equalsIgnoreCase("delete")){
              int projectId = Integer.parseInt(req.getParameter("projectId"));
              dao.delete(projectId);
-          
-             forward = LIST_PROJECT;
+               forward = LIST_PROJECT;
              req.setAttribute("list", dao.getAllEntries());  
          } else if (action.equalsIgnoreCase("edit")){
              forward = INSERT_OR_EDIT;
              int projectId = Integer.parseInt(req.getParameter("projectId"));
              TodoEntry entry = dao.get(projectId);
              req.setAttribute("entry", entry);
+         } else if (action.equalsIgnoreCase("details")){
+             forward = LIST_PROJECT_DETAILS;
+             int projectId = Integer.parseInt(req.getParameter("projectId"));
+             TodoEntry entry = dao.getdetails(projectId);
+             req.setAttribute("entry", entry);
+             
          } else if (action.equalsIgnoreCase("listProject")){
              forward = LIST_PROJECT;
              req.setAttribute("list", dao.getAllEntries());  
