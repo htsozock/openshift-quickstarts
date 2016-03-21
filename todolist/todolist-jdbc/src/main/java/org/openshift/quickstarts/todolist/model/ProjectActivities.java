@@ -110,11 +110,6 @@ return  obligationamount;
 
  ", activity_name='" + activity_name + '\'' + 
 
-
-/* ", obligationamount='" + obligationamount + '\'' + 
-
-
- ", award_number='" + award_number + '\'' + */
  
  ", description='" + description + '\'' + 
 
