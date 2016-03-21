@@ -58,7 +58,7 @@ try {
    Statement statement = connection.createStatement();
     try {
       statement.executeUpdate(" CREATE TABLE project_activity (id_activity int(11) NOT NULL AUTO_INCREMENT, id int(11),activity_name VARCHAR(50), "
-      		+ "description TEXT DEFAULT NULL, country VARCHAR(50), obligation_amount int DEFAULT 0,award_number int DEFAULT 0, PRIMARY KEY(id_activity,id)) ENGINE=InnoDB AUTO_INCREMENT=001 DEFAULT CHARSET=utf8 ");
+      		+ "description TEXT DEFAULT NULL, country VARCHAR(50),  PRIMARY KEY(id_activity,id)) ENGINE=InnoDB AUTO_INCREMENT=001 DEFAULT CHARSET=utf8 ");
      } finally {
  
      statement.close();

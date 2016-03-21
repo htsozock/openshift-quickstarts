@@ -176,31 +176,27 @@ public class JdbcTodoListDAO implements TodoListDAO {
             throw new RuntimeException(e);
         }
     }
-    
-      
+     
     
 ////Implement the "getProjectById" interface method -- search project by id
     
     @Override
-    public TodoEntry getProjectById(int projectId) {
+    public TodoEntry getProjectDetailsById(int projectId) {
     	  TodoEntry entry = new TodoEntry();
          
             try {
                Connection connection = getConnection();
-               PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM project WHERE id =? ");
+               PreparedStatement preparedStatement = connection.prepareStatement("SELECT a.id, b.id_activity,a.name, a.manager, b.activty_name, b.country FROM project a, project_activity b  WHERE a.id =b.id and a.id=? ");
                preparedStatement.setInt(1, projectId);
                ResultSet rset = preparedStatement.executeQuery();
                if (rset.next()){
             	   entry.setId(rset.getInt("id"));
+            	   entry.setId_activity(rset.getInt("id_activity"));
                    entry.setName(rset.getString("name"));
-                   entry.setStartdt(rset.getDate("startdt"));
-                   entry.setEnddt(rset.getDate("enddt"));
-                   entry.setOrganization(rset.getString("organization")); 
                    entry.setManager(rset.getString("manager"));
-                   entry.setStatus(rset.getString("status"));
-                   entry.setDescription(rset.getString("description"));
-                
-            }
+                   entry.setActivity_name(rset.getString("activity_name"));
+                   entry.setCountry(rset.getString("country"));
+               }
       } catch (SQLException e) {
         e.printStackTrace();
     }
@@ -208,6 +204,35 @@ public class JdbcTodoListDAO implements TodoListDAO {
     return entry;
 }
 
+    public TodoEntry getProjectById(int projectId) {
+  	  TodoEntry entry = new TodoEntry();
+       
+          try {
+             Connection connection = getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement("SELECT id, name,startdt, enddt ,organization,manager, status, description  FROM project WHERE id =? ");
+             preparedStatement.setInt(1, projectId);
+             ResultSet rset = preparedStatement.executeQuery();
+             if (rset.next()){
+            	 TodoEntry entry = new TodoEntry();
+             	entry.setId(rset.getInt("id"));
+                 entry.setName(rset.getString("name"));
+                 entry.setStartdt(rset.getDate("startdt"));
+                 entry.setEnddt(rset.getDate("enddt"));
+              
+                 entry.setOrganization(rset.getString("organization")); 
+                 entry.setManager(rset.getString("manager"));
+                 entry.setStatus(rset.getString("status"));
+                 entry.setDescription(rset.getString("description"));
+                 
+                 list.add(entry);
+             }
+    } catch (SQLException e) {
+      e.printStackTrace();
+  }
+
+  return entry;
+}
+  
    
    ///    Implement the "getAllProjects()"  interface method - --return  all the existing projects 
 

@@ -34,6 +34,7 @@ import org.openshift.quickstarts.todolist.dao.TodoListDAO;
 public class MainServlet extends HttpServlet {
 
 	    private static final long serialVersionUID = 1L;
+	    /*private static String INSERT_OR_EDIT = "/project.jsp";*/
 	    private static String INSERT_OR_EDIT = "/project.jsp";
 	    private static String LIST_PROJECT = "/listProject.jsp";
 	 

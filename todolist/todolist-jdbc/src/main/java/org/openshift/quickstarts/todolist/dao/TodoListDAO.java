@@ -16,4 +16,7 @@ public interface TodoListDAO {
     
     List<TodoEntry> getAllProjects();
     TodoEntry getProjectById(int projectId);
+    TodoEntry getProjectDetailsById(int projectId);
+    
+   
 }
