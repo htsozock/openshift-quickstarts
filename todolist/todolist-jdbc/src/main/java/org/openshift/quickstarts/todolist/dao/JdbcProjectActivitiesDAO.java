@@ -109,7 +109,7 @@ try {
   statement.setString(3, entry.getDescription());
 /*  statement.setInt(4, entry.getAwardnumber());
   statement.setInt(5, entry.getObligationamount());*/
-  statement.setInt(6, entry.getId());
+  statement.setInt(4, entry.getId());
   statement.executeUpdate();
   System.out.println("Record is Created!");
   } finally {
@@ -168,7 +168,7 @@ try {
      statement.setString(2, entry.getCountry());
     /* statement.setInt(3, entry.getAwardnumber());
      statement.setInt(4, entry.getObligationamount());*/
-     statement.setString(5, entry.getDescription());
+     statement.setString(3, entry.getDescription());
      statement.executeUpdate();
 
      System.out.println("Project activity " + entry.getActivity_name() + " is updated!");
