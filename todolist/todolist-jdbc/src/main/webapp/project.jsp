@@ -85,7 +85,7 @@ value="${entry.organization}" />" /> <br />
          
          Start Date    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input   type="text" name="startdt" size="50"  value="<fmt:formatDate pattern="MM/dd/yyyy" 
 
-value="${entry.startdt}" />" /> &nbsp;&nbsp;&nbsp;&nbsp 
+value="${entry.startdt}" />" /> &nbsp;&nbsp;&nbsp;
          End  Date    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;  <input    type="text" name="enddt" size="40"  value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.enddt}" />" /> <br 
 
 /> 
@@ -106,7 +106,14 @@ value="${entry.startdt}" />" /> &nbsp;&nbsp;&nbsp;&nbsp
           <hr size="35">
        <div id="container" style="text-align: left;">
  
-          <big><button type="submit"  class="btn app_button">SAVE &amp; CONTINUE</button>  </big>             </div>
+          <big><button type="submit"  class="btn app_button">SAVE &amp; CONTINUE</button>  </big>         
+     
+   <big><p><a href="MainServlet?action=ProjectActivitiesDetails" >Project Activities Details</a></p></big>  
+    <hr size="15">
+ </div>    
+          
+          
+              </div>
                
     </form>
     
