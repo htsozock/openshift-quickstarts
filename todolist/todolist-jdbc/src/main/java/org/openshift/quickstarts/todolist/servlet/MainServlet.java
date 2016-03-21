@@ -63,18 +63,10 @@ public class MainServlet extends HttpServlet {
         String id1 = req.getParameter("id");
       
        	entry1.setId_activity(Integer.parseInt(id_activity));
-       	
-        if(id1 == null || id1.isEmpty())
-        {
-            dao.addEntry(entry);
-        }
-        else
-        {
+       	 
          	entry1.setId(Integer.parseInt(id1));
          
-            dao.getdetails(id1);
-        }
-       	
+        
     
         try {
             Date startdt = new SimpleDateFormat("MM/dd/yyyy").parse(req.getParameter("startdt"));
@@ -120,8 +112,8 @@ public class MainServlet extends HttpServlet {
          } else if (action.equalsIgnoreCase("details")){
              forward = LIST_PROJECT_DETAILS;
              int projectId = Integer.parseInt(req.getParameter("projectId"));
-             TodoEntry entry = dao.getdetails(projectId);
-             req.setAttribute("entry", entry);
+             ProjectActivities entry1 = dao.getdetails(projectId);
+             req.setAttribute("entry1", entry1);
              
          } else if (action.equalsIgnoreCase("listProject")){
              forward = LIST_PROJECT;
