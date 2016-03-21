@@ -116,7 +116,7 @@ public class MainServlet extends HttpServlet {
              req.setAttribute("entry1", entry1);
              
          	} catch (NumberFormatException nfe) {
-         		 System.out.println("Project  "  + +  " is updated!");
+         		 System.out.println("Project  is updated!");
          	}
             
                     
