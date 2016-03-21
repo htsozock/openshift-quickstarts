@@ -109,14 +109,18 @@ public class MainServlet extends HttpServlet {
              req.setAttribute("entry", entry);
          } else if (action.equalsIgnoreCase("details")){
              forward = LIST_PROJECT_DETAILS;
-            try { 
-             int projectId1 = Integer.parseInt(req.getParameter("projectId"));
-             ProjectActivities entry1 = dao.getdetails(projectId1);
-             req.setAttribute("entry1", entry1);
-             
-         	} catch (NumberFormatException nfe) {
-         		 System.out.println("Project  is  details issue!");
-         	}
+            
+             int projectId = Integer.parseInt(req.getParameter("projectId"));
+             if(projectId == null || projectId.isEmpty())
+             {
+            	 System.out.println("Projectid is NULL!");
+             }
+             else
+             {
+                 ProjectActivities entry1 = dao.getdetails(projectId);
+                 req.setAttribute("entry1", entry1);
+              }
+         	
             
                     
              
