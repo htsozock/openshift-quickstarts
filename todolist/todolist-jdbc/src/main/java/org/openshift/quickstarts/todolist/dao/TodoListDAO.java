@@ -1,6 +1,7 @@
 package org.openshift.quickstarts.todolist.dao;
 
 import org.openshift.quickstarts.todolist.model.TodoEntry;
+import org.openshift.quickstarts.todolist.model.ProjectActivities;
 
 import java.util.List;
 
@@ -16,7 +17,7 @@ public interface TodoListDAO {
     
     List<TodoEntry> getAllProjects();
     TodoEntry getProjectById(int projectId);
-    TodoEntry getProjectDetailsById(int projectId);
+    ProjectActivities getProjectDetailsById(int projectId);
     
    
 }

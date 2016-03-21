@@ -3,6 +3,7 @@ package org.openshift.quickstarts.todolist.service;
 import org.openshift.quickstarts.todolist.dao.JdbcTodoListDAO;
 import org.openshift.quickstarts.todolist.dao.TodoListDAO;
 import org.openshift.quickstarts.todolist.model.TodoEntry;
+import org.openshift.quickstarts.todolist.model.ProjectActivities;
 
 import java.util.List;
 
@@ -34,7 +35,7 @@ public class TodoListService {
            return dao.getProjectById(projectId);
        }
     
-    public TodoEntry getdetails(int projectId) {    // will return ONLY one project awith all the activities
+    public ProjectActivities getdetails(int projectId) {    // will return ONLY one project awith all the activities
         return dao.getProjectDeailsById(projectId);
     }
  

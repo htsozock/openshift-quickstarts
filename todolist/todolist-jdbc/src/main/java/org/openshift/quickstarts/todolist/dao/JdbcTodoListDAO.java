@@ -182,7 +182,7 @@ public class JdbcTodoListDAO implements TodoListDAO {
 ////Implement the "getProjectById" interface method -- search project by id
     
     @Override
-    public TodoEntry getProjectDetailsById(int projectId) {
+    public ProjectActivities getProjectDetailsById(int projectId) {
     	 /* TodoEntry entry = new TodoEntry();*/
     	  ProjectActivities entry = new  ProjectActivities();
          
