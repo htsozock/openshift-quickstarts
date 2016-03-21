@@ -184,7 +184,7 @@ public class JdbcTodoListDAO implements TodoListDAO {
     @Override
     public ProjectActivities getProjectDetailsById(int projectId) {
     	 /* TodoEntry entry = new TodoEntry();*/
-    	  ProjectActivities entry = new  ProjectActivities();
+    	  ProjectActivities entry1 = new  ProjectActivities();
          
             try {
                Connection connection = getConnection();
@@ -192,18 +192,18 @@ public class JdbcTodoListDAO implements TodoListDAO {
                preparedStatement.setInt(1, projectId);
                ResultSet rset = preparedStatement.executeQuery();
                if (rset.next()){
-            	   entry.setId(rset.getInt("id"));
+            	   entry1.setId(rset.getInt("id"));
             	   entry.setId_activity(rset.getInt("id_activity"));
                   // entry.setName(rset.getString("name"));
-                   entry.setActivity_name(rset.getString("activity_name"));
-                   entry.setCountry(rset.getString("country"));
-                   entry.setDescription(rset.getString("description"));
+                   entry1.setActivity_name(rset.getString("activity_name"));
+                   entry1.setCountry(rset.getString("country"));
+                   entry1.setDescription(rset.getString("description"));
                           }
       } catch (SQLException e) {
         e.printStackTrace();
     }
 
-    return entry;
+    return entry1;
 }
 
     public TodoEntry getProjectById(int projectId) {
