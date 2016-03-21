@@ -91,8 +91,8 @@ return  obligationamount;
 }
 
  public void setObligation_amount(int obligationamount) {
- this.obligationamount = obligationamount;*/
-}
+ this.obligationamount = obligationamount;
+}*/
 
  @Override 
 
