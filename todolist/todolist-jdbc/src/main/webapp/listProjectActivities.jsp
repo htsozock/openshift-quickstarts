@@ -97,8 +97,8 @@
                     <td><c:out value="${entry.country}" /></td>
                     <td><c:out value="${entry.description}" /></td>
                     <td><c:out value="${entry.description}" /></td>
-                    <td><c:out value="${entry.awardnumber}" /></td>
-                     <td><c:out value="${entry.obligationamount}" /></td>
+                    <%-- <td><c:out value="${entry.awardnumber}" /></td>
+                     <td><c:out value="${entry.obligationamount}" /></td> --%>
                     
                     <td><a href="MainServletActivities?action=delete&projectId=<c:out value="${entry.id_activity}"/>">Delete</a></td>
                     <td><a href="MainServletActivities?action=edit&projectId=<c:out value="${entry.id_activity}"/>">Edit</a></td>

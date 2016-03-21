@@ -79,12 +79,12 @@
 
 value="${entry.country}" />" /> <br /> 
             <br />
-        Award Amount  &nbsp; <input   type="text" name="awardamount" size="50"  value="<c:out value="${entry.awardamount}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+       <%--  Award Amount  &nbsp; <input   type="text" name="awardamount" size="50"  value="<c:out value="${entry.awardamount}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 
 &nbsp;&nbsp;
          Obligation Amount   &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input   type="text" name="obligationamount" size="40"  value="<c:out value="${entry.obligationamount}" />" /> <br />    
             <br />
-                 
+                  --%>
                     <br /> <br /> 
          Description &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;     <textarea name="description" id="description"  rows="4" cols="95"></textarea> 
    

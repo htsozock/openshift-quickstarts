@@ -18,8 +18,8 @@ public class ProjectActivities {
 private int id_activity ;
 private int id ;
 private String activity_name;
-private int obligationamount;
-private int awardnumber;
+/*private int obligationamount;
+private int awardnumber;*/
 private String country;
 private String description;
 
@@ -29,16 +29,16 @@ private String description;
 
 }
 
- public ProjectActivities(int id_activity, int id , String activity_name, String description, String country, int awardnumber, int obligationamount) 
+ public ProjectActivities(int id_activity, int id , String activity_name, String description, String country) 
  {
   this.id_activity= id_activity;
   this.id=id;
   this.activity_name = activity_name;
   this.description = description;
   this.country = country;
-  this.awardnumber =awardnumber;
+/*  this.awardnumber =awardnumber;
   this.obligationamount = obligationamount;
-
+*/
 }
 
 
@@ -78,7 +78,7 @@ public void setId_activity(int id_activity) {
  this.id_activity = id_activity;
 }
 
-public int getAwardnumber() {
+/*public int getAwardnumber() {
  return awardnumber;
 }
 
@@ -91,7 +91,7 @@ return  obligationamount;
 }
 
  public void setObligation_amount(int obligationamount) {
- this.obligationamount = obligationamount;
+ this.obligationamount = obligationamount;*/
 }
 
  @Override 
@@ -111,10 +111,10 @@ return  obligationamount;
  ", activity_name='" + activity_name + '\'' + 
 
 
- ", obligationamount='" + obligationamount + '\'' + 
+/* ", obligationamount='" + obligationamount + '\'' + 
 
 
- ", awardnumber='" + awardnumber + '\'' + 
+ ", award_number='" + award_number + '\'' + */
  
  ", description='" + description + '\'' + 
 
