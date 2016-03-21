@@ -53,8 +53,7 @@
  
  <div id="container" style="text-align: center;">
  
-     
-       
+        
     <div id="q28" class="q full_width">
 <a class="item_anchor" name="ItemAnchor2"></a>
 <div class="segment_header" style="background:#0000FF;width:60%;text-align:left;"><h1 style="font-size:30px;padding:10px 1em 10px ;">Add / Edit Project Activity</h1></div>
@@ -71,13 +70,9 @@
 
 /> <br /> 
              <br />
-        Activity  Name &nbsp;&nbsp; &nbsp;&nbsp;  <input       type="text" name="activity_name" size="40"  title="Enter the activity name..."      value="<c:out value="${entry.activity_name}" 
-
-/>" /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+        Activity  Name &nbsp;&nbsp; &nbsp;&nbsp;  <input       type="text" name="activity_name" size="40"       value="<c:out value="${entry.activity_name}" />" /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
                 
-         &nbsp;&nbsp; Country   &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <input        type="text" name="country" size="40"      value="<c:out 
-
-value="${entry.country}" />" /> <br /> 
+         &nbsp;&nbsp; Country   &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <input        type="text" name="country" size="40"      value="<c:out value="${entry.country}" />" /> <br /> 
             <br />
        <%--  Award Amount  &nbsp; <input   type="text" name="awardamount" size="50"  value="<c:out value="${entry.awardamount}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 
@@ -88,7 +83,7 @@ value="${entry.country}" />" /> <br />
                     <br /> <br /> 
          Description &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;     <textarea name="description" id="description"  rows="4" cols="95"></textarea> 
    
-      <div class="clear"></div>
+     
  <br /> <br /> 
    
           

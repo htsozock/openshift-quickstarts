@@ -45,7 +45,7 @@ public class MainServletActivities extends HttpServlet {
         	
     	ProjectActivities entry = new ProjectActivities();
     	
-    	entry.setActivity_name(req.getParameter("Activity_name"));
+    	entry.setActivity_name(req.getParameter("activity_name"));
     	entry.setCountry(req.getParameter("country"));
      	entry.setDescription(req.getParameter("description"));
        
