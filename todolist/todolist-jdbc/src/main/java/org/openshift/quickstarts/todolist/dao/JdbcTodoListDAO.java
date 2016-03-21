@@ -193,7 +193,7 @@ public class JdbcTodoListDAO implements TodoListDAO {
                ResultSet rset = preparedStatement.executeQuery();
                if (rset.next()){
             	   entry1.setId(rset.getInt("id"));
-            	   entry.setId_activity(rset.getInt("id_activity"));
+            	   entry1.setId_activity(rset.getInt("id_activity"));
                   // entry.setName(rset.getString("name"));
                    entry1.setActivity_name(rset.getString("activity_name"));
                    entry1.setCountry(rset.getString("country"));
