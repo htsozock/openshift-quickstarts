@@ -36,8 +36,8 @@ private String description;
   this.activity_name = activity_name;
   this.description = description;
   this.country = country;
-  this.award_number =awardnumber;
-  this.obligation_amount = obligationamount;
+  this.awardnumber =awardnumber;
+  this.obligationamount = obligationamount;
 
 }
 

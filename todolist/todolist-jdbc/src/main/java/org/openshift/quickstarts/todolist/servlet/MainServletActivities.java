@@ -49,11 +49,11 @@ public class MainServletActivities extends HttpServlet {
     	entry.setCountry(req.getParameter("country"));
      	entry.setDescription(req.getParameter("description"));
        
-     	/*String award_number =  req.getParameter("award_number");
-        entry.setAward_number(Integer.parseInt(award_number));
+     	String awardnumber =  req.getParameter("awardnumber");
+        entry.setAwardnumber(Integer.parseInt(awardnumber));
         
-        String obligation_amount = req.getParameter("obligation_amount");
-        entry.setObligation_amount(Integer.parseInt(obligation_amount));*/
+        String obligationamount = req.getParameter("obligationamount");
+        entry.setObligationamount(Integer.parseInt(obligationamount));*/
        
         String id = req.getParameter("id");
         entry.setId(Integer.parseInt(id));
