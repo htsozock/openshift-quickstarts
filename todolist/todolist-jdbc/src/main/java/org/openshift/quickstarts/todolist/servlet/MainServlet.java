@@ -58,7 +58,7 @@ public class MainServlet extends HttpServlet {
      	entry1.setName(req.getParameter("name"));
      	entry1.setActivity_name(req.getParameter("activity_name"));
        	entry1.setCountry(req.getParameter("country"));
-       	entry1.setDescription(req.getParameter("description"))
+       	entry1.setDescription(req.getParameter("description"));
         String id_activity = req.getParameter("id_activity");
         String id1 = req.getParameter("id");
       
