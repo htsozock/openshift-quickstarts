@@ -101,7 +101,7 @@ try {
   Connection connection = getConnection();
  try {
  connection.setAutoCommit(true);
- PreparedStatement statement = connection.prepareStatement("INSERT INTO project_activity (activity_name,country, description, name,award_amount, oblihgation_amount, id ) "
+ PreparedStatement statement = connection.prepareStatement("INSERT INTO project_activity (activity_name,country, description, name,award_number, oblihgation_amount, id ) "
  + "VALUES ( ?, ?,?, ?)");
 
 // Parameters start with 1
@@ -165,7 +165,7 @@ try {
   try {
    connection.setAutoCommit(true);
    PreparedStatement statement = connection.prepareStatement("UPDATE project_activity  SET activity_name=?, country=?, description=? , name=?, "
-   		+ "amount_award=?, obligation_amount =?"
+   		+ "aaward_number=?, obligation_amount =?"
     + "WHERE id_activity =? ");
  	try {
      statement.setString(1, entry.getActivity_name());
@@ -197,7 +197,7 @@ try {
    try {
    Connection connection = getConnection();
    PreparedStatement preparedStatement = connection.prepareStatement("SELECT id_activity,activity_name,country,description,id, name"
-   		+ " award_amount, obligation_amount FROM project_activity  WHERE id_activity =? ");
+   		+ " award_number, obligation_amount FROM project_activity  WHERE id_activity =? ");
    preparedStatement.setInt(1, project_activityId);
    ResultSet rset = preparedStatement.executeQuery();
    if (rset.next()){

@@ -30,7 +30,7 @@ private String description;
 
 }
 
- public ProjectActivities(int id_activity, int id , String name, String activity_name, String description, String country, int award_amount, int obligation_amount) 
+ public ProjectActivities(int id_activity, int id , String name, String activity_name, String description, String country, int award_number, int obligation_amount) 
  {
   this.id_activity= id_activity;
   this.id=id;
@@ -115,7 +115,7 @@ return  obligation_amount;
  
  "id_activity='" + id_activity + '\'' + 
  
-  "award_amount='" + award_amount + '\'' + 
+  "award_numbert='" + award_number + '\'' + 
   
    "obligation_amount='" + obligation_amount + '\'' + 
  
