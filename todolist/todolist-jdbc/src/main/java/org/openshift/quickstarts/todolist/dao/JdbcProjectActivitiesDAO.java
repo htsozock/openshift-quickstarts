@@ -102,7 +102,7 @@ try {
  try {
  connection.setAutoCommit(true);
  PreparedStatement statement = connection.prepareStatement("INSERT INTO project_activity (activity_name,country, description, name,award_number, oblihgation_amount, id ) "
- + "VALUES ( ?, ?,?, ?)");
+ + "VALUES ( ?, ?,?, ?,?,?,?)");
 
 // Parameters start with 1
  try {
