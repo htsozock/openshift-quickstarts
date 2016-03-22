@@ -37,7 +37,7 @@ public class MainServletIndicators extends HttpServlet {
 	    private static String INSERT_OR_EDIT = "/projectActivities.jsp";
 	    private static String LIST_PROJECT = "/listProjectActivities.jsp";
 	 
-	    private ProjectActivitiesIndicatorsService dao = new ProjectActivitiesIndicatorsServicee();
+	    private ProjectActivitiesIndicatorsService dao = new ProjectActivitiesIndicatorsService();
 
 	    
     @Override
@@ -59,7 +59,7 @@ public class MainServletIndicators extends HttpServlet {
         entry.setId(Integer.parseInt(id));
         
         String id_activity = req.getParameter("id_activity");
-        entry.setId_activity (Integer.parseInt(Id_activity ));
+        entry.setId_activity (Integer.parseInt(id_activity ));
        
            
          
@@ -94,7 +94,7 @@ public class MainServletIndicators extends HttpServlet {
          } else if (action.equalsIgnoreCase("edit")){
              forward = INSERT_OR_EDIT;
              int projectId = Integer.parseInt(req.getParameter("projectId"));
-             ProjectActivities entry = dao.get(projectId);
+             ProjectActivitiesIndicators  entry = dao.get(projectId);
              req.setAttribute("entry", entry);
          } else if (action.equalsIgnoreCase("listProjectActivities")){
              forward = LIST_PROJECT;
