@@ -18,9 +18,6 @@ public class ProjectActivitiesIndicators {
 private int id_indicator;
 private int id_activity ;
 private int id ;
-private Date  period;
-private int value_ind;
-
 
 private String name;
 private String activity_name;
@@ -39,7 +36,7 @@ private String data_type;
 }
 
  public ProjectActivitiesIndicators(int id_activity, int id ,int id_indicator,String name, String activity_name, String indicator_name, String indicator_type, 
-	String indicator_category,  String active,String data_type, Date period, int value_ind)
+	String indicator_category,  String active,String data_type)
  {
   this.id_activity= id_activity;
   this.id=id;
@@ -50,8 +47,6 @@ private String data_type;
   this.indicator_category = indicator_category;
   this.indicator_type = indicator_type;
   this.active = active;
-  this.period = period;
-  this.value_ind = value_ind;
   this.data_type= data_type;
 }
 
@@ -126,26 +121,6 @@ public int getId_indicator() {
 	 this.id_indicator = id_indicator;
 	}
 	
-
-public int getValue_ind() {
- return value_ind;
-}
-
-public void setValue_ind(int value_ind) {
- this.value_ind = value_ind;
-}
-
-public Date getPeriod() {
-return  period;
-}
-
-
- public void setPeriod(Date period) {
- this.period = period;
- 
-}
-
- 
  
  
  @Override 
@@ -173,12 +148,8 @@ return  period;
 	   
 	  ",  name='" + name  + '\'' + 
 
-	 ",  value_ind='" +  value_ind  + '\'' + 
-
 	 ",  activity_name='" + activity_name  + '\'' + 
 	 
-	 ",  period='" + period  + '\'' + 
-
 	 '}'; 
 
 

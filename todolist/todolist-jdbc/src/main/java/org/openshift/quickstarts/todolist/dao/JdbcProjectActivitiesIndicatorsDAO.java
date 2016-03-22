@@ -1,6 +1,6 @@
 package org.openshift.quickstarts.todolist.dao;
 
-import org.openshift.quickstarts.todolist.model.ProjectActivities;
+import org.openshift.quickstarts.todolist.model.ProjectActivitiesIndicators;
  
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -20,14 +20,14 @@ import java.util.Date;
  */
 
  
-public class JdbcProjectActivitiesDAO implements ProjectActivitiesDAO {
+public class JdbcProjectActivitiesIndicatorsDAO implements ProjectActivitiesIndicatorsDAO {
  
 
  private final DataSource dataSource;
 
  // constructor
 
-public JdbcProjectActivitiesDAO() {
+public JdbcProjectActivitiesIndicatorsDAO() {
 
  dataSource = lookupDataSource();// retrurn the datasource
 
@@ -57,10 +57,10 @@ try {
    connection.setAutoCommit(true);
    Statement statement = connection.createStatement();
     try {
-      statement.executeUpdate(" CREATE TABLE project_activity (id_activity int(11) NOT NULL AUTO_INCREMENT, id int(11),activity_name VARCHAR(50),"
-      		+ " name VARCHAR(50),  description TEXT DEFAULT NULL, country VARCHAR(50),"
-      		+ "award_number int DEFAULT 0, obligation_amount int DEFAULT 0,"
-      		+ "PRIMARY KEY(id_activity,id)) ENGINE=InnoDB AUTO_INCREMENT=001 DEFAULT CHARSET=utf8;  ");
+      statement.executeUpdate(" CREATE TABLE project_activity_indicator (id_indicator int (11) not null AUTO_INCREMENT ,"
+    		  + "id int(11) not null , id_activity  int(11) not null, name VARCHAR(45), activity_name VARCHAR(45), "
+    		  + "indicator_name VARCHAR(45),indicator_category VARCHAR(30), data_type VARCHAR(30),indicator_type  VARCHAR(30),  "
+    		  + "active VARCHAR(30), PRIMARY KEY(id_indicator , id, id_activity))  ");
      } finally {
  
      statement.close();
@@ -77,7 +77,7 @@ try {
 
  private boolean isSchemaInitialized(Connection connection) throws SQLException {
 
- ResultSet rset = connection.getMetaData().getTables(null, null, "project_activity", null);
+ ResultSet rset = connection.getMetaData().getTables(null, null, "project_activity_indicator", null);
  try {
   return rset.next();
    } finally {
@@ -95,25 +95,29 @@ try {
  //// Implement the "addProjectActivity" interface method -- Create a new project
 
 @Override
- public void addProjectActivity(ProjectActivities entry) {
+ public void addProjectActivityIndicator(ProjectActivitiesIndicators entry) {
 
 try {
   Connection connection = getConnection();
  try {
  connection.setAutoCommit(true);
- PreparedStatement statement = connection.prepareStatement("INSERT INTO project_activity (activity_name,country, description, name,award_number, oblihgation_amount, id ) "
- + "VALUES ( ?, ?,?, ?)");
+ PreparedStatement statement = connection.prepareStatement("INSERT INTO project_activity_indicator (id_activity,activity_name, indicator_name,"
+ 		+ " indicator_category , name,"
+		+ "data_type , indicator_type, id,active ) "
+ + "VALUES ( ?, ?,?, ?,?, ?,?, ?,?)");
 
 // Parameters start with 1
  try {
-  statement.setString(1, entry.getActivity_name());
-  statement.setString(2, entry.getCountry());
-  statement.setString(3, entry.getDescription());
-  statement.setString(4, entry.getName());
- statement.setInt(5, entry.getAward_number());
-  statement.setInt(6, entry.getObligation_amount());
-  statement.setInt(7, entry.getId());
-  statement.executeUpdate();
+	 statement.setInt(1, entry.getId_activity());
+	 statement.setString(2, entry.getActivity_name());
+	 statement.setString(3, entry.getIndicator_name());
+	 statement.setString(4, entry.getIndicator_category());
+	 statement.setString(5, entry.getName());
+	 statement.setString(6, entry.getData_type());
+	 statement.setString(7, entry.getIndicator_type());
+	  statement.setInt(8, entry.getId());
+	  statement.setString(9, entry.getActive());
+	   statement.executeUpdate();
   System.out.println("Record is Created!");
   } finally {
    statement.close();
@@ -131,12 +135,12 @@ throw new RuntimeException(e);
  //// Implement the "deleteProjectActivity" interface method -- delete an existing project
 
  @Override
- public void deleteProjectActivity(int project_activityId) {
+ public void deleteProjectActivityIndicator(int project_activityId) {
  try {
   Connection connection = getConnection();
   try {
    connection.setAutoCommit(true);
-   PreparedStatement statement = connection.prepareStatement("DELETE FROM project_activity  WHERE id_activity =?");
+   PreparedStatement statement = connection.prepareStatement("DELETE FROM project_activity_indicator  WHERE id_indicator =?");
    try {
    statement.setInt(1, project_activityId);
    statement.executeUpdate();
@@ -155,28 +159,32 @@ throw new RuntimeException(e);
 }
 }
 
+ 
+ 
+
 ////Implement the "updateProjectActivity" interface method -- update record for an existing project
 
 @Override
- public void updateProjectActivity(ProjectActivities entry) {
+ public void updateProjectActivityIndicator(ProjectActivitiesIndicators entry) {
 
 try {
   Connection connection = getConnection();
   try {
    connection.setAutoCommit(true);
-   PreparedStatement statement = connection.prepareStatement("UPDATE project_activity  SET activity_name=?, country=?, description=? , name=?, "
-   		+ "award_number=?, obligation_amount =?"
-    + "WHERE id_activity =? ");
+   PreparedStatement statement = connection.prepareStatement("UPDATE project_activity_indicator SET activity_name=?, "
+   		+ "indicator_name=?, active=? , name=?, "
+   		+ "indicator_category=?, indicator_type =?"
+    + "WHERE id_indicator =? ");
  	try {
      statement.setString(1, entry.getActivity_name());
-     statement.setString(2, entry.getCountry());
-     statement.setString(3, entry.getDescription());
+     statement.setString(2, entry.getIndicator_nam());
+     statement.setString(3, entry.getActive());
      statement.setString(4, entry.getName());
-     statement.setInt(5, entry.getAward_number());
-     statement.setInt(6, entry.getObligation_amount());
+     statement.setString(5, entry.getIndicator_category());
+     statement.setString(6, entry.getIndicator_type());
      statement.executeUpdate();
 
-     System.out.println("Project activity " + entry.getActivity_name() + " is updated!");
+     
   } finally {
   statement.close();
   }
@@ -190,25 +198,28 @@ try {
 
 ////Implement the "getProjectActivityById" interface method -- search project by id
 
- @Override
- public ProjectActivities getProjectActivityById(int project_activityId) {
 
-  ProjectActivities entry = new ProjectActivities();
+
+ @Override
+ public ProjectActivitiesIndicators getProjectActivityIndicatorById(int project_activityId) {
+
+	 ProjectActivitiesIndicators entry = new ProjectActivitiesIndicators();
    try {
    Connection connection = getConnection();
-   PreparedStatement preparedStatement = connection.prepareStatement("SELECT id_activity,activity_name,country,description,id, name"
-   		+ " award_number, obligation_amount FROM project_activity  WHERE id_activity =? ");
+   PreparedStatement preparedStatement = connection.prepareStatement("SELECT id, id_activity,id_indicator, name, activity_name,indicator_name, active FROM project_activity_indicator  WHERE id_indicator =? ");
+   
    preparedStatement.setInt(1, project_activityId);
    ResultSet rset = preparedStatement.executeQuery();
    if (rset.next()){
-    entry.setId_activity(rset.getInt("id_activity"));
-    entry.setActivity_name(rset.getString("activity_name"));
-    entry.setCountry(rset.getString("country")); 
-    entry.setDescription(rset.getString("description"));
-    entry.setId(rset.getInt("id"));
-    entry.setName(rset.getString("name"));
-     entry.setAward_number(rset.getInt("award_number"));
-    entry.setObligation_amount(rset.getInt("obligation_amount"));
+	   entry.setId(rset.getInt("id"));
+	   entry.setId_activity(rset.getInt("id_activity"));
+	    entry.setId_indicator(rset.getInt("id_indicator"));
+	    entry.setName(rset.getString("name"));
+	     entry.setActivity_name(rset.getString("activity_name"));
+    entry.setIndicator_name(rset.getString("indicator_name")); 
+    entry.setActive(rset.getString("active"));
+      statement.executeUpdate();
+    
     
   }
   } catch (SQLException e) {
@@ -217,36 +228,32 @@ try {
  return entry;
 }
 
- /// Implement the "getAllProjectsActivity()" interface method - --return all the existing projects 
-
- 
-
-
+ /// Implement the "getAllProjectsActivityIndicators()" interface method - --return all the existing projects 
 
 @Override
-
-
- public List<ProjectActivities> getAllProjectsActivity() {
+ public List<ProjectActivitiesIndicators> getAllProjectsActivityIndicator() {
  try {
   Connection connection = getConnection();
    try {
     Statement statement = connection.createStatement();
-  List<ProjectActivities> list;
+  List<ProjectActivitiesIndicators> list;
   try {
-   ResultSet rset = statement.executeQuery(" SELECT * FROM project_activity  ");
+   ResultSet rset = statement.executeQuery(" SELECT id, id_activity,id_indicator, name, activity_name,indicator_name, active FROM project_activity_indicator  ");
   try {
-  list = new ArrayList<ProjectActivities>();
+  list = new ArrayList<ProjectActivitiesIndicators>();
   while (rset.next()) {
-   ProjectActivities entry = new ProjectActivities();
-   entry.setId_activity(rset.getInt("id_activity"));
-   entry.setActivity_name(rset.getString("activity_name"));
-   entry.setCountry(rset.getString("Country")); 
-   entry.setDescription(rset.getString("description"));
-   entry.setName(rset.getString("name"));
-   entry.setId(rset.getInt("id"));
-   entry.setAward_number(rset.getInt("award_number"));
-   entry.setObligation_amount(rset.getInt("obligation_amount"));
-
+	  ProjectActivitiesIndicators entry = new ProjectActivitiesIndicators();
+   
+	  entry.setId(rset.getInt("id"));
+	   entry.setId_activity(rset.getInt("id_activity"));
+	    entry.setId_indicator(rset.getInt("id_indicator"));
+	    entry.setName(rset.getString("name"));
+	     entry.setActivity_name(rset.getString("activity_name"));
+   entry.setIndicator_name(rset.getString("indicator_name")); 
+   entry.setActive(rset.getString("active"));
+      
+   statement.executeUpdate();
+  
    list.add(entry);
   }
    } finally {
