@@ -56,14 +56,14 @@ public class MainServlet extends HttpServlet {
     	entry.setDescription(req.getParameter("description"));
     	
      //	entry1.setName(req.getParameter("name"));
-     	entry1.setActivity_name(req.getParameter("activity_name"));
+     	/*entry1.setActivity_name(req.getParameter("activity_name"));
        	entry1.setCountry(req.getParameter("country"));
        	entry1.setDescription(req.getParameter("description"));
-        String id_activity = req.getParameter("id_activity");
-        String id1 = req.getParameter("id");
+        String id_activity = req.getParameter("id_activity");*/
+        /*String id1 = req.getParameter("id");
     
        	entry1.setId_activity(Integer.parseInt(id_activity));
-       	entry1.setId(Integer.parseInt(id1));
+       	entry1.setId(Integer.parseInt(id1));*/
          
          	
         try {
@@ -97,26 +97,24 @@ public class MainServlet extends HttpServlet {
     	 String forward="";
          String action = req.getParameter("action");
          
-       
-         
-         
-         
          
          if (action.equalsIgnoreCase("delete")){
              int projectId = Integer.parseInt(req.getParameter("projectId"));
              dao.delete(projectId);
                forward = LIST_PROJECT;
              req.setAttribute("list", dao.getAllEntries());  
+             
          } else if (action.equalsIgnoreCase("edit")){
              forward = INSERT_OR_EDIT;
              int projectId = Integer.parseInt(req.getParameter("projectId"));
              TodoEntry entry = dao.get(projectId);
              req.setAttribute("entry", entry);
+             
          } else if (action.equalsIgnoreCase("details")){
              forward = LIST_PROJECT_DETAILS;
-              int projectId = Integer.parseInt(req.getParameter("projectId"));
-                 ProjectActivities entry1 = dao.getdetails(projectId);
-                 req.setAttribute("entry1", entry1);
+               entry.setId(Integer.parseInt(id));
+                 ProjectActivities entry1 = dao.getdetails(entry.id);
+                 req.setAttribute("entry1", dao.getdetails(entry.id));
             
          } else if (action.equalsIgnoreCase("listProject")){
              forward = LIST_PROJECT;
