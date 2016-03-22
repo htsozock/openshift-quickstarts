@@ -41,7 +41,7 @@ private int value_ind;
  {
   this.id_activity= id_activity;
   this.id=id;
-  this.id=id_indicator;
+  this.id_indicator=id_indicator;
   this.name = name;
   this.activity_name = activity_name;
   this.indicator_name = indicator_name;
