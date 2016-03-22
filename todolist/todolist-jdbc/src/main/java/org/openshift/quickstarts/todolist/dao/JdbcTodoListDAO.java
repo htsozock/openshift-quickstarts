@@ -204,12 +204,12 @@ public class JdbcTodoListDAO implements TodoListDAO {
                             
                             list1.add(entry);
                         }
-                  
+                        return list1;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
         
-        return list1;
+     
     }
 
    
