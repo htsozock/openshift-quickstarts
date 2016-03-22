@@ -37,7 +37,7 @@ public class MainServlet extends HttpServlet {
 	    private static final long serialVersionUID = 1L;
 	    private static String INSERT_OR_EDIT = "/project.jsp";
 	    private static String LIST_PROJECT = "/listProject.jsp";
-	    private static String LIST_PROJECT_DETAILS = "/ProjectActivitiesDetails.jsp";
+	  //  private static String LIST_PROJECT_DETAILS = "/ProjectActivitiesDetails.jsp";
 	 
 	    private TodoListService dao = new TodoListService();
 
@@ -53,17 +53,7 @@ public class MainServlet extends HttpServlet {
     	entry.setManager(req.getParameter("manager"));
     	entry.setOrganization(req.getParameter("organization"));
     	entry.setDescription(req.getParameter("description"));
-    	
-     //	entry1.setName(req.getParameter("name"));
-     	/*entry1.setActivity_name(req.getParameter("activity_name"));
-       	entry1.setCountry(req.getParameter("country"));
-       	entry1.setDescription(req.getParameter("description"));
-        String id_activity = req.getParameter("id_activity");*/
-        /*String id1 = req.getParameter("id");
-    
-       	entry1.setId_activity(Integer.parseInt(id_activity));
-       	entry1.setId(Integer.parseInt(id1));*/
-         
+            
          	
         try {
             Date startdt = new SimpleDateFormat("MM/dd/yyyy").parse(req.getParameter("startdt"));
@@ -103,10 +93,10 @@ public class MainServlet extends HttpServlet {
              dao.delete(projectId);
                forward = LIST_PROJECT;
              req.setAttribute("list", dao.getAllEntries());  
-           } else if (action.equalsIgnoreCase("details")){
+          /* } else if (action.equalsIgnoreCase("details")){
         	   int projectId = Integer.parseInt(req.getParameter("projectId"));
         	    forward = LIST_PROJECT_DETAILS;
-                 req.setAttribute("list1", dao.getdetails(projectId));
+                 req.setAttribute("list1", dao.getdetails(projectId));*/
                  
          } else if (action.equalsIgnoreCase("edit")){
              forward = INSERT_OR_EDIT;

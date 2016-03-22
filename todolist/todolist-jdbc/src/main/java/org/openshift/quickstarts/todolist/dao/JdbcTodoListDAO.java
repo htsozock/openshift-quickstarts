@@ -181,7 +181,7 @@ public class JdbcTodoListDAO implements TodoListDAO {
     
 ////Implement the "getProjectById" interface method -- search project by id
     
-    @Override
+    /*@Override
     public List<ProjectActivities> getProjectDetailsById(int projectId) {
     	try {
     		  Connection connection = getConnection();
@@ -210,7 +210,7 @@ public class JdbcTodoListDAO implements TodoListDAO {
         }
         
      
-    }
+    }*/
 
    
 
