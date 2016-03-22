@@ -97,6 +97,11 @@ public class MainServlet extends HttpServlet {
     	 String forward="";
          String action = req.getParameter("action");
          
+       
+         
+         
+         
+         
          if (action.equalsIgnoreCase("delete")){
              int projectId = Integer.parseInt(req.getParameter("projectId"));
              dao.delete(projectId);
@@ -112,7 +117,7 @@ public class MainServlet extends HttpServlet {
               int projectId = Integer.parseInt(req.getParameter("projectId"));
                  ProjectActivities entry1 = dao.getdetails(projectId);
                  req.setAttribute("entry1", entry1);
-                       
+            
          } else if (action.equalsIgnoreCase("listProject")){
              forward = LIST_PROJECT;
              req.setAttribute("list", dao.getAllEntries());  
