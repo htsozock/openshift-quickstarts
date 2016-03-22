@@ -113,11 +113,11 @@ return  obligation_amount;
 
  "id='" + id + '\'' + 
  
- "id_activity='" + id_activity + '\'' + 
+ ", id_activity='" + id_activity + '\'' + 
  
-  "award_number='" + award_number + '\'' + 
+  ", award_number='" + award_number + '\'' + 
   
-   "obligation_amount='" + obligation_amount + '\'' + 
+   ", obligation_amount='" + obligation_amount + '\'' + 
  
   ", name='" + name + '\'' + 
 

@@ -44,12 +44,10 @@ private int value_ind;
   this.id=id_indicator;
   this.name = name;
   this.activity_name = activity_name;
-  
   this.indicator_name = indicator_name;
   this.indicator_category = indicator_category;
   this.indicator_type = indicator_type;
   this.active = active;
-   
   this.period = period;
   this.value_ind = value_ind;
 
@@ -61,12 +59,12 @@ private int value_ind;
  public String getIndicator_type() {
 	 return indicator_type;
 	}
-	 public void setIndicator_type(String indicator_type) {
+ public void setIndicator_type(String indicator_type) {
 	 this.indicator_type = indicator_type;
 	}
-	 public String getIndicator_category() {
-		 return indicator_name;
-		}
+  public String getIndicator_category() {
+	 return indicator_name;
+	}
 		 public void setIndicator_category(String indicator_category) {
 		 this.indicator_category = indicator_category;
 		}
@@ -132,39 +130,36 @@ return  period;
  public String toString() { 
 
 	 return "ProjectActivitiesIndicators{" + 
+			
 
-
-	 "id='" + id + '\'' + 
+	 "id='" + id +  '\'' + 
 	 
-	 "id_activity='" + id_activity + '\'' + 
+	 ", id_activity='" + id_activity +  '\'' + 
 	 
-	  "id_indicator='" + id_indicator + '\'' + 
+	  ", id_indicator='" + id_indicator  + '\'' + 
 	 
-	  "indicator_name='" + indicator_name + '\'' + 
+	  ", indicator_name='" + indicator_name +  '\'' + 
 	  
-	   "indicator_category ='" + indicator_category  + '\'' + 
+	   ", indicator_category ='" + indicator_category  + '\'' + 
 	   
-	   "indicator_type ='" + indicator_type  + '\'' + 
+	   ", indicator_type ='" + indicator_type  + '\'' + 
 	   
-	    "active ='" + active  + '\'' + 
+	    ", active ='" + active  + '\'' + 
 	   
-	  ", name='" + name + '\'' + 
+	  ", name='" + name  + '\'' + 
 
-	 ", value_ind='" + value_ind + '\'' + 
+	 ", value_ind='" +  value_ind  + '\'' + 
 
 
-	 ", activity_name='" + activity_name + '\'' + 
+	 ", activity_name='" + activity_name  + '\'' + 
 
 	 
-	 ", period='" + period + '\'' + 
+	 ", period='" + period  + '\'' + 
 
 	 '}'; 
 
 
 	}
-
-
-
 
 
 
