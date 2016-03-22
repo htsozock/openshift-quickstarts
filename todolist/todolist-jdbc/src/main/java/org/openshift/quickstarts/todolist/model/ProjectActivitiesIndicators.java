@@ -15,9 +15,12 @@ import java.util.Date;
 public class ProjectActivitiesIndicators {
 
 
+private int id_indicator;
 private int id_activity ;
 private int id ;
-private int id_indicator;
+private Date  period;
+private int value_ind;
+
 
 private String name;
 private String activity_name;
@@ -25,9 +28,8 @@ private String indicator_name;
 private String indicator_category;
 private String indicator_type;
 private String active;
+private String data_type;
 
-private Date  period;
-private int value_ind;
 
 
 // overloaded constructors --- 
@@ -37,11 +39,11 @@ private int value_ind;
 }
 
  public ProjectActivitiesIndicators(int id_activity, int id ,int id_indicator,String name, String activity_name, String indicator_name, String indicator_type, 
-	String indicator_category,  String active, Date period, int value_ind)
+	String indicator_category,  String active,String data_type, Date period, int value_ind)
  {
   this.id_activity= id_activity;
   this.id=id;
-  this.id_indicator=id_indicator;
+  this.id_indicator  =id_indicator;
   this.name = name;
   this.activity_name = activity_name;
   this.indicator_name = indicator_name;
@@ -50,11 +52,19 @@ private int value_ind;
   this.active = active;
   this.period = period;
   this.value_ind = value_ind;
-
+  this.data_type= data_type;
 }
 
 
  // SETTERS AND GETTERS -- 
+ 
+ public String getData_type() {
+	 return data_type;
+	}
+ public void setData_type(String data_type) {
+	 this.data_type = data_type;
+	}
+ 
 
  public String getIndicator_type() {
 	 return indicator_type;
@@ -155,6 +165,8 @@ return  period;
 	 ", indicator_type ='" + indicator_type  + '\'' + 
 	   
 	  ",  active ='" + active  + '\'' + 
+	
+	  ",  data_type ='" + data_type  + '\'' + 
 	   
 	  ",  name='" + name  + '\'' + 
 
