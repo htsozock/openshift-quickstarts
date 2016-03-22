@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  *  This interface contains project CRUD operations and it will be implemented by JdbcProjectActivitiesIndicatorDAO class 
- *  Programming to Interfaces Approach
+ *  Programming to Interfaces Approach -----Hilaire
  */  
 public interface ProjectActivitiesIndicatorsDAO {
 
