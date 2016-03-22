@@ -218,7 +218,7 @@ try {
 	   entry.setActivity_name(rset.getString("activity_name"));
        entry.setIndicator_name(rset.getString("indicator_name")); 
        entry.setActive(rset.getString("active"));
-       statement.executeUpdate();
+       preparedStatement.executeUpdate();
   
   }
   } catch (SQLException e) {
@@ -250,9 +250,7 @@ try {
 	   entry.setActivity_name(rset.getString("activity_name"));
        entry.setIndicator_name(rset.getString("indicator_name")); 
       entry.setActive(rset.getString("active"));
-      
-   statement.executeUpdate();
-  
+    
    list.add(entry);
   }
    } finally {
