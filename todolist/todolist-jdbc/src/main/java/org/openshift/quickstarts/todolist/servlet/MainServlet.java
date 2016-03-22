@@ -76,6 +76,7 @@ public class MainServlet extends HttpServlet {
         }
           
         String id = req.getParameter("id");
+        
         if(id == null || id.isEmpty())
         {
             dao.addEntry(entry);
@@ -103,21 +104,22 @@ public class MainServlet extends HttpServlet {
              dao.delete(projectId);
                forward = LIST_PROJECT;
              req.setAttribute("list", dao.getAllEntries());  
-             
+         } else if (action.equalsIgnoreCase("details")){
+             forward = LIST_PROJECT_DETAILS;
+             int projectId = Integer.parseInt(req.getParameter("projectId"));
+                 ProjectActivities entry1 = dao.getdetails(projectId);
+                 req.setAttribute("entry1", dao.getdetails(projectId));
+                 
          } else if (action.equalsIgnoreCase("edit")){
              forward = INSERT_OR_EDIT;
              int projectId = Integer.parseInt(req.getParameter("projectId"));
              TodoEntry entry = dao.get(projectId);
              req.setAttribute("entry", entry);
-             
-         } else if (action.equalsIgnoreCase("details")){
-             forward = LIST_PROJECT_DETAILS;
-               entry.setId(Integer.parseInt(id));
-                 ProjectActivities entry1 = dao.getdetails(entry.id);
-                 req.setAttribute("entry1", dao.getdetails(entry.id));
+              
             
          } else if (action.equalsIgnoreCase("listProject")){
              forward = LIST_PROJECT;
+             
              req.setAttribute("list", dao.getAllEntries());  
          } else {
              forward = INSERT_OR_EDIT;
