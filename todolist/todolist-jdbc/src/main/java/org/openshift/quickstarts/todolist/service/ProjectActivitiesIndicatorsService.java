@@ -10,7 +10,7 @@ import java.util.List;
  * The service will call JJdbcProjectActivitiesDAO; class methods and this class  implements ProjectActivitiesIndicatorsDAO;DAO interface - 
  *
  */
-public class ProjectActivitiesIndicatorService{
+public class ProjectActivitiesIndicatorsService{
 
     private ProjectActivitiesIndicatorsDAO dao = new JdbcProjectActivitiesIndicatorsDAO(); //Using polymorphism 
 
@@ -19,7 +19,7 @@ public class ProjectActivitiesIndicatorService{
     }
 
     public List<ProjectActivitiesIndicators> getAllEntries() {  
-        return dao.getAllProjectsActivity();
+        return dao.getAllProjectsActivityIndicator();
     }
     
      public void delete(int projectId) {
