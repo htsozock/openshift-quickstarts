@@ -57,8 +57,10 @@ try {
    connection.setAutoCommit(true);
    Statement statement = connection.createStatement();
     try {
-      statement.executeUpdate(" CREATE TABLE project_activity (id_activity int(11) NOT NULL AUTO_INCREMENT, id int(11),activity_name VARCHAR(50), "
-      		+ "description TEXT DEFAULT NULL, country VARCHAR(50),  PRIMARY KEY(id_activity,id)) ENGINE=InnoDB AUTO_INCREMENT=001 DEFAULT CHARSET=utf8 ");
+      statement.executeUpdate(" CREATE TABLE project_activity (id_activity int(11) NOT NULL AUTO_INCREMENT, id int(11),activity_name VARCHAR(50),"
+      		+ " name VARCHAR(50),  description TEXT DEFAULT NULL, country VARCHAR(50),"
+      		+ "award_number int DEFAULT 0, obligation_amount int DEFAULT 0,"
+      		+ "PRIMARY KEY(id_activity,id)) ENGINE=InnoDB AUTO_INCREMENT=001 DEFAULT CHARSET=utf8;  ");
      } finally {
  
      statement.close();
@@ -99,7 +101,7 @@ try {
   Connection connection = getConnection();
  try {
  connection.setAutoCommit(true);
- PreparedStatement statement = connection.prepareStatement("INSERT INTO project_activity (activity_name,country, description,  id ) "
+ PreparedStatement statement = connection.prepareStatement("INSERT INTO project_activity (activity_name,country, description, name,award_amount, oblihgation_amount, id ) "
  + "VALUES ( ?, ?,?, ?)");
 
 // Parameters start with 1
@@ -107,9 +109,10 @@ try {
   statement.setString(1, entry.getActivity_name());
   statement.setString(2, entry.getCountry());
   statement.setString(3, entry.getDescription());
-/*  statement.setInt(4, entry.getAwardnumber());
-  statement.setInt(5, entry.getObligationamount());*/
-  statement.setInt(4, entry.getId());
+  statement.setString(4, entry.getName());
+ statement.setInt(5, entry.getAward_number());
+  statement.setInt(6, entry.getObligation_amount());
+  statement.setInt(7, entry.getId());
   statement.executeUpdate();
   System.out.println("Record is Created!");
   } finally {
@@ -161,14 +164,16 @@ try {
   Connection connection = getConnection();
   try {
    connection.setAutoCommit(true);
-   PreparedStatement statement = connection.prepareStatement("UPDATE project_activity  SET activity_name=?, country=?, description=? "
+   PreparedStatement statement = connection.prepareStatement("UPDATE project_activity  SET activity_name=?, country=?, description=? , name=?, "
+   		+ "amount_award=?, obligation_amount =?"
     + "WHERE id_activity =? ");
  	try {
      statement.setString(1, entry.getActivity_name());
      statement.setString(2, entry.getCountry());
-    /* statement.setInt(3, entry.getAwardnumber());
-     statement.setInt(4, entry.getObligationamount());*/
      statement.setString(3, entry.getDescription());
+     statement.setString(4, entry.getName());
+     statement.setInt(5, entry.getAward_number());
+     statement.setInt(6, entry.getObligation_amount());
      statement.executeUpdate();
 
      System.out.println("Project activity " + entry.getActivity_name() + " is updated!");
@@ -191,17 +196,20 @@ try {
   ProjectActivities entry = new ProjectActivities();
    try {
    Connection connection = getConnection();
-   PreparedStatement preparedStatement = connection.prepareStatement("SELECT id_activity,activity_name,country,description,id FROM project_activity  WHERE id_activity =? ");
+   PreparedStatement preparedStatement = connection.prepareStatement("SELECT id_activity,activity_name,country,description,id, name"
+   		+ " award_amount, obligation_amount FROM project_activity  WHERE id_activity =? ");
    preparedStatement.setInt(1, project_activityId);
    ResultSet rset = preparedStatement.executeQuery();
    if (rset.next()){
     entry.setId_activity(rset.getInt("id_activity"));
     entry.setActivity_name(rset.getString("activity_name"));
     entry.setCountry(rset.getString("country")); 
- /*   entry.setAwardnumber(rset.getInt("award_number"));
-    entry.setObligationamount(rset.getInt("obligation_amount"));*/
     entry.setDescription(rset.getString("description"));
     entry.setId(rset.getInt("id"));
+    entry.setName(rset.getString("name"));
+     entry.setAward_number(rset.getInt("award_number"));
+    entry.setObligation_amount(rset.getInt("obligation_amount"));
+    
   }
   } catch (SQLException e) {
   e.printStackTrace();
@@ -225,7 +233,7 @@ try {
     Statement statement = connection.createStatement();
   List<ProjectActivities> list;
   try {
-   ResultSet rset = statement.executeQuery(" SELECT id_activity,activity_name,country,description,id FROM project_activity  ");
+   ResultSet rset = statement.executeQuery(" SELECT * FROM project_activity  ");
   try {
   list = new ArrayList<ProjectActivities>();
   while (rset.next()) {
@@ -234,11 +242,10 @@ try {
    entry.setActivity_name(rset.getString("activity_name"));
    entry.setCountry(rset.getString("Country")); 
    entry.setDescription(rset.getString("description"));
+   entry.setName(rset.getString("name"));
    entry.setId(rset.getInt("id"));
-
-  
-/*   entry.setAwardnumber(rset.getInt("award_number"));
-   entry.setObligationamount(rset.getInt("obligation_amount"));*/
+   entry.setAward_number(rset.getInt("award_number"));
+   entry.setObligation_amount(rset.getInt("obligation_amount"));
 
    list.add(entry);
   }

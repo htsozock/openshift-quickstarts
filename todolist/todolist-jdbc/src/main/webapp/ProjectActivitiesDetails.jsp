@@ -68,35 +68,33 @@
             <tr>
                 <th scope="col"> Project ID </th>
                 <th scope="col"> Activity ID </th>
-                <!-- <th scope="col"> Project Name </th>
-                <th scope="col"> Project Manager </th> -->
-                <th scope="col"> Activity Name </th>
+                 <th scope="col"> Project Name </th>
+                 <th scope="col"> Activity Name </th>
                 <th scope="col"> Country </th>
                  <th scope="col"> Description </th> 
-                <!--         <th scope="col"> Award Number </th>
-                <th scope="col"> Total Obligation Amount </th> -->
+                 <th scope="col"> Award Number </th>
+                <th scope="col"> Total Obligation Amount </th> 
                </tr>
       </thead> 
      
          <tbody>
-            <c:forEach items="${list}" var="entry">
+            <c:forEach items="${list1}" var="entry">
                 <tr>
-                    <td><c:out value="${entry1.id}" /></td>
-                    <td><c:out value="${entry1.id_activity}" /></td>
-                <%--     <td><c:out value="${entry1.name}" /></td>
-                    <td><c:out value="${entry.manager}" /></td> --%>
-                    <td><c:out value="${entry1.activity_name}" /></td>
-                    <td><c:out value="${entry1.country}" /></td>
-                       <td><c:out value="${entry1.description}" /></td>
-                     <%-- <td><c:out value="${entry.awardnumber}" /></td>
-                     <td><c:out value="${entry.obligationamount}" /></td> --%>
+                    <td><c:out value="${entry.id}" /></td>
+                    <td><c:out value="${entry.id_activity}" /></td>
+                    <td><c:out value="${entry.name}" /></td>
+                    <td><c:out value="${entry.activity_name}" /></td>
+                    <td><c:out value="${entry.country}" /></td>
+                       <td><c:out value="${entry.description}" /></td>
+                     <td><c:out value="${entry.award_number}" /></td>
+                     <td><c:out value="${entry.obligation_amount}" /></td>
                                
                 </tr>
             </c:forEach>
         </tbody>
     </table>
   
-    <h5 align="left"> <a href="MainServletActivities?action=listProjectActivities" >[+] HOME</a> </h5> 
+    <h5 align="left"> <a href="MainServlet?action=listProject" >[+] HOME</a> </h5> 
 
     
     

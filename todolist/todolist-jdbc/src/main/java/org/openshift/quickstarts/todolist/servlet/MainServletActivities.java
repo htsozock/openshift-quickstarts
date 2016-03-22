@@ -48,18 +48,18 @@ public class MainServletActivities extends HttpServlet {
     	entry.setActivity_name(req.getParameter("activity_name"));
     	entry.setCountry(req.getParameter("country"));
      	entry.setDescription(req.getParameter("description"));
-       
-     	/*String awardnumber =  req.getParameter("awardnumber");
-        entry.setAwardnumber(Integer.parseInt(awardnumber));
+     	entry.setName(req.getParameter("name"));
         
-        String obligationamount = req.getParameter("obligationamount");
-        entry.setObligationamount(Integer.parseInt(obligationamount));*/
+     	String award_number =  req.getParameter("award_number");
+        entry.setAward_number(Integer.parseInt(award_number));
+        
+        String obligation_amount = req.getParameter("obligation_amount");
+        entry.setObligation_amount(Integer.parseInt(obligation_amount));
        
         String id = req.getParameter("id");
         entry.setId(Integer.parseInt(id));
         
-        
-           String id_activity = req.getParameter("id_activity");
+         String id_activity = req.getParameter("id_activity");
         if(id_activity == null || id_activity.isEmpty())
         {
             dao.addEntry(entry);
@@ -84,7 +84,6 @@ public class MainServletActivities extends HttpServlet {
          if (action.equalsIgnoreCase("delete")){
              int projectId = Integer.parseInt(req.getParameter("projectId"));
              dao.delete(projectId);
-          
              forward = LIST_PROJECT;
              req.setAttribute("list", dao.getAllEntries());  
          } else if (action.equalsIgnoreCase("edit")){

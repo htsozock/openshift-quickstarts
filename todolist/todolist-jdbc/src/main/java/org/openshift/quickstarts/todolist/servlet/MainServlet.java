@@ -35,7 +35,6 @@ import org.openshift.quickstarts.todolist.dao.TodoListDAO;
 public class MainServlet extends HttpServlet {
 
 	    private static final long serialVersionUID = 1L;
-	    /*private static String INSERT_OR_EDIT = "/project.jsp";*/
 	    private static String INSERT_OR_EDIT = "/project.jsp";
 	    private static String LIST_PROJECT = "/listProject.jsp";
 	    private static String LIST_PROJECT_DETAILS = "/ProjectActivitiesDetails.jsp";
@@ -104,11 +103,10 @@ public class MainServlet extends HttpServlet {
              dao.delete(projectId);
                forward = LIST_PROJECT;
              req.setAttribute("list", dao.getAllEntries());  
-         } else if (action.equalsIgnoreCase("details")){
-             forward = LIST_PROJECT_DETAILS;
-             int projectId = Integer.parseInt(req.getParameter("projectId"));
-                 ProjectActivities entry1 = dao.getdetails(projectId);
-                 req.setAttribute("entry1", dao.getdetails(projectId));
+           } else if (action.equalsIgnoreCase("details")){
+        	   int projectId = Integer.parseInt(req.getParameter("projectId"));
+        	    forward = LIST_PROJECT_DETAILS;
+                 req.setAttribute("list1", dao.getdetails(projectId));
                  
          } else if (action.equalsIgnoreCase("edit")){
              forward = INSERT_OR_EDIT;

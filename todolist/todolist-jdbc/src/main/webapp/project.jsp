@@ -108,7 +108,7 @@ value="${entry.startdt}" />" /> &nbsp;&nbsp;&nbsp;
  
           <big><button type="submit"  class="btn app_button">SAVE &amp; CONTINUE</button>  </big>         
      
-   <big><p><a href="MainServlet?action=details" >Project Activities Details</a></p></big>  
+  <!--  <big><p><a href="MainServlet?action=details" >Project Activities Details</a></p></big>   -->
     <hr size="35">
  </div>    
           

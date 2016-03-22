@@ -71,13 +71,14 @@
 /> <br /> 
              <br />
         Activity  Name &nbsp;&nbsp; &nbsp;&nbsp;  <input       type="text" name="activity_name" size="40"       value="<c:out value="${entry.activity_name}" />" /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-                
+      Project  Name &nbsp;&nbsp; &nbsp;&nbsp;  <input       type="text" name="name" size="40"       value="<c:out value="${entry.name}" />" /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;           
+        <br>
          &nbsp;&nbsp; Country   &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <input        type="text" name="country" size="40"      value="<c:out value="${entry.country}" />" /> <br /> 
             <br />
-       <%--  Award Amount  &nbsp; <input   type="text" name="awardamount" size="50"  value="<c:out value="${entry.awardamount}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+       Award Amount  <label>$</label> &nbsp; <input   type="text" name="award_amount" size="50"  value="<c:out value="${entry.award_amount}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 
 &nbsp;&nbsp;
-         Obligation Amount   &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input   type="text" name="obligationamount" size="40"  value="<c:out value="${entry.obligationamount}" />" /> <br />    
+         Obligation Amount  <label>$</label> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input   type="text" name="obligation_amount" size="40"  value="<c:out value="${entry.obligation_amount}" />" /> <br />    
             <br />
                   --%>
                     <br /> <br /> 

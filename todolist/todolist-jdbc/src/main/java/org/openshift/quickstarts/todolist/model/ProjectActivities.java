@@ -18,9 +18,10 @@ public class ProjectActivities {
 private int id_activity ;
 private int id ;
 private String activity_name;
-/*private int obligationamount;
-private int awardnumber;*/
+private int obligation_amount;
+private int award_number;
 private String country;
+private String name;
 private String description;
 
 // overloaded constructors --- 
@@ -29,16 +30,17 @@ private String description;
 
 }
 
- public ProjectActivities(int id_activity, int id , String activity_name, String description, String country) 
+ public ProjectActivities(int id_activity, int id , String name, String activity_name, String description, String country, int award_amount, int obligation_amount) 
  {
   this.id_activity= id_activity;
   this.id=id;
   this.activity_name = activity_name;
+  this.name = name;
   this.description = description;
   this.country = country;
-/*  this.awardnumber =awardnumber;
-  this.obligationamount = obligationamount;
-*/
+  this.award_number =award_number;
+  this.obligation_amount = obligation_amount;
+
 }
 
 
@@ -58,6 +60,14 @@ private String description;
 public void setActivity_name(String activity_name) {
  this.activity_name = activity_name;
 }
+
+public String getName() {
+return name;
+}
+public void setname(String name) {
+this.name = name;
+}
+
 public String getCountry() {
  return country;
 }
@@ -78,21 +88,21 @@ public void setId_activity(int id_activity) {
  this.id_activity = id_activity;
 }
 
-/*public int getAwardnumber() {
- return awardnumber;
+public int getAward_number() {
+ return award_number;
 }
 
-public void setAwardnumber(int awardnumber) {
- this.awardnumber = awardnumber;
+public void setAward_number(int award_number) {
+ this.award_number = award_number;
 }
 
-public int getObligationamount() {
-return  obligationamount;
+public int getObligation_amount() {
+return  obligation_amount;
 }
 
- public void setObligation_amount(int obligationamount) {
- this.obligationamount = obligationamount;
-}*/
+ public void setObligation_amount(int obligation_amount) {
+ this.obligation_amount = obligation_amount;
+}
 
  @Override 
 
@@ -104,6 +114,12 @@ return  obligationamount;
  "id='" + id + '\'' + 
  
  "id_activity='" + id_activity + '\'' + 
+ 
+  "award_amount='" + award_amount + '\'' + 
+  
+   "obligation_amount='" + obligation_amount + '\'' + 
+ 
+  ", name='" + name + '\'' + 
 
  ", country='" +country + '\'' + 
 

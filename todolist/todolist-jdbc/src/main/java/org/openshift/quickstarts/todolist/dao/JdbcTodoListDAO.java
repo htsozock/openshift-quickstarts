@@ -182,29 +182,47 @@ public class JdbcTodoListDAO implements TodoListDAO {
 ////Implement the "getProjectById" interface method -- search project by id
     
     @Override
-    public ProjectActivities getProjectDetailsById(int projectId) {
-    	 /* TodoEntry entry = new TodoEntry();*/
-    	  ProjectActivities entry1 = new  ProjectActivities();
-         
+    public List<ProjectActivities> getProjectDetailsById(int projectId) {
+    	try {
+            Connection connection = getConnection();
             try {
-               Connection connection = getConnection();
-               PreparedStatement preparedStatement = connection.prepareStatement("SELECT id, id_activity, activty_name, country, description  FROM project_activity  WHERE id=? ");
-               preparedStatement.setInt(1, projectId);
-               ResultSet rset = preparedStatement.executeQuery();
-               if (rset.next()){
-            	   entry1.setId(rset.getInt("id"));
-            	   entry1.setId_activity(rset.getInt("id_activity"));
-                  // entry.setName(rset.getString("name"));
-                   entry1.setActivity_name(rset.getString("activity_name"));
-                   entry1.setCountry(rset.getString("country"));
-                   entry1.setDescription(rset.getString("description"));
-                          }
-      } catch (SQLException e) {
-        e.printStackTrace();
+                Statement statement = connection.createStatement();
+                List<ProjectActivities> list1;
+                try {
+                	statement.setInt(1, projectId);
+                    ResultSet rset = statement.executeQuery(" SELECT  *  FROM project_activity where id =?  ");
+                    try {
+                        list = new ArrayList<ProjectActivities>();
+                        while (rset.next()) {
+                        	ProjectActivities entry = new ProjectActivities();
+                        	entry.setId(rset.getInt("id"));
+                        	entry.setId_acivity(rset.getInt("id_activity"));
+                        	entry.setAward_amount(rset.getInt("award_amount"));
+                        	entry.setObligation_amount(rset.getInt("obligation_amount"));
+                            entry.setName(rset.getString("name"));
+                             
+                            entry.setCountry(rset.getString("country"));
+                            entry.setActivity_name(rset.getString("activity_name"));
+                            entry.setDescription(rset.getString("description"));
+                            
+                            list1.add(entry);
+                        }
+                    } finally {
+                        rset.close();
+                    }
+                } finally {
+                    statement.close();
+                }
+                return list1;
+            } finally {
+                connection.close();
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    return entry1;
-}
+   
 
     public TodoEntry getProjectById(int projectId) {
   	  TodoEntry entry = new TodoEntry();
@@ -212,6 +230,7 @@ public class JdbcTodoListDAO implements TodoListDAO {
           try {
              Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement("SELECT id, name,startdt, enddt ,organization,manager, status, description  FROM project WHERE id =? ");
+             
              preparedStatement.setInt(1, projectId);
              ResultSet rset = preparedStatement.executeQuery();
              if (rset.next()){
