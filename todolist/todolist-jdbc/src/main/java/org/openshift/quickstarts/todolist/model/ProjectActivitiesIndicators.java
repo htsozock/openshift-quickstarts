@@ -117,7 +117,7 @@ public int getId_activity() {
 }
 public void setId_activity(int id_activity) {
  this.id_activity = id_activity;
-}
+}  
 
 public int getId_indicator() {
 	 return id_indicator;
