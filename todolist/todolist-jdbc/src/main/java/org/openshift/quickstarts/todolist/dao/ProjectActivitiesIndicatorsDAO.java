@@ -8,7 +8,7 @@ import java.util.List;
  *  This interface contains project CRUD operations and it will be implemented by JdbcProjectActivitiesIndicatorDAO class 
  *  Programming to Interfaces
  */  
-public interface ProjectActivitiesIndicators {
+public interface ProjectActivitiesIndicatorsDAO {
 
     void addProjectActivityIndicator(ProjectActivitiesIndicators entry);
     void deleteProjectActivityIndicator(int project_activityId);
