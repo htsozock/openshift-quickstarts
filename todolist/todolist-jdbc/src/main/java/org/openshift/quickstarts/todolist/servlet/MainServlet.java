@@ -109,10 +109,8 @@ public class MainServlet extends HttpServlet {
              req.setAttribute("entry", entry);
          } else if (action.equalsIgnoreCase("details")){
              forward = LIST_PROJECT_DETAILS;
-            
-             int projectId = Integer.parseInt(req.getParameter("1"));
-             
-                ProjectActivities entry1 = dao.getdetails(projectId);
+              int projectId = Integer.parseInt(req.getParameter("projectId"));
+                 ProjectActivities entry1 = dao.getdetails(projectId);
                  req.setAttribute("entry1", entry1);
                        
          } else if (action.equalsIgnoreCase("listProject")){
