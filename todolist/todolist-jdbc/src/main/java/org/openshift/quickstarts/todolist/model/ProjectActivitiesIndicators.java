@@ -140,11 +140,14 @@ return  period;
 }
 
 
- public Date setPeriod(Date period) {
+ public void setPeriod(Date period) {
  this.period = period;
  
 }
 
+ 
+ 
+ 
  @Override 
 
  public String toString() { 
