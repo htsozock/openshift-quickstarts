@@ -109,6 +109,14 @@ public void setId_activity(int id_activity) {
  this.id_activity = id_activity;
 }
 
+public int getId_indicator() {
+	 return id_indicator;
+	}
+	public void setId_indicator(int id_indicator) {
+	 this.id_indicator = id_indicator;
+	}
+	
+
 public int getValue_ind() {
  return value_ind;
 }
@@ -121,8 +129,10 @@ public Date getPeriod() {
 return  period;
 }
 
+
  public Date setPeriod(Date period) {
  this.period = period;
+ 
 }
 
  @Override 
@@ -132,29 +142,27 @@ return  period;
 	 return "ProjectActivitiesIndicators{" + 
 			
 
-	 "id='" + id +  '\'' + 
+	 "id='"  + id +  '\'' + 
 	 
-	 ", id_activity='" + id_activity +  '\'' + 
+	 ",  id_activity='" + id_activity +  '\'' + 
 	 
-	  ", id_indicator='" + id_indicator  + '\'' + 
+	 ",  id_indicator='" + id_indicator  + '\'' + 
 	 
-	  ", indicator_name='" + indicator_name +  '\'' + 
+	 ",  indicator_name='" + indicator_name +  '\'' + 
 	  
-	   ", indicator_category ='" + indicator_category  + '\'' + 
+	 ",  indicator_category ='" + indicator_category  + '\'' + 
 	   
-	   ", indicator_type ='" + indicator_type  + '\'' + 
+	 ", indicator_type ='" + indicator_type  + '\'' + 
 	   
-	    ", active ='" + active  + '\'' + 
+	  ",  active ='" + active  + '\'' + 
 	   
-	  ", name='" + name  + '\'' + 
+	  ",  name='" + name  + '\'' + 
 
-	 ", value_ind='" +  value_ind  + '\'' + 
+	 ",  value_ind='" +  value_ind  + '\'' + 
 
-
-	 ", activity_name='" + activity_name  + '\'' + 
-
+	 ",  activity_name='" + activity_name  + '\'' + 
 	 
-	 ", period='" + period  + '\'' + 
+	 ",  period='" + period  + '\'' + 
 
 	 '}'; 
 
