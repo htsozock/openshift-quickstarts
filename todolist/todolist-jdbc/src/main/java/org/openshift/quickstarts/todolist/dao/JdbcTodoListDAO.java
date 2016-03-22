@@ -184,15 +184,12 @@ public class JdbcTodoListDAO implements TodoListDAO {
     @Override
     public List<ProjectActivities> getProjectDetailsById(int projectId) {
     	try {
-            Connection connection = getConnection();
-            try {
-                Statement statement = connection.createStatement();
-                List<ProjectActivities> list1;
-                try {
-                	statement.setInt(1, projectId);
-                    ResultSet rset = statement.executeQuery(" SELECT  *  FROM project_activity where id =?  ");
-                    try {
-                        list = new ArrayList<ProjectActivities>();
+    		  Connection connection = getConnection();
+              PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM project_activity WHERE id =? ");
+              List<ProjectActivities>    list1 = new ArrayList<ProjectActivities>();
+              preparedStatement.setInt(1, projectId);
+              ResultSet rset = preparedStatement.executeQuery();
+          
                         while (rset.next()) {
                         	ProjectActivities entry = new ProjectActivities();
                         	entry.setId(rset.getInt("id"));
@@ -207,19 +204,12 @@ public class JdbcTodoListDAO implements TodoListDAO {
                             
                             list1.add(entry);
                         }
-                    } finally {
-                        rset.close();
-                    }
-                } finally {
-                    statement.close();
-                }
-                return list1;
-            } finally {
-                connection.close();
-            }
+                  
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        
+        return list1;
     }
 
    
