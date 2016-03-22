@@ -1,7 +1,7 @@
 package org.openshift.quickstarts.todolist.servlet;
 
 import org.openshift.quickstarts.todolist.model.TodoEntry;
-import org.openshift.quickstarts.todolist.model.ProjectActivities;
+//import org.openshift.quickstarts.todolist.model.ProjectActivities;
 import org.openshift.quickstarts.todolist.service.TodoListService;
 
 import javax.servlet.ServletException;
@@ -46,7 +46,7 @@ public class MainServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         	
     	TodoEntry entry = new TodoEntry();
-    	ProjectActivities entry1 = new ProjectActivities();
+ /*   	ProjectActivities entry1 = new ProjectActivities();*/
     	
     	entry.setName(req.getParameter("name"));
     	entry.setStatus(req.getParameter("status"));

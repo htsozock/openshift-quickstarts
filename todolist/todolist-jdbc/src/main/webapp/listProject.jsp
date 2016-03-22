@@ -85,7 +85,7 @@
                 <th scope="col">Start Date</th>
                 <th scope="col"> End Date</th>
                 <th scope="col">Status</th>
-               <th scope="col" colspan=4>Action</th>
+               <th scope="col" colspan=3>Action</th>
             </tr>
       </thead> 
      
@@ -103,7 +103,7 @@
                     <td><a href="MainServlet?action=delete&projectId=<c:out value="${entry.id}"/>">Delete</a></td>
                     <td><a href="MainServlet?action=edit&projectId=<c:out value="${entry.id}"/>">Edit</a></td>
                     <td><a href="MainServlet?action=edit&projectId=<c:out value="${entry.id}"/>">Update</a></td>
-                    <td><a href="MainServlet?action=edit&projectId=<c:out value="${entry.id}"/>">Details</a></td>
+                  <%--   <td><a href="MainServlet?action=edit&projectId=<c:out value="${entry.id}"/>">Details</a></td> --%>
                 </tr>
             </c:forEach>
         </tbody>
