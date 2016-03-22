@@ -177,7 +177,7 @@ try {
     + "WHERE id_indicator =? ");
  	try {
      statement.setString(1, entry.getActivity_name());
-     statement.setString(2, entry.getIndicator_nam());
+     statement.setString(2, entry.getIndicator_name());
      statement.setString(3, entry.getActive());
      statement.setString(4, entry.getName());
      statement.setString(5, entry.getIndicator_category());
@@ -213,14 +213,13 @@ try {
    if (rset.next()){
 	   entry.setId(rset.getInt("id"));
 	   entry.setId_activity(rset.getInt("id_activity"));
-	    entry.setId_indicator(rset.getInt("id_indicator"));
-	    entry.setName(rset.getString("name"));
-	     entry.setActivity_name(rset.getString("activity_name"));
-    entry.setIndicator_name(rset.getString("indicator_name")); 
-    entry.setActive(rset.getString("active"));
-      statement.executeUpdate();
-    
-    
+	   entry.setId_indicator(rset.getInt("id_indicator"));
+	   entry.setName(rset.getString("name"));
+	   entry.setActivity_name(rset.getString("activity_name"));
+       entry.setIndicator_name(rset.getString("indicator_name")); 
+       entry.setActive(rset.getString("active"));
+       statement.executeUpdate();
+  
   }
   } catch (SQLException e) {
   e.printStackTrace();
@@ -247,10 +246,10 @@ try {
 	  entry.setId(rset.getInt("id"));
 	   entry.setId_activity(rset.getInt("id_activity"));
 	    entry.setId_indicator(rset.getInt("id_indicator"));
-	    entry.setName(rset.getString("name"));
-	     entry.setActivity_name(rset.getString("activity_name"));
-   entry.setIndicator_name(rset.getString("indicator_name")); 
-   entry.setActive(rset.getString("active"));
+	   entry.setName(rset.getString("name"));
+	   entry.setActivity_name(rset.getString("activity_name"));
+       entry.setIndicator_name(rset.getString("indicator_name")); 
+      entry.setActive(rset.getString("active"));
       
    statement.executeUpdate();
   
