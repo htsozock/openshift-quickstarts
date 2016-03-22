@@ -156,7 +156,7 @@ return  period;
 	 
 	 ",  id_activity='" + id_activity +  '\'' + 
 	 
-	 ",  id_indicator='" + id_indicator  + '\'' + 
+	 ",  id_indicator='" +  id_indicator  + '\'' + 
 	 
 	 ",  indicator_name='" + indicator_name +  '\'' + 
 	  
