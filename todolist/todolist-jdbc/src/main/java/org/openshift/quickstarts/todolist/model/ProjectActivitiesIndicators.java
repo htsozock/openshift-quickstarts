@@ -85,7 +85,7 @@ private String data_type;
  public void setActive(String active) {
  this.active = active;
  }
- 
+  
  public String getActivity_name() {
 	 return activity_name;
 	}
