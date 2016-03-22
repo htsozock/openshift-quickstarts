@@ -15,6 +15,6 @@ public interface ProjectActivitiesDAO {
     void updateProjectActivity(ProjectActivities entry);
     
     List<ProjectActivities> getAllProjectsActivity();
-  //  ProjectActivities getProjectActivityById(int project_activityId);
+  ProjectActivities getProjectActivityById(int project_activityId);
 }
     
