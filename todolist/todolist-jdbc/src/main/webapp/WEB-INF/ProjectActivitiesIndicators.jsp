@@ -47,8 +47,8 @@
 <div id="container" style="text-align: left;">
  <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">
  &nbsp;&nbsp; &nbsp;&nbsp; <h2>  Development Information Solution (DIS) </h2>  
-   <big><p><a href="MainServletActivities?action=listProjectActivities" >HOME</a></p></big>  
-    <hr size="15">
+   <big><p><a href="MainServletIndicators?action=listProjectIndicators" >HOME</a></p></big>  
+    <hr size="35">
  </div>
  
  <div id="container" style="text-align: center;">
@@ -56,11 +56,11 @@
         
     <div id="q28" class="q full_width">
 <a class="item_anchor" name="ItemAnchor2"></a>
-<div class="segment_header" style="background:#0000FF;width:60%;text-align:left;"><h1 style="font-size:30px;padding:10px 1em 10px ;">Add / Edit Project Activity</h1></div>
+<div class="segment_header" style="background:#0000FF;width:60%;text-align:left;"><h1 style="font-size:30px;padding:10px 1em 10px ;">Add / Edit Project Indicator </h1></div>
 </div></div>
 <div id="container" style="text-align: left;">
     <hr size="35">           
-   <form method="POST" action='MainServletActivities' name="frmAddProject_activities">
+   <form method="POST" action='MainServletIndicators' name="frmAddProject_indicators">
     
        Indicator ID     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text" readonly="readonly" name="id_indicator"  size="10"  disabled  value="<c:out value="${entry.id_indicator}" />" 
 
@@ -75,23 +75,22 @@
 
 /> <br /> 
             <br />
-        Activity  Name &nbsp;&nbsp; &nbsp;&nbsp;  <input       type="text" name="activity_name" size="40"       value="<c:out value="${entry.activity_name}" />" /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+        Activity  Name &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  <input       type="text" name="activity_name" size="40"       value="<c:out value="${entry.activity_name}" />" /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
      <br /> 
      <br />
-   &nbsp;   Project  Name ;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;   <input       type="text" name="name" size="40"       value="<c:out value="${entry.name}" />" /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;           
+   Project  Name &nbsp; &nbsp;&nbsp;   <input       type="text" name="name" size="40"       value="<c:out value="${entry.name}" />" /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;           
      
          &nbsp;&nbsp; Indicator Name   &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <input        type="text" name="country" size="40"      value="<c:out value="${entry.indicator_name}" />" /> <br /> 
             <br />
        Indicator Category   &nbsp; <input   type="text" name="indicator_category" size="40"  value="<c:out value="${entry.indicator_category}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 
 &nbsp;&nbsp;
-        Indicator Type   &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input   type="text" name="indicator_type" size="40"  value="<c:out value="${entry.indicator_type}" />" /> <br />    
+     &nbsp;&nbsp;&nbsp;&nbsp;   Indicator Type  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input   type="text" name="indicator_type" size="40"  value="<c:out value="${entry.indicator_type}" />" /> <br />    
             <br />
-           
-                    <br /> <br /> 
-        Active &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;     <input  type="text" name="active" size="40"  value="<c:out value="${entry.active}" />" /> <br />    
+         
+        Active &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;     <input  type="text" name="active" size="40"  value="<c:out value="${entry.active}" />" /> <br />    
    
-         <br /> <br /> 
+         <br /> 
       Data Type  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;     <input type="text" name="data_type" size="40"  value="<c:out value="${entry.data_type}" />" /> <br />    
    
  <br /> <br /> 

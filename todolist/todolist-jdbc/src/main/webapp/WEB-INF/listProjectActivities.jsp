@@ -63,14 +63,14 @@
     <ul class="nav nav-tabs">
    <li> <a href="MainServlet?action=listProject" >Projects</a></li>
     <li class="active" ><a href="MainServletActivities?action=listProjectActivities" >Activities</a></li>
-    <li><a href="#">Indicators</a></li>
-    <li><a href="#">Tags</a></li>
-    <li><a href="#">Search</a></li>
-    <li><a href="#">Reports</a></li>
+    <li><a href=<a href="MainServlet?action=listProject" >Indicators</a></li>
+    <li><a href="<a href="MainServlet?action=listProject" >Tags</a></li>
+    <li><a href="<a href="MainServlet?action=listProject" >Search</a></li>
+    <li><a href="<a href="MainServlet?action=listProject" >>Reports</a></li>
    </ul>
      <br>
   
-<table style="width:95%"  border=2 align="center" frame="box" id="Projects_activitiesList"  >
+<table style="width:98%"  border=2 align="center" frame="box" id="Projects_activitiesList"  >
    <div class="container" align ="left"> 
      <!-- <h4>  USAID - Development Information Solution (DIS) </h4> -->
      <b> <h3>Project Activities List</h3></b>
@@ -78,14 +78,14 @@
        <thead>
             <tr>
                 <th scope="col"> Project ID </th>
-                 <th scope="col"> Project Name </th>
                 <th scope="col"> Activity ID </th>
+                <th scope="col"> Project Name </th>
                 <th scope="col"> Activity Name </th>
                 <th scope="col"> Country </th>
                 <th scope="col"> Description </th>
                 <th scope="col"> Award Number </th>
                 <th scope="col"> Total Obligation Amount </th> 
-               <th scope="col" colspan=3> Action </th>
+               <th scope="col" colspan=4> Action </th>
             </tr>
       </thead> 
      
@@ -97,13 +97,13 @@
                     <td><c:out value="${entry.id_activity}" /></td>
                     <td><c:out value="${entry.activity_name}" /></td>
                     <td><c:out value="${entry.country}" /></td>
-                    <td><c:out value="${entry.description}" /></td>
                     <td> $ <c:out value="${entry.award_number}" /></td>
-                     <td><$<c:out value="${entry.obligation_amount}" /></td> 
+                    <td><$<c:out value="${entry.obligation_amount}" /></td> 
                     
                     <td><a href="MainServletActivities?action=delete&projectId=<c:out value="${entry.id_activity}"/>">Delete</a></td>
                     <td><a href="MainServletActivities?action=edit&projectId=<c:out value="${entry.id_activity}"/>">Edit</a></td>
                     <td><a href="MainServletActivities?action=edit&projectId=<c:out value="${entry.id_activity}"/>">Update</a></td>
+                    <td><a href="MainServletActivities?action=edit&projectId=<c:out value="${entry.id_activity}"/>">Details</a></td>
                 </tr>
             </c:forEach>
         </tbody>
