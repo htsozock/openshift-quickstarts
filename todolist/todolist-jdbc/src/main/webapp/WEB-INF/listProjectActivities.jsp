@@ -54,62 +54,62 @@
 <div id="container" style="text-align: left;">
  <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">
  &nbsp;&nbsp; &nbsp;&nbsp; <h2>  Development Information Solution (DIS) </h2>  
-   
-    <hr size="15">
- </div>
+  
+   </div>
     <div class="container" align ="center"> 
      <!-- <h4>  USAID - Development Information Solution (DIS) </h4> -->
       <hr size="35">
       
     <ul class="nav nav-tabs">
-   <li class="active" <a href="MainServlet?action=listProject" >Projects</a></li>
-    <li><a href="MainServletActivities?action=listProjectActivities" >Activities</a></li>
-    <li><a href="MainServletIndicators?action=listProjectIndicators">Indicators</a></li>
-    <li><a href="MainServletIndicators?action=listProjectIndicators">Tags</a></li>
-    <li><a href="MainServletIndicators?action=listProjectIndicators">Search</a></li>
-    <li><a href="MainServletIndicators?action=listProjectIndicators">Reports</a></li>
+   <li> <a href="MainServlet?action=listProject" >Projects</a></li>
+    <li class="active" ><a href="MainServletActivities?action=listProjectActivities" >Activities</a></li>
+    <li><a href="#">Indicators</a></li>
+    <li><a href="#">Tags</a></li>
+    <li><a href="#">Search</a></li>
+    <li><a href="#">Reports</a></li>
    </ul>
      <br>
   
-<table style="width:98%"  border=1 align="center" frame="box" id="Projects_List"  >
+<table style="width:95%"  border=2 align="center" frame="box" id="Projects_activitiesList"  >
    <div class="container" align ="left"> 
      <!-- <h4>  USAID - Development Information Solution (DIS) </h4> -->
-     <b> <h3>Projects List</h3></b>
+     <b> <h3>Project Activities List</h3></b>
      </div>
        <thead>
             <tr>
-                <th scope="col"> ID</th>
-                <th scope="col">Project Name</th>
-                <th scope="col">Organization</th>
-                <th scope="col">Project Manager</th>
-                <th scope="col">Start Date</th>
-                <th scope="col"> End Date</th>
-                <th scope="col">Status</th>
-               <th scope="col" colspan=3>Action</th>
+                <th scope="col"> Project ID </th>
+                 <th scope="col"> Project Name </th>
+                <th scope="col"> Activity ID </th>
+                <th scope="col"> Activity Name </th>
+                <th scope="col"> Country </th>
+                <th scope="col"> Description </th>
+                <th scope="col"> Award Number </th>
+                <th scope="col"> Total Obligation Amount </th> 
+               <th scope="col" colspan=3> Action </th>
             </tr>
       </thead> 
      
-        <tbody>
+         <tbody>
             <c:forEach items="${list}" var="entry">
                 <tr>
                     <td><c:out value="${entry.id}" /></td>
-                    <td><c:out value="${entry.name}" /></td>
-                    <td><c:out value="${entry.organization}" /></td>
-                    <td><c:out value="${entry.manager}" /></td>
-                    <td><fmt:formatDate pattern="dd-MMM-yyyy" value="${entry.startdt}" /></td>
-                    <td><fmt:formatDate pattern="dd-MMM-yyyy" value="${entry.enddt}" /></td>
-                    <td><c:out value="${entry.status}" /></td>
-                 
-                    <td><a href="MainServlet?action=delete&projectId=<c:out value="${entry.id}"/>">Delete</a></td>
-                    <td><a href="MainServlet?action=edit&projectId=<c:out value="${entry.id}"/>">Edit</a></td>
-                    <td><a href="MainServlet?action=edit&projectId=<c:out value="${entry.id}"/>">Update</a></td>
-                  <%--   <td><a href="MainServlet?action=edit&projectId=<c:out value="${entry.id}"/>">Details</a></td> --%>
+                     <td><c:out value="${entry.name}" /></td>
+                    <td><c:out value="${entry.id_activity}" /></td>
+                    <td><c:out value="${entry.activity_name}" /></td>
+                    <td><c:out value="${entry.country}" /></td>
+                    <td><c:out value="${entry.description}" /></td>
+                    <td> $ <c:out value="${entry.award_number}" /></td>
+                     <td><$<c:out value="${entry.obligation_amount}" /></td> 
+                    
+                    <td><a href="MainServletActivities?action=delete&projectId=<c:out value="${entry.id_activity}"/>">Delete</a></td>
+                    <td><a href="MainServletActivities?action=edit&projectId=<c:out value="${entry.id_activity}"/>">Edit</a></td>
+                    <td><a href="MainServletActivities?action=edit&projectId=<c:out value="${entry.id_activity}"/>">Update</a></td>
                 </tr>
             </c:forEach>
         </tbody>
     </table>
   
-    <h5 align="left"> <p><a href="MainServlet?action=insert" >[+]Add Project</a></p></h5> 
+    <h5 align="left"> <p><a href="MainServletActivities?action=insert" >[+]Add Activity</a></p></h5> 
    </div>   
  <script src="//assets.cms.gov/resources/libs/jquery/1.8.2/js/jquery-1.8.2.js" type="text/javascript" />
 <script src="//assets.cms.gov/resources/libs/jquery-ui/1.9.1/js/jquery-ui-1.9.1.js" type="text/javascript" />

@@ -13,6 +13,7 @@
     <link type="text/css" rel="stylesheet" media="screen" href="resources/css/bootstrap-theme.min.css"/>
  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//assets.cms.gov/resources/libs/datepicker/v6/css/datepicker.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
   
@@ -47,52 +48,72 @@
 <div id="container" style="text-align: left;">
  <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">
  &nbsp;&nbsp; &nbsp;&nbsp; <h2>  Development Information Solution (DIS) </h2>  
-   <big><p><a href="MainServletActivities?action=listProjectActivities" >HOME</a></p></big>  
+   <big><p><a href="MainServlet?action=listProject" >HOME</a></p></big>  
     <hr size="15">
  </div>
  
  <div id="container" style="text-align: center;">
  
-        
+     
+       
     <div id="q28" class="q full_width">
 <a class="item_anchor" name="ItemAnchor2"></a>
-<div class="segment_header" style="background:#0000FF;width:60%;text-align:left;"><h1 style="font-size:30px;padding:10px 1em 10px ;">Add / Edit Project Activity</h1></div>
+<div class="segment_header" style="background:#0000FF;width:60%;text-align:left;"><h1 style="font-size:30px;padding:10px 1em 10px ;">Add / Edit Project</h1></div>
 </div></div>
 <div id="container" style="text-align: left;">
     <hr size="35">           
-   <form method="POST" action='MainServletActivities' name="frmAddProject_activities">
+   <form method="POST" action='MainServlet' name="frmAddProject">
     
-       Activity ID     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text" readonly="readonly" name="id_activity"  size="10"  disabled  value="<c:out value="${entry.id_activity}" />" 
-
-/> <br /> <br> <br>
- 
-       Project ID     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text"  name="id"  size="10"   value="<c:out value="${entry.id}" />" 
+        Project ID     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text" readonly="readonly" name="id"  size="10"  disabled  value="<c:out value="${entry.id}" />" 
 
 /> <br /> 
              <br />
-        Activity  Name &nbsp;&nbsp; &nbsp;&nbsp;  <input       type="text" name="activity_name" size="40"       value="<c:out value="${entry.activity_name}" />" /> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-     <br /> 
-     <br />
-      Project  Name &nbsp; &nbsp;&nbsp;   <input       type="text" name="name" size="40"       value="<c:out value="${entry.name}" />" /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;           
-     
-         &nbsp;&nbsp; Country   &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <input        type="text" name="country" size="40"      value="<c:out value="${entry.country}" />" /> <br /> 
-            <br />
-       Award Amount  <label>$</label> &nbsp; <input   type="text" name="award_number" size="8"  value="<c:out value="${entry.award_number}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+         Project  Name &nbsp;&nbsp; &nbsp;&nbsp;  <input       type="text" name="name" size="40"  title="Enter the project name..."      value="<c:out value="${entry.name}" 
 
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  Obligation Amount &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <label>$</label> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input   type="text" name="obligation_amount" size="8"  value="<c:out value="${entry.obligation_amount}" />" /> <br />    
+/>" /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                
+         &nbsp;&nbsp; Organization   &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <input        type="text" name="organization" size="40"      value="<c:out 
+
+value="${entry.organization}" />" /> <br /> 
             <br />
-           
-                    <br /> <br /> 
+         Project Manager &nbsp; <input   type="text" name="manager" size="50"  value="<c:out value="${entry.manager}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+
+&nbsp;&nbsp;
+         Status  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input   type="text" name="status" size="40"  value="<c:out value="${entry.status}" />" /> <br />    
+            <br />
+                 
+         
+         Start Date    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input   type="text" name="startdt" size="50"  value="<fmt:formatDate pattern="MM/dd/yyyy" 
+
+value="${entry.startdt}" />" /> &nbsp;&nbsp;&nbsp;
+         End  Date    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;  <input    type="text" name="enddt" size="40"  value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.enddt}" />" /> <br 
+
+/> 
+           <br /> <br /> 
          Description &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;     <textarea name="description" id="description"  rows="4" cols="95"></textarea> 
    
-     
+      <div class="clear"></div>
  <br /> <br /> 
+<div id="q29" class="q">
+<a class="item_anchor" name="ItemAnchor12"></a>
+<label class="question top_question" for="RESULT_FileUpload-12">Upload Documents</label>
+<div class=""><input type="file" name="RESULT_FileUpload-12" size="40" class="file_upload" id="RESULT_FileUpload-12" /><br/><span class="file_upload_info"></span>&nbsp;<input type="submit" name="Upload-12" value="Upload" class="file_upload_button" /> <input type="submit" name="Delete-12" value="Delete" class="file_upload_button" /></div>
+</div>
+
+<div class="clear"></div>
    
           
           <hr size="35">
        <div id="container" style="text-align: left;">
  
-          <big><button type="submit"  class="btn app_button">SAVE &amp; CONTINUE</button>  </big>             </div>
+          <big><button type="submit"  class="btn app_button">SAVE &amp; CONTINUE</button>  </big>         
+     
+ <!--   <big><p><a href="MainServlet?action=ProjectActivitiesDetails.jsp" >Project Activities Details</a></p></big>   -->
+    <hr size="35">
+ </div>    
+          
+          
+              </div>
                
     </form>
     

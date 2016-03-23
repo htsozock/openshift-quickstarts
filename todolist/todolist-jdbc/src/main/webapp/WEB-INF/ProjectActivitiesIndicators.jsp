@@ -62,32 +62,40 @@
     <hr size="35">           
    <form method="POST" action='MainServletActivities' name="frmAddProject_activities">
     
-       Activity ID     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text" readonly="readonly" name="id_activity"  size="10"  disabled  value="<c:out value="${entry.id_activity}" />" 
+       Indicator ID     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text" readonly="readonly" name="id_indicator"  size="10"  disabled  value="<c:out value="${entry.id_indicator}" />" 
 
 /> <br /> <br> <br>
  
        Project ID     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text"  name="id"  size="10"   value="<c:out value="${entry.id}" />" 
 
 /> <br /> 
-             <br />
-        Activity  Name &nbsp;&nbsp; &nbsp;&nbsp;  <input       type="text" name="activity_name" size="40"       value="<c:out value="${entry.activity_name}" />" /> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+
+      <br>
+      Activity ID  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text"  name="id_activity"  size="10"   value="<c:out value="${entry.id_activity}" />" 
+
+/> <br /> 
+            <br />
+        Activity  Name &nbsp;&nbsp; &nbsp;&nbsp;  <input       type="text" name="activity_name" size="40"       value="<c:out value="${entry.activity_name}" />" /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
      <br /> 
      <br />
-      Project  Name &nbsp; &nbsp;&nbsp;   <input       type="text" name="name" size="40"       value="<c:out value="${entry.name}" />" /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;           
+   &nbsp;   Project  Name ;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;   <input       type="text" name="name" size="40"       value="<c:out value="${entry.name}" />" /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;           
      
-         &nbsp;&nbsp; Country   &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <input        type="text" name="country" size="40"      value="<c:out value="${entry.country}" />" /> <br /> 
+         &nbsp;&nbsp; Indicator Name   &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <input        type="text" name="country" size="40"      value="<c:out value="${entry.indicator_name}" />" /> <br /> 
             <br />
-       Award Amount  <label>$</label> &nbsp; <input   type="text" name="award_number" size="8"  value="<c:out value="${entry.award_number}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+       Indicator Category   &nbsp; <input   type="text" name="indicator_category" size="40"  value="<c:out value="${entry.indicator_category}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  Obligation Amount &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <label>$</label> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input   type="text" name="obligation_amount" size="8"  value="<c:out value="${entry.obligation_amount}" />" /> <br />    
+&nbsp;&nbsp;
+        Indicator Type   &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input   type="text" name="indicator_type" size="40"  value="<c:out value="${entry.indicator_type}" />" /> <br />    
             <br />
            
                     <br /> <br /> 
-         Description &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;     <textarea name="description" id="description"  rows="4" cols="95"></textarea> 
+        Active &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;     <input  type="text" name="active" size="40"  value="<c:out value="${entry.active}" />" /> <br />    
    
-     
+         <br /> <br /> 
+      Data Type  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;     <input type="text" name="data_type" size="40"  value="<c:out value="${entry.data_type}" />" /> <br />    
+   
  <br /> <br /> 
-   
+  
           
           <hr size="35">
        <div id="container" style="text-align: left;">
