@@ -58,15 +58,15 @@
    </div>
     <div class="container" align ="center"> 
      <!-- <h4>  USAID - Development Information Solution (DIS) </h4> -->
-      <hr size="35">
+      <hr size="45">
       
     <ul class="nav nav-tabs">
-   <li class="active"> <a href="MainServlet?action=listProject" >Projects</a></li>
-    <li><a href="MainServletActivities?action=listProjectActivities" >Activities</a></li>
+   <li> <a href="MainServlet?action=listProject" >Projects</a></li>
+    <li class="active"><a href="MainServletActivities?action=listProjectActivities" >Activities</a></li>
     <li><a href="MainServletIndicators?action=listProjectIndicators">Indicators</a></li>
-    <li><a href="MainServletIndicators?action=listProject">Tags</a></li>
-    <li><a href="MainServletIndicators?action=listProject">Search</a></li>
-    <li><a href="MainServletIndicators?action=listProject">Reports</a></li>
+    <li><a href="MainServlet?action=listProject">Tags</a></li>
+    <li><a href="MainServlet?action=listProject">Search</a></li>
+    <li><a a href="MainServlet?action=listProject">Reports</a></li>
    </ul>
      <br>
   
@@ -85,7 +85,7 @@
                 <th scope="col"> Description </th>
                 <th scope="col"> Award Number </th>
                 <th scope="col"> Total Obligation Amount </th> 
-               <th scope="col" colspan=3> Action </th>
+               <th scope="col" colspan=4> Action </th>
             </tr>
       </thead> 
      
@@ -104,6 +104,7 @@
                     <td><a href="MainServletActivities?action=delete&projectId=<c:out value="${entry.id_activity}"/>">Delete</a></td>
                     <td><a href="MainServletActivities?action=edit&projectId=<c:out value="${entry.id_activity}"/>">Edit</a></td>
                     <td><a href="MainServletActivities?action=edit&projectId=<c:out value="${entry.id_activity}"/>">Update</a></td>
+                    <td><a href="MainServletActivities?action=edit&projectId=<c:out value="${entry.id_activity}"/>">Details</a></td>
                 </tr>
             </c:forEach>
         </tbody>
