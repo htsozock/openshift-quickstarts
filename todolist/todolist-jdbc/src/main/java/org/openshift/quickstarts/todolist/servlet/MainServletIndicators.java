@@ -34,7 +34,7 @@ import org.openshift.quickstarts.todolist.dao.ProjectActivitiesIndicatorsDAO;
 public class MainServletIndicators extends HttpServlet {
 
 	    private static final long serialVersionUID = 1L;
-	    private static String INSERT_OR_EDIT = "/projectActivitiesIndicators.jsp";
+	    private static String INSERT_OR_EDIT = "/ProjectActivitiesIndicators.jsp";
 	    private static String LIST_PROJECT = "/listProjectIndicators.jsp";
 	 
 	    private ProjectActivitiesIndicatorsService dao = new ProjectActivitiesIndicatorsService();
