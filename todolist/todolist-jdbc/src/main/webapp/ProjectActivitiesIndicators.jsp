@@ -60,7 +60,7 @@
 </div></div>
 <div id="container" style="text-align: left;">
     <hr size="35">           
-   <form method="POST" action='MainServletActivities' name="frmAddProject_activities">
+   <form method="POST" action='MainServletIndicators' name="frmAddProject_INDICATORS">
     
        Indicator ID     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text" readonly="readonly" name="id_indicator"  size="10"  disabled  value="<c:out value="${entry.id_indicator}" />" 
 
