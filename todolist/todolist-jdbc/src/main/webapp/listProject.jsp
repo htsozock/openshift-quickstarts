@@ -65,9 +65,9 @@
    <li class="active" <a href="MainServlet?action=listProject" >Projects</a></li>
     <li><a href="MainServletActivities?action=listProjectActivities" >Activities</a></li>
     <li><a href="MainServletIndicators?action=listProjectIndicators">Indicators</a></li>
-    <li><a href="MainServletIndicators?action=listProjectIndicators">Tags</a></li>
-    <li><a href="MainServletIndicators?action=listProjectIndicators">Search</a></li>
-    <li><a href="MainServletIndicators?action=listProjectIndicators">Reports</a></li>
+    <li><a href="MainServletIndicators?action=listProject">Tags</a></li>
+    <li><a href="MainServletIndicators?action=listProject">Search</a></li>
+    <li><a href="MainServletIndicators?action=listProject">Reports</a></li>
    </ul>
      <br>
   

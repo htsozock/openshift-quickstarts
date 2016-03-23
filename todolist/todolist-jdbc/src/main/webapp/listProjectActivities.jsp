@@ -64,9 +64,9 @@
    <li class="active"> <a href="MainServlet?action=listProject" >Projects</a></li>
     <li><a href="MainServletActivities?action=listProjectActivities" >Activities</a></li>
     <li><a href="MainServletIndicators?action=listProjectIndicators">Indicators</a></li>
-    <li><a href="MainServletIndicators?action=listProjectIndicators">Tags</a></li>
-    <li><a href="MainServletIndicators?action=listProjectIndicators">Search</a></li>
-    <li><a href="MainServletIndicators?action=listProjectIndicators">Reports</a></li>
+    <li><a href="MainServletIndicators?action=listProject">Tags</a></li>
+    <li><a href="MainServletIndicators?action=listProject">Search</a></li>
+    <li><a href="MainServletIndicators?action=listProject">Reports</a></li>
    </ul>
      <br>
   
@@ -99,7 +99,7 @@
                     <td><c:out value="${entry.country}" /></td>
                     <td><c:out value="${entry.description}" /></td>
                     <td> $ <c:out value="${entry.award_number}" /></td>
-                     <td><$<c:out value="${entry.obligation_amount}" /></td> 
+                     <td>$<c:out value="${entry.obligation_amount}" /></td> 
                     
                     <td><a href="MainServletActivities?action=delete&projectId=<c:out value="${entry.id_activity}"/>">Delete</a></td>
                     <td><a href="MainServletActivities?action=edit&projectId=<c:out value="${entry.id_activity}"/>">Edit</a></td>
