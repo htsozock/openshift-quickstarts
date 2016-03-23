@@ -47,7 +47,7 @@
 <div id="container" style="text-align: left;">
  <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">
  &nbsp;&nbsp; &nbsp;&nbsp; <h2>  Development Information Solution (DIS) </h2>  
-   <big><p><a href="MainServletActivities?action=listProjectActivities" >HOME</a></p></big>  
+   <big><p><a href="MainServletIndicators?action=listProjectIndicators" >HOME</a></p></big>  
     <hr size="45">
  </div>
  
@@ -82,10 +82,9 @@
      
          &nbsp;&nbsp; Indicator Name   &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <input        type="text" name="country" size="40"      value="<c:out value="${entry.indicator_name}" />" /> <br /> 
             <br />
-       Indicator Ctry   &nbsp; <input   type="text" name="indicator_category" size="40"  value="<c:out value="${entry.indicator_category}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+       Indicator Ctry  &nbsp; &nbsp; <input   type="text" name="indicator_category" size="40"  value="<c:out value="${entry.indicator_category}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 
-&nbsp;&nbsp;
-   &nbsp;&nbsp;     Indicator Type  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input   type="text" name="indicator_type" size="40"  value="<c:out value="${entry.indicator_type}" />" /> <br />    
+&nbsp;&nbsp;   &nbsp;&nbsp;   &nbsp;&nbsp;   &nbsp;&nbsp; &nbsp;&nbsp;   &nbsp;&nbsp;   Indicator Type  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input   type="text" name="indicator_type" size="40"  value="<c:out value="${entry.indicator_type}" />" /> <br />    
             <br />
        
         Active &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;     <input  type="text" name="active" size="40"  value="<c:out value="${entry.active}" />" /> <br />    
