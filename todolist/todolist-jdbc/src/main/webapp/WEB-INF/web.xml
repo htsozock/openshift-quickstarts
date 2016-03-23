@@ -20,6 +20,11 @@
      <servlet-class>org.openshift.quickstarts.todolist.servlet.MainServletActivities</servlet-class>
      </servlet>
 
+     <servlet>
+     <servlet-name>MainServletIndicators</servlet-name>
+     <servlet-class>org.openshift.quickstarts.todolist.servlet.MainServletIndicators</servlet-class>
+     </servlet>
+
     <servlet-mapping>
      <servlet-name>MainServlet</servlet-name>
         <url-pattern>/MainServlet</url-pattern> 
@@ -30,7 +35,10 @@
        <servlet-name>MainServletActivities</servlet-name>
         <url-pattern>/MainServletActivities</url-pattern>
       </servlet-mapping>
-  
+  <servlet-mapping>
+       <servlet-name>MainServletIndicators</servlet-name>
+        <url-pattern>/MainServletIndicators</url-pattern>
+      </servlet-mapping>
 
 </web-app>
 

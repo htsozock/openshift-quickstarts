@@ -98,8 +98,8 @@
                     <td><c:out value="${entry.activity_name}" /></td>
                     <td><c:out value="${entry.country}" /></td>
                     <td><c:out value="${entry.description}" /></td>
-                    <td><label>$</label> <c:out value="${entry.award_number}" /></td>
-                     <td><label>$</label><c:out value="${entry.obligation_amount}" /></td> 
+                    <td> $ <c:out value="${entry.award_number}" /></td>
+                     <td><$<c:out value="${entry.obligation_amount}" /></td> 
                     
                     <td><a href="MainServletActivities?action=delete&projectId=<c:out value="${entry.id_activity}"/>">Delete</a></td>
                     <td><a href="MainServletActivities?action=edit&projectId=<c:out value="${entry.id_activity}"/>">Edit</a></td>
