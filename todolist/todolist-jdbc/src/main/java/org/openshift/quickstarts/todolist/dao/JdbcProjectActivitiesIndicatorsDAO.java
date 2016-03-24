@@ -102,7 +102,7 @@ try {
  try {
  connection.setAutoCommit(true);
  PreparedStatement statement = connection.prepareStatement("INSERT INTO project_activity_indicator (id_activity,activity_name, indicator_name,"
- 		+ " indicator_category , name,"
+ 		+ "  name,"
 		+ "data_type , value, period) "
  + "VALUES ( ?, ?,?, ?,?, ?,?, ?,?)");
 
@@ -111,11 +111,10 @@ try {
 	 statement.setInt(1, entry.getId_activity());
 	 statement.setString(2, entry.getActivity_name());
 	 statement.setString(3, entry.getIndicator_name());
-	 statement.setString(4, entry.getIndicator_category());
-	 statement.setString(5, entry.getName());
-	 statement.setString(6, entry.getData_type());
-	 statement.setString(7, entry.getValue());
-     statement.setString(8, entry.getPeriod());
+	 statement.setString(4, entry.getName());
+	 statement.setString(5, entry.getData_type());
+	 statement.setString(6, entry.getValue());
+     statement.setString(7, entry.getPeriod());
 	   statement.executeUpdate();
   System.out.println("Record is Created!");
   } finally {
