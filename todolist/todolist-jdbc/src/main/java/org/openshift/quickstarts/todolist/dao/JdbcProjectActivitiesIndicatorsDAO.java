@@ -218,7 +218,7 @@ try {
 	   entry.setActivity_name(rset.getString("activity_name"));
        entry.setIndicator_name(rset.getString("indicator_name")); 
        entry.setValue(rset.getString("value"));
-       entry.setPeriod(rset.getDate("period"))
+       entry.setPeriod(rset.getDate("period"));
        entry.setData_type(rset.getString("data_type"));
        entry.setIndicator_cataegory(rset.getString("indicator_category")); 
               

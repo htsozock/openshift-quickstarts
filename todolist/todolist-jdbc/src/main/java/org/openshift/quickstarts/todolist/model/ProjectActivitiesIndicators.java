@@ -24,7 +24,7 @@ private String name;
 private String activity_name;
 private String indicator_name;
 private String indicator_category;
-private String value
+private String value;
 private String data_type;
 private Date period ;
 
