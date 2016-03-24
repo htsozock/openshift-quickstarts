@@ -76,9 +76,9 @@
      
          &nbsp;&nbsp; Country   &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <input        type="text" name="country" size="40"      value="<c:out value="${entry.country}" />" /> <br /> 
             <br />
-       Award Number  &nbsp;  &nbsp;   &nbsp; <input   type="text" name="award_number"  id="award_number" size="40"  value="<c:out value="${entry.award_number}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+       Award Number  &nbsp;  &nbsp;   &nbsp; <input   type="text" name="award_number"  id="award_number" size="40"  value="<c:out value="${entry.award_number}" />" /> &nbsp;&nbsp;&nbsp;&nbsp; 
 
- Obligation Amount &nbsp; $ <input   type="text" name="obligation_amount" size="10"  value="<c:out value="${entry.obligation_amount}" />" /> <br />    
+ Obligation Amount  $<input   type="text" name="obligation_amount" size="10"  value="<c:out value="${entry.obligation_amount}" />" /> <br />    
             <br />  
            
                     <br /> <br /> 

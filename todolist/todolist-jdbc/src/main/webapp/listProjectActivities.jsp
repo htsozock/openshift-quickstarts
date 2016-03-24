@@ -77,13 +77,13 @@
      </div>
        <thead>
             <tr>
-                <th scope="col"> Activity ID </th>
-                <th scope="col" style="width:25%> Project Name </th>
-                <th scope="col" style="width:25%> Activity Name </th>
-                 <th scope="col" style="width: 20%">  Award Number </th>
-                 <th scope="col"> Obligation Amount </th> 
-                 <th scope="col"> Country </th>
-                 <th scope="col" colspan=4> Action </th>
+                <th scope="col" style="width:3%"> ID </th>
+                <th scope="col" style="width:15%"> Project Name </th>
+                <th scope="col" style="width: 15%"> Activity Name </th>
+                 <th scope="col" style="width: 15%">  Award Number </th>
+                 <th scope="col" style="width: 8%"> Obligation Amount </th> 
+                 <th scope="col" style="width: 10%"> Country </th>
+                 <th scope="col" style="width: 20%" colspan=4> Action </th>
             </tr>
       </thead> 
      
