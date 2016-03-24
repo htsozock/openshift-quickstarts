@@ -59,7 +59,7 @@ try {
     try {
       statement.executeUpdate(" CREATE TABLE project_activity_indicator (id_indicator int (11) not null AUTO_INCREMENT , id int(11) not null ,"
       		+ " id_activity  int(11) not null, name VARCHAR(45), activity_name VARCHAR(45),"
-      		+ " indicator_name VARCHAR(45),indicator_category VARCHAR(30), data_type VARCHAR(30),period DATE, value VARCHAR(30),"
+      		+ " indicator_name VARCHAR(45),indicator_category VARCHAR(30), data_type VARCHAR(30),period  VARCHAR(10), value VARCHAR(30),"
       		+ " PRIMARY KEY(id_indicator , id, id_activity)) ENGINE=InnoDB AUTO_INCREMENT=001 DEFAULT CHARSET=utf8  ");
      } finally {
  
@@ -115,7 +115,7 @@ try {
 	 statement.setString(5, entry.getName());
 	 statement.setString(6, entry.getData_type());
 	 statement.setString(7, entry.getValue());
-     statement.setDate(8, new java.sql.Date(entry.getPeriod().getTime()));
+     statement.setString(8, entry.getPeriod());
 	   statement.executeUpdate();
   System.out.println("Record is Created!");
   } finally {
@@ -181,7 +181,7 @@ try {
      statement.setString(4, entry.getName());
      statement.setString(5, entry.getData_type());
      statement.setString(6, entry.getIndicator_category());
-     statement.setDate(6, new java.sql.Date(entry.getPeriod().getTime()));
+     statement.setString(7, entry.getPeriod());
      statement.executeUpdate();
 
      
@@ -218,7 +218,7 @@ try {
 	   entry.setActivity_name(rset.getString("activity_name"));
        entry.setIndicator_name(rset.getString("indicator_name")); 
        entry.setValue(rset.getString("value"));
-       entry.setPeriod(rset.getDate("period"));
+       entry.setPeriod(rset.getString("period"));
        entry.setData_type(rset.getString("data_type"));
        entry.setIndicator_category(rset.getString("indicator_category")); 
               
@@ -253,7 +253,7 @@ try {
 	    entry.setActivity_name(rset.getString("activity_name"));
         entry.setIndicator_name(rset.getString("indicator_name")); 
         entry.setData_type(rset.getString("data_type"));
-        entry.setPeriod(rset.getDate("period"));
+        entry.setPeriod(rset.getString("period"));
         entry.setValue(rset.getString("value"));
     
    list.add(entry);

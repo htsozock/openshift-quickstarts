@@ -26,7 +26,7 @@ private String indicator_name;
 private String indicator_category;
 private String value;
 private String data_type;
-private Date period ;
+private String period ;
 
 // overloaded constructors --- 
 
@@ -35,7 +35,7 @@ private Date period ;
 }
 
  public ProjectActivitiesIndicators(int id_activity, int id ,int id_indicator,String name, String activity_name, String indicator_name, String indicator_category, 
-	String value, Date period,String data_type)
+	String value, String period,String data_type)
  {
   this.id_activity= id_activity;
   this.id=id;
@@ -59,10 +59,10 @@ private Date period ;
 	 this.data_type = data_type;
 	}
  
- public Date getPeriod() {
+ public String getPeriod() {
 	 return period;
 	}
- public void setPeriod(Date period) {
+ public void setPeriod(String period) {
 	 this.period = period;
 	}
   public String getIndicator_category() {
