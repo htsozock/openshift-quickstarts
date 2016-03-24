@@ -63,24 +63,19 @@
    <form method="POST" action='MainServletIndicators' name="frmAddProject_INDICATORS">
     
   Indicator ID     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text" readonly="readonly" name="id_indicator"  size="10"  disabled  value="<c:out value="${entry.id_indicator}" />" /> 
-            <br />
+            <br />  <br />
             
-  Activity ID     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text"  name="id_activity"  size="10"    value="<c:out value="${entry.id_activity}" />" /> 
-            <br />          
-  Activity  Name  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  <input       type="text" name="activity_name" size="40"       value="<c:out value="${entry.activity_name}" />" /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-       <br />
-  Project  Name &nbsp; &nbsp;&nbsp;   <input       type="text" name="name" size="40"       value="<c:out value="${entry.name}" />" /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;           
-     
+  Activity ID     &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text"  name="id_activity"  size="10"    value="<c:out value="${entry.id_activity}" />" /> 
+            <br />   <br />         
+  Activity  Name  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  <input       type="text" name="activity_name" size="40"       value="<c:out value="${entry.activity_name}" />" /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+       <br /> <br />
+  Project  Name &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;   <input       type="text" name="name" size="40"       value="<c:out value="${entry.name}" />" /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;           
+    
   Indicator Name   &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <input        type="text" name="country" size="40"      value="<c:out value="${entry.indicator_name}" />" /> <br /> 
-            <br />
-  Indicator Category &nbsp; &nbsp; <input   type="text" name="indicator_category" size="40"  value="<c:out value="${entry.indicator_category}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-
-  Value  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input   type="text" name="indicator_type" size="40"  value="<c:out value="${entry.value}" />" /> <br />    
-            <br />
-       
- Period    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input   type="text" name="period" size="30"  value="<fmt:formatDate pattern="MMM-YYYY" 
-
-value="${entry.period}" />" /> &nbsp;&nbsp;&nbsp;
+            <br /> <br />
+   Value  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input   type="text" name="indicator_type" size="40"  value="<c:out value="${entry.value}" />" /> <br />    
+             
+   Period    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input   type="text" name="period" size="30"  value="<fmt:formatDate pattern="MMM-YYYY" value="${entry.period}" />" /> &nbsp;&nbsp;&nbsp;
    
          <br /> <br /> 
       Data Type  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;     <input type="text" name="data_type" size="40"  value="<c:out value="${entry.data_type}" />" /> <br />    
