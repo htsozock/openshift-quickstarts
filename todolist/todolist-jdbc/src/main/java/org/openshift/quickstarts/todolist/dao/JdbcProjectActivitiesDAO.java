@@ -57,10 +57,9 @@ try {
    connection.setAutoCommit(true);
    Statement statement = connection.createStatement();
     try {
-      statement.executeUpdate(" CREATE TABLE project_activity (id_activity int(11) NOT NULL AUTO_INCREMENT, id int(11),activity_name VARCHAR(50),"
-      		+ " name VARCHAR(50),  description TEXT DEFAULT NULL, country VARCHAR(50),"
-      		+ "award_number int DEFAULT 0, obligation_amount int DEFAULT 0,"
-      		+ "PRIMARY KEY(id_activity,id)) ENGINE=InnoDB AUTO_INCREMENT=001 DEFAULT CHARSET=utf8;  ");
+    	 statement.executeUpdate(" CREATE TABLE project_activity (id_activity int(11) NOT NULL AUTO_INCREMENT, id int(11),activity_name VARCHAR(50),"
+    	      		+ " name VARCHAR(50),  description TEXT DEFAULT NULL, country VARCHAR(50), award_number VARCHAR(50), obligation_amount BIGINT,"
+    	      		+ "PRIMARY KEY(id_activity,id)) ;  ");
      } finally {
  
      statement.close();
@@ -110,8 +109,8 @@ try {
   statement.setString(2, entry.getCountry());
   statement.setString(3, entry.getDescription());
   statement.setString(4, entry.getName());
- statement.setInt(5, entry.getAward_number());
-  statement.setInt(6, entry.getObligation_amount());
+  statement.settring(5, entry.getAward_number());
+  statement.setBigint(6, entry.getObligation_amount());
   statement.setInt(7, entry.getId());
   statement.executeUpdate();
   System.out.println("Record is Created!");
@@ -172,8 +171,8 @@ try {
      statement.setString(2, entry.getCountry());
      statement.setString(3, entry.getDescription());
      statement.setString(4, entry.getName());
-     statement.setInt(5, entry.getAward_number());
-     statement.setInt(6, entry.getObligation_amount());
+     statement.setString(5, entry.getAward_number());
+     statement.setBigint(6, entry.getObligation_amount());
      statement.executeUpdate();
 
      System.out.println("Project activity " + entry.getActivity_name() + " is updated!");
@@ -207,8 +206,8 @@ try {
     entry.setDescription(rset.getString("description"));
     entry.setId(rset.getInt("id"));
     entry.setName(rset.getString("name"));
-     entry.setAward_number(rset.getInt("award_number"));
-    entry.setObligation_amount(rset.getInt("obligation_amount"));
+     entry.setAward_number(rset.getString("award_number"));
+    entry.setObligation_amount(rset.getBigint("obligation_amount"));
     
   }
   } catch (SQLException e) {
@@ -244,8 +243,8 @@ try {
    entry.setDescription(rset.getString("description"));
    entry.setName(rset.getString("name"));
    entry.setId(rset.getInt("id"));
-   entry.setAward_number(rset.getInt("award_number"));
-   entry.setObligation_amount(rset.getInt("obligation_amount"));
+   entry.setAward_number(rset.getString("award_number"));
+   entry.setObligation_amount(rset.getBigint("obligation_amount"));
 
    list.add(entry);
   }

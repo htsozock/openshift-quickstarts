@@ -42,13 +42,16 @@
 </head>   
     
 <body>
+<%-- <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+Your browser does not support the HTML5 canvas tag.
+</canvas> --%>
 
-
+<div style="width:800px;height:400px;border:1px solid #000;">
 <div id="container" style="text-align: left;">
  <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">
  &nbsp;&nbsp; &nbsp;&nbsp; <h2>  Development Information Solution (DIS) </h2>  
    <big><p><a href="MainServletActivities?action=listProjectActivities" >HOME</a></p></big>  
-    <hr size="15">
+    <hr size="55">
  </div>
  
  <div id="container" style="text-align: center;">
@@ -59,7 +62,7 @@
 <div class="segment_header" style="background:#0000FF;width:60%;text-align:left;"><h1 style="font-size:30px;padding:10px 1em 10px ;">Add / Edit Project Activity</h1></div>
 </div></div>
 <div id="container" style="text-align: left;">
-    <hr size="35">           
+    <hr size="55">           
    <form method="POST" action='MainServletActivities' name="frmAddProject_activities">
     
        Activity ID     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text" readonly="readonly" name="id_activity"  size="10"  disabled  value="<c:out value="${entry.id_activity}" />" 
@@ -77,7 +80,7 @@
      
          &nbsp;&nbsp; Country   &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <input        type="text" name="country" size="40"      value="<c:out value="${entry.country}" />" /> <br /> 
             <br />
-       Award Amount  <label>$</label> &nbsp; <input   type="text" name="award_number" size="8"  value="<c:out value="${entry.award_number}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+       Award Amount   &nbsp; <input   type="text" name="award_number" size="50"  value="<c:out value="${entry.award_number}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 
 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  Obligation Amount &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <label>$</label> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input   type="text" name="obligation_amount" size="8"  value="<c:out value="${entry.obligation_amount}" />" /> <br />    
             <br />
@@ -97,6 +100,7 @@
     </form>
     
   
+     </div>
      </div>
     
 </body>
