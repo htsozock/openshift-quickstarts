@@ -53,8 +53,7 @@
 <body>
 <div id="container" style="text-align: left;">
  <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">
- &nbsp;&nbsp; &nbsp;&nbsp; <h2>  Development Information Solution (DIS) </h2>  
-   
+ &nbsp;&nbsp; &nbsp;&nbsp;  <p><font color="blue"><h2>  Development Information Solution (DIS) </h2>  </font></p>
     <hr size="45">
  </div>
     <div class="container" align ="center"> 
@@ -74,7 +73,8 @@
 <table style="width:98%"  border=1 align="center" frame="box" id="Projects_List"  >
    <div class="container" align ="left"> 
      <!-- <h4>  USAID - Development Information Solution (DIS) </h4> -->
-     <b> <h3>Projects List</h3></b>
+     <p><font color="blue"><b> <h3>Projects List</h3></b> </font></p>
+     
      </div>
        <thead>
             <tr>
