@@ -77,25 +77,23 @@
      </div>
        <thead>
             <tr>
-                <th scope="col"> Project ID </th>
-                 <th scope="col"> Project Name </th>
                 <th scope="col"> Activity ID </th>
+                <th scope="col"> Project Name </th>
                 <th scope="col"> Activity Name </th>
                  <th scope="col"> Award Number </th>
                  <th scope="col"> Obligation Amount </th> 
-                  <th scope="col"> Country </th>
-                <th scope="col"> Description </th>
-                <th scope="col" colspan=4> Action </th>
+                 <th scope="col"> Country </th>
+                 <th scope="col">Description </th>
+                 <th scope="col" colspan=4> Action </th>
             </tr>
       </thead> 
      
          <tbody>
             <c:forEach items="${list}" var="entry">
                 <tr>
-                    <td><c:out value="${entry.id}" /></td>
+                     <td><c:out value="${entry.id_activity}" /></td>
                      <td><c:out value="${entry.name}" /></td>
-                    <td><c:out value="${entry.id_activity}" /></td>
-                    <td><c:out value="${entry.activity_name}" /></td>
+                     <td><c:out value="${entry.activity_name}" /></td>
                      <td>  <c:out value="${entry.award_number}" /></td>
                      <td>$<c:out value="${entry.obligation_amount}" /></td> 
                     <td><c:out value="${entry.country}" /></td>

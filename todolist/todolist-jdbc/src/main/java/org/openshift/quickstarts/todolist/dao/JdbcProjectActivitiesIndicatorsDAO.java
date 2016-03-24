@@ -103,7 +103,7 @@ try {
  connection.setAutoCommit(true);
  PreparedStatement statement = connection.prepareStatement("INSERT INTO project_activity_indicator (id_activity,activity_name, indicator_name,"
  		+ " indicator_category , name,"
-		+ "data_type , value, period ) "
+		+ "data_type , value, period, id_activity ) "
  + "VALUES ( ?, ?,?, ?,?, ?,?, ?,?)");
 
 // Parameters start with 1

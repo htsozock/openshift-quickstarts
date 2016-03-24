@@ -59,7 +59,7 @@
     <canvas id="myCanvas" width="600" height="400" style="border:1px solid #000000;">
     <div class="container" align ="center"> 
      <!-- <h4>  USAID - Development Information Solution (DIS) </h4> -->
-      <hr size="55">
+      <hr size="45">
       
     <ul class="nav nav-tabs">
    <li> <a href="MainServlet?action=listProject" >Projects</a></li>

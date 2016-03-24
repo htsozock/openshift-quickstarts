@@ -58,6 +58,9 @@ public class MainServletIndicators extends HttpServlet {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+     	
+        String id_activity = req.getParameter("id_activity");
+        entry.setId_activity(Integer.parseInt(id_activity));
           
      	entry.setData_type(req.getParameter("data_type"));
                  

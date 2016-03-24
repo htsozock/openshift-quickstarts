@@ -55,19 +55,19 @@
  <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">
  &nbsp;&nbsp; &nbsp;&nbsp; <h2>  Development Information Solution (DIS) </h2>  
    
-    <hr size="15">
+    <hr size="45">
  </div>
     <div class="container" align ="center"> 
      <!-- <h4>  USAID - Development Information Solution (DIS) </h4> -->
-      <hr size="35">
+      <hr size="45">
       
     <ul class="nav nav-tabs">
    <li class="active" <a href="MainServlet?action=listProject" >Projects</a></li>
     <li><a href="MainServletActivities?action=listProjectActivities" >Activities</a></li>
     <li><a href="MainServletIndicators?action=listProjectIndicators">Indicators</a></li>
-    <li><a href="MainServletIndicators?action=listProject">Tags</a></li>
-    <li><a href="MainServletIndicators?action=listProject">Search</a></li>
-    <li><a href="MainServletIndicators?action=listProject">Reports</a></li>
+    <li><a href="MainServlet?action=listProject" >Tags</a></li>
+    <li><a href="MainServlet?action=listProject" >Search</a></li>
+    <li><a href="MainServlet?action=listProject" >Reports</a></li>
    </ul>
      <br>
   

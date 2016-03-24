@@ -52,13 +52,8 @@
     <hr size="45">
  </div>
  
- <canvas id="myCanvas" width="600" height="400" style="border:1px solid #000000;">
-
- 
- 
  <div id="container" style="text-align: center;">
- 
-     
+    
        
     <div id="q28" class="q full_width">
 <a class="item_anchor" name="ItemAnchor2"></a>
@@ -107,13 +102,13 @@ value="${entry.startdt}" />" /> &nbsp;&nbsp;&nbsp;
 <div class="clear"></div>
    
           
-          <hr size="35">
+          <hr size="45">
        <div id="container" style="text-align: left;">
  
           <big><button type="submit"  class="btn app_button">SAVE &amp; CONTINUE</button>  </big>         
      
  <!--   <big><p><a href="MainServlet?action=ProjectActivitiesDetails.jsp" >Project Activities Details</a></p></big>   -->
-    <hr size="35">
+    <hr size="45">
  </div>    
           
           
@@ -123,7 +118,7 @@ value="${entry.startdt}" />" /> &nbsp;&nbsp;&nbsp;
     
   
      </div>
-     </canvas>
+    
     
 </body>
 </html>

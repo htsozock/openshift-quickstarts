@@ -50,7 +50,7 @@
    <big><p><a href="MainServletIndicators?action=listProjectIndicators" >HOME</a></p></big>  
     <hr size="45">
  </div>
-  <canvas id="myCanvas" width="600" height="400" style="border:1px solid #000000;">
+
  <div id="container" style="text-align: center;">
  
         
@@ -64,6 +64,9 @@
     
   Indicator ID     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text" readonly="readonly" name="id_indicator"  size="10"  disabled  value="<c:out value="${entry.id_indicator}" />" /> 
             <br />
+            
+  Activity ID     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text"  name="id_activity"  size="10"    value="<c:out value="${entry.id_activity}" />" /> 
+            <br />          
   Activity  Name  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  <input       type="text" name="activity_name" size="40"       value="<c:out value="${entry.activity_name}" />" /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
        <br />
   Project  Name &nbsp; &nbsp;&nbsp;   <input       type="text" name="name" size="40"       value="<c:out value="${entry.name}" />" /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;           
@@ -95,8 +98,7 @@ value="${entry.period}" />" /> &nbsp;&nbsp;&nbsp;
   
      </div>
      
-       </canvas>
-    
+   
 </body>
 </html>
 
