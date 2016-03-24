@@ -220,7 +220,7 @@ try {
        entry.setValue(rset.getString("value"));
        entry.setPeriod(rset.getDate("period"));
        entry.setData_type(rset.getString("data_type"));
-       entry.setIndicator_cataegory(rset.getString("indicator_category")); 
+       entry.setIndicator_category(rset.getString("indicator_category")); 
               
        preparedStatement.executeUpdate();
   
