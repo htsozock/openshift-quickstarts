@@ -98,7 +98,7 @@
                      <td><c:out value="${entry.activity_name}" /></td>
                      <td><c:out value="${entry.indicator_name}" /></td>
                       <td><c:out value="${entry.data_type}" /></td>
-                         <td><c:out value="${entry.period}" /></td>
+                      <td><c:out value="${entry.period}" /></td>
                       <td><c:out value="${entry.value}" /></td>
                     
                     <td><a href="MainServletIndicators?action=delete&projectId=<c:out value="${entry.id_indicator}"/>">Delete</a></td>

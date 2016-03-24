@@ -47,11 +47,9 @@ public class MainServletIndicators extends HttpServlet {
     	
     	entry.setActivity_name(req.getParameter("activity_name"));
     	entry.setIndicator_name(req.getParameter("indicator_name"));
-     	entry.setIndicator_category(req.getParameter("indicator_category"));
-     	entry.setName(req.getParameter("name"));
+      	entry.setName(req.getParameter("name"));
      	entry.setValue(req.getParameter("value"));
-     	
-     	entry.setPeriod(req.getParameter("period"));
+       	entry.setPeriod(req.getParameter("period"));
      	
         String id_activity = req.getParameter("id_activity");
         entry.setId_activity(Integer.parseInt(id_activity));
