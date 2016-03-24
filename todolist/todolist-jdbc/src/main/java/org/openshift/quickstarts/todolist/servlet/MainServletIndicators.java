@@ -51,8 +51,8 @@ public class MainServletIndicators extends HttpServlet {
      	entry.setName(req.getParameter("name"));
      	entry.setValue(req.getParameter("value"));
      	
-     	try {
-            Date period = new SimpleDateFormat("MM/DD/YYYY").parse(req.getParameter("period"));
+     	try { 
+            Date period = new SimpleDateFormat("MMM/YYYY").parse(req.getParameter("period"));
             entry.setPeriod(period);
            
         } catch (ParseException e) {
