@@ -59,7 +59,7 @@
     <div class="container" align ="center"> 
      <!-- <h4>  USAID - Development Information Solution (DIS) </h4> -->
       <hr size="45">
-   <font color="blue"> 
+ 
     <ul class="nav nav-tabs">
 
    <li class="active" <a href="MainServlet?action=listProject" >Projects</a></li>
