@@ -53,7 +53,7 @@
 <body>
 <div id="container" style="text-align: left;">
  <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">
- &nbsp;&nbsp; &nbsp;&nbsp;  <p><font color="B'dazzled Blue"><h2>  Development Information Solution (DIS) </h2>  </font></p>
+ &nbsp;&nbsp; &nbsp;&nbsp;  <font color="#2E5894"><h2>  Development Information Solution (DIS) </h2> 
     <hr size="45">
  </div>
     <div class="container" align ="center"> 
@@ -73,7 +73,7 @@
 <table style="width:98%"  border=1 align="center" frame="box" id="Projects_List"  >
    <div class="container" align ="left"> 
      <!-- <h4>  USAID - Development Information Solution (DIS) </h4> -->
-     <p><font color="B'dazzled Blue"><b> <h3>Projects List</h3></b> </font></p>
+    <font color="#2E5894"><b> <h3>Projects List</h3></b>    </font>
      
      </div>
        <thead>
@@ -88,7 +88,7 @@
                <th scope="col" colspan=4>Action</th>
             </tr>
       </thead> 
-     
+  
         <tbody>
             <c:forEach items="${list}" var="entry">
                 <tr>
