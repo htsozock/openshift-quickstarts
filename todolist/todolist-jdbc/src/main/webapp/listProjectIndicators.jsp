@@ -56,7 +56,7 @@
  &nbsp;&nbsp; &nbsp;&nbsp; <h2>  Development Information Solution (DIS) </h2>  
   
    </div>
-    <canvas id="myCanvas" width="600" height="400" style="border:1px solid #000000;">
+ 
     <div class="container" align ="center"> 
      <!-- <h4>  USAID - Development Information Solution (DIS) </h4> -->
       <hr size="45">
@@ -114,7 +114,7 @@
     <h5 align="left"> <p><a href="MainServletIndicators?action=insert" >[+]Add Indicator</a></p></h5> 
    </div>   
    
-    </canvas>
+ 
  <script src="//assets.cms.gov/resources/libs/jquery/1.8.2/js/jquery-1.8.2.js" type="text/javascript" />
 <script src="//assets.cms.gov/resources/libs/jquery-ui/1.9.1/js/jquery-ui-1.9.1.js" type="text/javascript" />
 <script src="//assets.cms.gov/resources/libs/bootstrap/2.1.1/js/bootstrap.js" type="text/javascript" />
