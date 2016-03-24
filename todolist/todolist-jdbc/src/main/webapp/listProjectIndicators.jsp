@@ -53,7 +53,7 @@
 <body>
 <div id="container" style="text-align: left;">
  <img src="usaid_logo.png" alt="USAID Logo" style="width:440px;height:220px;">
- &nbsp;&nbsp; &nbsp;&nbsp; <font color="#2E5894"><h2>  Development Information Solution (DIS) </h2> </font> 
+ &nbsp;&nbsp; &nbsp;&nbsp;  <p><font color="#2E5894"><h2>  Development Information Solution (DIS) </h2> </font>  </p>
   
    </div>
  
@@ -62,14 +62,14 @@
       <hr size="45">
       
     <ul class="nav nav-tabs">
-    <font color="#2E5894">
+ 
    <li> <a href="MainServlet?action=listProject" >Projects</a></li>
     <li><a href="MainServletActivities?action=listProjectActivities" >Activities</a></li>
     <li class="active"><a href="MainServletIndicators?action=listProjectIndicators">Indicators</a></li>
     <li> <a href="MainServlet?action=listProject" >Tags</a></li>
     <li> <a href="MainServlet?action=listProject" > Search</a></li>
     <li> <a href="MainServlet?action=listProject" >Reports</a></li>
-      </font> 
+  
    </ul>
      <br>
   
@@ -77,7 +77,7 @@
    <div class="container" align ="left"> 
      <!-- <h4>  USAID - Development Information Solution (DIS) </h4> -->
   
-    <font color="#2E5894">   <b> <h3>Project Indicators List</h3></b>  </font>
+   <p>  <font color="#2E5894">   <b> <h3>Project Indicators List</h3></b>  </font> </p>
      </div>
        <thead>
             <tr>
