@@ -57,10 +57,10 @@ try {
    connection.setAutoCommit(true);
    Statement statement = connection.createStatement();
     try {
-      statement.executeUpdate(" CREATE TABLE project_activity_indicator (id_indicator int (11) not null AUTO_INCREMENT ,"
-    		  + "id int(11) not null , id_activity  int(11) not null, name VARCHAR(45), activity_name VARCHAR(45), "
-    		  + "indicator_name VARCHAR(45),indicator_category VARCHAR(30), data_type VARCHAR(30),indicator_type  VARCHAR(30),  "
-    		  + "active VARCHAR(30), PRIMARY KEY(id_indicator , id, id_activity))  ");
+      statement.executeUpdate(" CREATE TABLE project_activity_indicator (id_indicator int (11) not null AUTO_INCREMENT , id int(11) not null ,"
+      		+ " id_activity  int(11) not null, name VARCHAR(45), activity_name VARCHAR(45),"
+      		+ " indicator_name VARCHAR(45),indicator_category VARCHAR(30), data_type VARCHAR(30),period DATE, value VARCHAR(30),"
+      		+ " PRIMARY KEY(id_indicator , id, id_activity)) ENGINE=InnoDB AUTO_INCREMENT=001 DEFAULT CHARSET=utf8  ");
      } finally {
  
      statement.close();
@@ -88,7 +88,7 @@ try {
  /**
  
 * 
-* Implement the project_activities object CRUD operations
+* Implement the project_activities_indicator object CRUD operations
 *
 */
  
@@ -103,7 +103,7 @@ try {
  connection.setAutoCommit(true);
  PreparedStatement statement = connection.prepareStatement("INSERT INTO project_activity_indicator (id_activity,activity_name, indicator_name,"
  		+ " indicator_category , name,"
-		+ "data_type , indicator_type, id,active ) "
+		+ "data_type , value, period ) "
  + "VALUES ( ?, ?,?, ?,?, ?,?, ?,?)");
 
 // Parameters start with 1
@@ -114,9 +114,8 @@ try {
 	 statement.setString(4, entry.getIndicator_category());
 	 statement.setString(5, entry.getName());
 	 statement.setString(6, entry.getData_type());
-	 statement.setString(7, entry.getIndicator_type());
-	  statement.setInt(8, entry.getId());
-	  statement.setString(9, entry.getActive());
+	 statement.setString(7, entry.getValue());
+     statement.setDate(8, new java.sql.Date(entry.getPeriod().getTime()));
 	   statement.executeUpdate();
   System.out.println("Record is Created!");
   } finally {
@@ -172,16 +171,17 @@ try {
   try {
    connection.setAutoCommit(true);
    PreparedStatement statement = connection.prepareStatement("UPDATE project_activity_indicator SET activity_name=?, "
-   		+ "indicator_name=?, active=? , name=?, "
-   		+ "indicator_category=?, indicator_type =?"
+   		+ "indicator_name=?, value=? , name=?, data_type,"
+   		+ "indicator_category=?, period =?"
     + "WHERE id_indicator =? ");
  	try {
      statement.setString(1, entry.getActivity_name());
      statement.setString(2, entry.getIndicator_name());
-     statement.setString(3, entry.getActive());
+     statement.setString(3, entry.getValue());
      statement.setString(4, entry.getName());
-     statement.setString(5, entry.getIndicator_category());
-     statement.setString(6, entry.getIndicator_type());
+     statement.setString(5, entry.getData_type());
+     statement.setString(6, entry.getIndicator_category());
+     statement.setDate(6, new java.sql.Date(entry.getPeriod().getTime()));
      statement.executeUpdate();
 
      
@@ -206,18 +206,22 @@ try {
 	 ProjectActivitiesIndicators entry = new ProjectActivitiesIndicators();
    try {
    Connection connection = getConnection();
-   PreparedStatement preparedStatement = connection.prepareStatement("SELECT id, id_activity,id_indicator, name, activity_name,indicator_name, active FROM project_activity_indicator  WHERE id_indicator =? ");
+   PreparedStatement preparedStatement = connection.prepareStatement("SELECT id_indicator, name, activity_name,indicator_name, "
+   		+ "value, period, data_type, indicator_category "
+   		+ " FROM project_activity_indicator  WHERE id_indicator =? ");
    
    preparedStatement.setInt(1, project_activityId);
    ResultSet rset = preparedStatement.executeQuery();
    if (rset.next()){
-	   entry.setId(rset.getInt("id"));
-	   entry.setId_activity(rset.getInt("id_activity"));
-	   entry.setId_indicator(rset.getInt("id_indicator"));
+	    entry.setId_indicator(rset.getInt("id_indicator"));
 	   entry.setName(rset.getString("name"));
 	   entry.setActivity_name(rset.getString("activity_name"));
        entry.setIndicator_name(rset.getString("indicator_name")); 
-       entry.setActive(rset.getString("active"));
+       entry.setValue(rset.getString("value"));
+       entry.setPeriod(rset.getDate("period"))
+       entry.setData_type(rset.getString("data_type"));
+       entry.setIndicator_cataegory(rset.getString("indicator_category")); 
+              
        preparedStatement.executeUpdate();
   
   }
@@ -237,19 +241,20 @@ try {
     Statement statement = connection.createStatement();
   List<ProjectActivitiesIndicators> list;
   try {
-   ResultSet rset = statement.executeQuery(" SELECT id, id_activity,id_indicator, name, activity_name,indicator_name, active FROM project_activity_indicator  ");
+   ResultSet rset = statement.executeQuery(" SELECT id_indicator, name, activity_name,indicator_name, data_type,period, value "
+   		+ " FROM project_activity_indicator  ");
   try {
   list = new ArrayList<ProjectActivitiesIndicators>();
   while (rset.next()) {
 	  ProjectActivitiesIndicators entry = new ProjectActivitiesIndicators();
    
-	  entry.setId(rset.getInt("id"));
-	   entry.setId_activity(rset.getInt("id_activity"));
 	    entry.setId_indicator(rset.getInt("id_indicator"));
-	   entry.setName(rset.getString("name"));
-	   entry.setActivity_name(rset.getString("activity_name"));
-       entry.setIndicator_name(rset.getString("indicator_name")); 
-      entry.setActive(rset.getString("active"));
+	    entry.setName(rset.getString("name"));
+	    entry.setActivity_name(rset.getString("activity_name"));
+        entry.setIndicator_name(rset.getString("indicator_name")); 
+        entry.setData_type(rset.getString("data_type"));
+        entry.setPeriod(rset.getDate("period"));
+        entry.setValue(rset.getString("value"));
     
    list.add(entry);
   }

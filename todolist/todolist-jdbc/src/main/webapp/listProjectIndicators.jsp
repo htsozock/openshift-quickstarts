@@ -56,17 +56,18 @@
  &nbsp;&nbsp; &nbsp;&nbsp; <h2>  Development Information Solution (DIS) </h2>  
   
    </div>
+    <canvas id="myCanvas" width="600" height="400" style="border:1px solid #000000;">
     <div class="container" align ="center"> 
      <!-- <h4>  USAID - Development Information Solution (DIS) </h4> -->
-      <hr size="35">
+      <hr size="55">
       
     <ul class="nav nav-tabs">
    <li> <a href="MainServlet?action=listProject" >Projects</a></li>
     <li><a href="MainServletActivities?action=listProjectActivities" >Activities</a></li>
     <li class="active"><a href="MainServletIndicators?action=listProjectIndicators">Indicators</a></li>
-    <li><a href="MainServletIndicators?action=listProject">Tags</a></li>
-    <li><a href="MainServletIndicators?action=listProject">Search</a></li>
-    <li><a href="MainServletIndicators?action=listProject">Reports</a></li>
+    <li> <a href="MainServlet?action=listProject" >Tags</a></li>
+    <li> <a href="MainServlet?action=listProject" > Search</a></li>
+    <li> <a href="MainServlet?action=listProject" >Reports</a></li>
    </ul>
      <br>
   
@@ -77,32 +78,28 @@
      </div>
        <thead>
             <tr>
-                <th scope="col"> Project ID </th>
-                <th scope="col"> Activity ID </th>
-                <th scope="col"> Indicator ID </th>
-                <th scope="col"> Project Name </th>
-                <th scope="col"> Activity Name </th>
-                <th scope="col"> Indicator Name </th>
-                <th scope="col"> Indicator Category </th>
-                <th scope="col"> Indicator Type </th>
-                <th scope="col"> Data Type </th> 
+                <th scope="col"> Project  </th>
+                <th scope="col"> Activity </th>
+                <th scope="col"> Indicator </th>
+                <th scope="col"> Data Type </th>
+                <th scope="col"> Period </th> 
+                <th scope="col"> Value </th> 
                <th scope="col" colspan=4> Action </th>
             </tr>
       </thead> 
      
+       
         <tbody>
             <c:forEach items="${list}" var="entry">
                 <tr>
-                    <td><c:out value="${entry.id}" /></td>
-                    <td><c:out value="${entry.id_activity}" /></td>
-                    <td><c:out value="${entry.id_indicator}" /></td>
+               
                      
                      <td><c:out value="${entry.name}" /></td>
                      <td><c:out value="${entry.activity_name}" /></td>
                      <td><c:out value="${entry.indicator_name}" /></td>
-                      <td><c:out value="${entry.indicator_category}" /></td>
-                      <td><c:out value="${entry.indicator_type}" /></td>
                       <td><c:out value="${entry.data_type}" /></td>
+                      <td><fmt:formatDate pattern="MMM-YYYY" value="${entry.period}" /></td>
+                      <td><c:out value="${entry.value}" /></td>
                     
                     <td><a href="MainServletIndicators?action=delete&projectId=<c:out value="${entry.id_indicator}"/>">Delete</a></td>
                     <td><a href="MainServletIndicators?action=edit&projectId=<c:out value="${entry.id_indicator}"/>">Edit</a></td>
@@ -116,6 +113,8 @@
   
     <h5 align="left"> <p><a href="MainServletIndicators?action=insert" >[+]Add Indicator</a></p></h5> 
    </div>   
+   
+    </canvas>
  <script src="//assets.cms.gov/resources/libs/jquery/1.8.2/js/jquery-1.8.2.js" type="text/javascript" />
 <script src="//assets.cms.gov/resources/libs/jquery-ui/1.9.1/js/jquery-ui-1.9.1.js" type="text/javascript" />
 <script src="//assets.cms.gov/resources/libs/bootstrap/2.1.1/js/bootstrap.js" type="text/javascript" />

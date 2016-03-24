@@ -9,6 +9,8 @@ import java.util.Date;
 * contains the POJO (Plain Old Java Object). Each class in this package represents the database table.
 
 * project_activitiesindicators table
+* * 
+* Note: No time to write a  good application and in addition openshift environment is not stable
 
 */
 
@@ -18,16 +20,13 @@ public class ProjectActivitiesIndicators {
 private int id_indicator;
 private int id_activity ;
 private int id ;
-
 private String name;
 private String activity_name;
 private String indicator_name;
 private String indicator_category;
-private String indicator_type;
-private String active;
+private String value
 private String data_type;
-
-
+private Date period ;
 
 // overloaded constructors --- 
 
@@ -35,8 +34,8 @@ private String data_type;
 
 }
 
- public ProjectActivitiesIndicators(int id_activity, int id ,int id_indicator,String name, String activity_name, String indicator_name, String indicator_type, 
-	String indicator_category,  String active,String data_type)
+ public ProjectActivitiesIndicators(int id_activity, int id ,int id_indicator,String name, String activity_name, String indicator_name, String indicator_category, 
+	String value, Date period,String data_type)
  {
   this.id_activity= id_activity;
   this.id=id;
@@ -45,8 +44,8 @@ private String data_type;
   this.activity_name = activity_name;
   this.indicator_name = indicator_name;
   this.indicator_category = indicator_category;
-  this.indicator_type = indicator_type;
-  this.active = active;
+  this.value = value;
+  this.period = period;
   this.data_type= data_type;
 }
 
@@ -60,25 +59,24 @@ private String data_type;
 	 this.data_type = data_type;
 	}
  
-
- public String getIndicator_type() {
-	 return indicator_type;
+ public Date getPeriod() {
+	 return period;
 	}
- public void setIndicator_type(String indicator_type) {
-	 this.indicator_type = indicator_type;
+ public void setPeriod(Date period) {
+	 this.period = period;
 	}
   public String getIndicator_category() {
 	 return indicator_name;
 	}
-		 public void setIndicator_category(String indicator_category) {
-		 this.indicator_category = indicator_category;
-		}
+  public void setIndicator_category(String indicator_category) {
+	 this.indicator_category = indicator_category;
+	}
  
- public String getActive() {
- return active;
+ public String getValue() {
+ return value;
  }
- public void setActive(String active) {
- this.active = active;
+ public void setValue(String value) {
+ this.value = value;
  }
   
  public String getActivity_name() {
@@ -140,9 +138,9 @@ public int getId_indicator() {
 	  
 	 ",  indicator_category ='" + indicator_category  + '\'' + 
 	   
-	 ", indicator_type ='" + indicator_type  + '\'' + 
+	 ", period ='" + period  + '\'' + 
 	   
-	  ",  active ='" + active  + '\'' + 
+	  ",  value ='" + value  + '\'' + 
 	
 	  ",  data_type ='" + data_type  + '\'' + 
 	   

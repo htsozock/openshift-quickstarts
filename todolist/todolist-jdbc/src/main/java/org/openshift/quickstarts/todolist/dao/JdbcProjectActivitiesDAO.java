@@ -59,7 +59,7 @@ try {
     try {
     	 statement.executeUpdate(" CREATE TABLE project_activity (id_activity int(11) NOT NULL AUTO_INCREMENT, id int(11),activity_name VARCHAR(50),"
     	      		+ " name VARCHAR(50),  description TEXT DEFAULT NULL, country VARCHAR(50), award_number VARCHAR(50), obligation_amount BIGINT,"
-    	      		+ "PRIMARY KEY(id_activity,id)) ;  ");
+    	      		+ "PRIMARY KEY(id_activity,id))  ");
      } finally {
  
      statement.close();
