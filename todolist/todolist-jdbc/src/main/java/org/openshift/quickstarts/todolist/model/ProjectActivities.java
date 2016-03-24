@@ -18,7 +18,7 @@ public class ProjectActivities {
 private int id_activity ;
 private int id ;
 private String activity_name;
-private bigint obligation_amount;
+private double obligation_amount;
 private String award_number;
 private String country;
 private String name;
@@ -30,7 +30,7 @@ private String description;
 
 }
 
- public ProjectActivities(int id_activity, int id , String name, String activity_name, String description, String country, String award_number, bigint obligation_amount) 
+ public ProjectActivities(int id_activity, int id , String name, String activity_name, String description, String country, String award_number, double obligation_amount) 
  {
   this.id_activity= id_activity;
   this.id=id;
@@ -96,11 +96,11 @@ public void setAward_number(String award_number) {
  this.award_number = award_number;
 }
 
-public bigint getObligation_amount() {
+public double getObligation_amount() {
 return  obligation_amount;
 }
 
- public void setObligation_amount(bigint obligation_amount) {
+ public void setObligation_amount(double obligation_amount) {
  this.obligation_amount = obligation_amount;
 }
 

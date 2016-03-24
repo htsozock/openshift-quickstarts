@@ -109,8 +109,8 @@ try {
   statement.setString(2, entry.getCountry());
   statement.setString(3, entry.getDescription());
   statement.setString(4, entry.getName());
-  statement.settring(5, entry.getAward_number());
-  statement.setBigint(6, entry.getObligation_amount());
+  statement.setString(5, entry.getAward_number());
+  statement.setDouble(6, entry.getObligation_amount());
   statement.setInt(7, entry.getId());
   statement.executeUpdate();
   System.out.println("Record is Created!");
@@ -172,7 +172,7 @@ try {
      statement.setString(3, entry.getDescription());
      statement.setString(4, entry.getName());
      statement.setString(5, entry.getAward_number());
-     statement.setBigint(6, entry.getObligation_amount());
+     statement.setDouble(6, entry.getObligation_amount());
      statement.executeUpdate();
 
      System.out.println("Project activity " + entry.getActivity_name() + " is updated!");
@@ -207,7 +207,7 @@ try {
     entry.setId(rset.getInt("id"));
     entry.setName(rset.getString("name"));
      entry.setAward_number(rset.getString("award_number"));
-    entry.setObligation_amount(rset.getBigint("obligation_amount"));
+    entry.setObligation_amount(rset.getDouble("obligation_amount"));
     
   }
   } catch (SQLException e) {
@@ -244,7 +244,7 @@ try {
    entry.setName(rset.getString("name"));
    entry.setId(rset.getInt("id"));
    entry.setAward_number(rset.getString("award_number"));
-   entry.setObligation_amount(rset.getBigint("obligation_amount"));
+   entry.setObligation_amount(rset.getDouble("obligation_amount"));
 
    list.add(entry);
   }
