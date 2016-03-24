@@ -75,7 +75,7 @@
             <br /> 
    Value   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input   type="text" name="value" size="40"  value="<c:out value="${entry.value}" />" />     
              
-   &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;Period  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input   type="text" name="period" size="30"  vvalue="<c:out value="${entry.period}" />" />    &nbsp;&nbsp;&nbsp;
+   &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;Period  &nbsp;&nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input   type="text" name="period" size="30"  vvalue="<c:out value="${entry.period}" />" />    &nbsp;&nbsp;&nbsp;
    
          <br /> <br /> 
       Data Type  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;     <input type="text" name="data_type" size="40"  value="<c:out value="${entry.data_type}" />" /> <br />    
