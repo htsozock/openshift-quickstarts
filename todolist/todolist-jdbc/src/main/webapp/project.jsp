@@ -63,7 +63,7 @@
     <hr size="45">           
    <form method="POST" action='MainServlet' name="frmAddProject">
     
-        Project ID     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text" readonly="readonly" name="id"  size="10"  disabled  value="<c:out value="${entry.id}" />" 
+       Project ID     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input type="text" readonly="readonly" name="id"  size="10"  disabled  value="<c:out value="${entry.id}" />" 
 
 /> <br /> 
              <br />
@@ -78,18 +78,16 @@ value="${entry.organization}" />" /> <br />
          Project Manager &nbsp; <input   type="text" name="manager" size="50"  value="<c:out value="${entry.manager}" />" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 
 &nbsp;&nbsp;
-         Status  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input   type="text" name="status" size="40"  value="<c:out value="${entry.status}" />" /> <br />    
+         Status  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input   type="text" name="status" size="40"  value="<c:out value="${entry.status}" />" /> <br />    
             <br />
-                 
-         
-         Start Date    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input   type="text" name="startdt" size="50"  value="<fmt:formatDate pattern="MM/dd/yyyy" 
+        Start Date   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;  &nbsp;&nbsp; &nbsp;  <input   type="text" name="startdt" size="50"  value="<fmt:formatDate pattern="MM/dd/yyyy" 
 
 value="${entry.startdt}" />" /> &nbsp;&nbsp;&nbsp;
          End  Date    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;  <input    type="text" name="enddt" size="40"  value="<fmt:formatDate pattern="MM/dd/yyyy" value="${entry.enddt}" />" /> <br 
 
 /> 
            <br /> <br /> 
-         Description &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;     <textarea name="description" id="description"  rows="4" cols="95"></textarea> 
+        Description &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;     <textarea name="description" id="description"  rows="4" cols="95"></textarea> 
    
       <div class="clear"></div>
  <br /> <br /> 
@@ -102,13 +100,13 @@ value="${entry.startdt}" />" /> &nbsp;&nbsp;&nbsp;
 <div class="clear"></div>
    
           
-          <hr size="45">
+          <hr size="55">
        <div id="container" style="text-align: left;">
  
           <big><button type="submit"  class="btn app_button">SAVE &amp; CONTINUE</button>  </big>         
      
  <!--   <big><p><a href="MainServlet?action=ProjectActivitiesDetails.jsp" >Project Activities Details</a></p></big>   -->
-    <hr size="45">
+    <hr size="55">
  </div>    
           
           
