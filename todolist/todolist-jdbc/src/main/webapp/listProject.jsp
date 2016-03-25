@@ -80,7 +80,7 @@
      </div>
        <thead>
             <tr>
-                <th scope="col"> ID</th>
+                <th scope="col"> Project ID</th>
                 <th scope="col">Project Name</th>
                 <th scope="col">Organization</th>
                 <th scope="col">Project Manager</th>
